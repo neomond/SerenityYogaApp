@@ -59,6 +59,7 @@
 		7A922E992CAFB94F009F3E9C /* SerenityYoga */ = {
 			isa = PBXGroup;
 			children = (
+				7A922ED62CB50F54009F3E9C /* App */,
 				7A922ECA2CB3E228009F3E9C /* Utils */,
 				7A922EC92CB3E21F009F3E9C /* Services */,
 				7A922EC82CB3E218009F3E9C /* Models */,
@@ -66,9 +67,6 @@
 				7A922EC62CB3E207009F3E9C /* ViewModels */,
 				7A922EC52CB3E202009F3E9C /* Views */,
 				7A922EC42CB3E1D9009F3E9C /* Resources */,
-				7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */,
-				7A922E9C2CAFB94F009F3E9C /* ContentView.swift */,
-				7A922E9E2CAFB950009F3E9C /* Assets.xcassets */,
 				7A922EA02CAFB950009F3E9C /* Preview Content */,
 			);
 			path = SerenityYoga;
@@ -85,6 +83,7 @@
 		7A922EC42CB3E1D9009F3E9C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A922E9E2CAFB950009F3E9C /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -92,6 +91,7 @@
 		7A922EC52CB3E202009F3E9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A922E9C2CAFB94F009F3E9C /* ContentView.swift */,
 				7A922EA82CAFBA6C009F3E9C /* LoginView.swift */,
 				7A922ECB2CB3EE29009F3E9C /* SignupView.swift */,
 			);
@@ -133,6 +133,14 @@
 				7A922ECF2CB41E37009F3E9C /* Image+Ext.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7A922ED62CB50F54009F3E9C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SerenityYoga/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "SerenityYoga/Preview\\ Content";
 				DEVELOPMENT_TEAM = 963Q5MY7HY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -373,7 +381,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SerenityYoga/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "SerenityYoga/Preview\\ Content";
 				DEVELOPMENT_TEAM = 963Q5MY7HY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
