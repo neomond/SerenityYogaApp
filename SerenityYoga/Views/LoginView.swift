@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     @State private var email = ""
     @State private var password = ""
     @State private var showPassword = false
-        
+    
     
     var body: some View {
         NavigationStack {
@@ -25,57 +26,17 @@ struct LoginView: View {
                 .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    Image(.appLogo)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .padding(.top, 10)
-                    VStack(spacing: 12) {
-                        Text("Welcome!")
-                            .font(.title)
-                        
-                        Text("Don't have an account yet?")
-                            .foregroundColor(.gray)
-                        
-                        Button(action: {}) {
-                            NavigationLink(destination: SignupView()) {
-                                Text("Sign Up")
-                                    .foregroundColor(.primaryPurple)
-                                    .fontWeight(.medium)
-                            }
-                        }
-                    }
-                    .padding(.bottom, 25)
+                    AuthHeaderView(
+                        title: "Welcome!",
+                        subtitle: "Do not have an account?",
+                        actionText: "Sign Up",
+                        actionDestination: AnyView(SignupView())
+                    )
                     
                     VStack(spacing: 12) {
-                        TextField("Email", text: $email)
-                            .autocapitalization(.none)
-                            .keyboardType(.emailAddress)
-                            .padding()
-                            .background(Color.tertiaryInput)
-                            .cornerRadius(10)
+                        AuthTextField(placeholder: "Email", text: $email, isSecure: false, showPassword: .constant(false))
                         
-                        ZStack {
-                            if showPassword {
-                                TextField("Password", text: $password)
-                                    .padding(.trailing, 40)
-                            } else {
-                                SecureField("Password", text: $password)
-                                    .textContentType(.password)
-                                    .padding(.trailing, 40)
-                            }
-                            
-                            Button(action: {
-                                showPassword.toggle()
-                            }) {
-                                Image(systemName: showPassword ? "eye.slash" : "eye")
-                                    .foregroundStyle(.gray)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                        .padding()
-                        .background(Color.tertiaryInput)
-                        .cornerRadius(10)
+                        AuthTextField(placeholder: "Password", text: $password, isSecure: true, showPassword: $showPassword)
                         
                         Text("Forgot Password?")
                             .frame(maxWidth: .infinity, alignment: .trailing)
@@ -85,17 +46,9 @@ struct LoginView: View {
                     Spacer().frame(height: 30)
                     
                     VStack(spacing: 16) {
-                        Button(action: {
-                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        AppButton(title: "Sign In") {
                             print("Email: \(email), Password: \(password)")
-                        }) {
-                            Text("Sign In")
-                                .frame(minWidth: 0, maxWidth: .infinity)
                         }
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.primaryPurple)
-                        .cornerRadius(25)
                         
                         HStack {
                             Rectangle()
@@ -112,6 +65,7 @@ struct LoginView: View {
                                 .foregroundColor(.gray)
                                 .padding(.horizontal)
                         }
+                        
                         Button(action: {
                         }) {
                             HStack(spacing: 0) {

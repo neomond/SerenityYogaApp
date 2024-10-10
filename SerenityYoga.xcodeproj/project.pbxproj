@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */; };
+		7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2222CB7A967002498A2 /* AuthTextField.swift */; };
+		7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2242CB7AA56002498A2 /* AppButton.swift */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
 		7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A922E9E2CAFB950009F3E9C /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		7A12F2222CB7A967002498A2 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		7A12F2242CB7AA56002498A2 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
 		7A922E9C2CAFB94F009F3E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +46,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A12F21F2CB6FCDD002498A2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7A12F2262CB7ADAA002498A2 /* Auth */,
+				7A12F2242CB7AA56002498A2 /* AppButton.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7A12F2262CB7ADAA002498A2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */,
+				7A12F2222CB7A967002498A2 /* AuthTextField.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		7A922E8E2CAFB94F009F3E9C = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +115,7 @@
 		7A922EC52CB3E202009F3E9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A12F21F2CB6FCDD002498A2 /* Shared */,
 				7A922E9C2CAFB94F009F3E9C /* ContentView.swift */,
 				7A922EA82CAFBA6C009F3E9C /* LoginView.swift */,
 				7A922ECB2CB3EE29009F3E9C /* SignupView.swift */,
@@ -214,11 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A922ECC2CB3EE29009F3E9C /* SignupView.swift in Sources */,
+				7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */,
 				7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */,
+				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
+				7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

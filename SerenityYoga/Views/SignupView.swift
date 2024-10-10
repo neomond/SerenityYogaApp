@@ -26,79 +26,18 @@ struct SignupView: View {
                 .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    Image(.appLogo)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .padding(.top, 10)
-                    VStack(spacing: 12) {
-                        Text("Welcome!")
-                            .font(.title)
-                        
-                        Text("Already have an account?")
-                            .foregroundColor(.gray)
-                        
-                        Button(action: {}) {
-                            NavigationLink(destination: LoginView()) {
-                                Text("Sign In")
-                                    .foregroundColor(.primaryPurple)
-                                    .fontWeight(.medium)
-                            }
-                        }
-                    }
-                    .padding(.bottom, 25)
+                    AuthHeaderView(
+                        title: "Welcome!",
+                        subtitle: "Already have an account?",
+                        actionText: "Sign In",
+                        actionDestination: AnyView(LoginView())
+                    )
                     
                     VStack(spacing: 12) {
-                        TextField("Email", text: $email)
-                            .autocapitalization(.none)
-                            .keyboardType(.emailAddress)
-                            .padding()
-                            .background(Color.tertiaryInput)
-                            .cornerRadius(10)
-                        
-                        ZStack {
-                            if showPassword {
-                                TextField("Password", text: $password)
-                                    .padding(.trailing, 40)
-                            } else {
-                                SecureField("Password", text: $password)
-                                    .textContentType(.password)
-                                    .padding(.trailing, 40)
-                            }
-                            
-                            Button(action: {
-                                showPassword.toggle()
-                            }) {
-                                Image(systemName: showPassword ? "eye.slash" : "eye")
-                                    .foregroundStyle(.gray)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                        .padding()
-                        .background(Color.tertiaryInput)
-                        .cornerRadius(10)
-                        
-                        ZStack {
-                            if showPassword {
-                                TextField("Confirm Password", text: $confirmPassword)
-                                    .padding(.trailing, 40)
-                            } else {
-                                SecureField("Confirm Password", text: $confirmPassword)
-                                    .textContentType(.password)
-                                    .padding(.trailing, 40)
-                            }
-                            
-                            Button(action: {
-                                showPassword.toggle()
-                            }) {
-                                Image(systemName: showPassword ? "eye.slash" : "eye")
-                                    .foregroundStyle(.gray)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                        .padding()
-                        .background(Color.tertiaryInput)
-                        .cornerRadius(10)
+                       AuthTextField(placeholder: "Email", text: $email, isSecure: false, showPassword: .constant(false))
+                        AuthTextField(placeholder: "Password", text: $password, isSecure: true, showPassword: $showPassword)
+                        AuthTextField(placeholder: "Confirm Password", text: $confirmPassword, isSecure: true, showPassword: $showPassword)
+                                              
                        
                         HStack {
                             Button(action: {}) {
@@ -122,18 +61,11 @@ struct SignupView: View {
                     Spacer().frame(height: 30)
                     
                     VStack(spacing: 16) {
-                        Button(action: {
-                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                            print("Email: \(email), Password: \(password)")
-                        }) {
-                            Text("Sign Up")
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.primaryPurple)
-                        .cornerRadius(25)
                         
+                        AppButton(title: "Sign Up") {
+                            print("Email: \(email), Password: \(password)")
+                        }
+                                        
                         HStack {
                             Rectangle()
                                 .frame(height: 0.5)
