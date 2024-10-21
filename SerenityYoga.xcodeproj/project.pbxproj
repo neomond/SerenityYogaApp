@@ -83,11 +83,11 @@
 		7A922E992CAFB94F009F3E9C /* SerenityYoga */ = {
 			isa = PBXGroup;
 			children = (
+				7AE5DB4C2CC63C1E00DCB9A0 /* SupportingViews */,
 				7A922ED62CB50F54009F3E9C /* App */,
-				7A922ECA2CB3E228009F3E9C /* Utils */,
+				7A922ECA2CB3E228009F3E9C /* Utilities */,
 				7A922EC92CB3E21F009F3E9C /* Services */,
 				7A922EC82CB3E218009F3E9C /* Models */,
-				7A922EC72CB3E210009F3E9C /* Coordinators */,
 				7A922EC62CB3E207009F3E9C /* ViewModels */,
 				7A922EC52CB3E202009F3E9C /* Views */,
 				7A922EC42CB3E1D9009F3E9C /* Resources */,
@@ -115,7 +115,6 @@
 		7A922EC52CB3E202009F3E9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7A12F21F2CB6FCDD002498A2 /* Shared */,
 				7A922E9C2CAFB94F009F3E9C /* ContentView.swift */,
 				7A922EA82CAFBA6C009F3E9C /* LoginView.swift */,
 				7A922ECB2CB3EE29009F3E9C /* SignupView.swift */,
@@ -128,13 +127,6 @@
 			children = (
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		7A922EC72CB3E210009F3E9C /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		7A922EC82CB3E218009F3E9C /* Models */ = {
@@ -151,13 +143,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		7A922ECA2CB3E228009F3E9C /* Utils */ = {
+		7A922ECA2CB3E228009F3E9C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				7A922ECD2CB40BEC009F3E9C /* Color+Ext.swift */,
 				7A922ECF2CB41E37009F3E9C /* Image+Ext.swift */,
 			);
-			path = Utils;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		7A922ED62CB50F54009F3E9C /* App */ = {
@@ -166,6 +158,14 @@
 				7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		7AE5DB4C2CC63C1E00DCB9A0 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				7A12F21F2CB6FCDD002498A2 /* Shared */,
+			);
+			path = SupportingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
