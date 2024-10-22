@@ -14,10 +14,8 @@ struct SignupView: View {
     @State private var showPassword = false
     
     var body: some View {
-        
         NavigationStack {
             ZStack(alignment: .center) {
-                
                 LinearGradient(
                     gradient: Gradient(colors: [.primaryPurple, .mainPink]),
                     startPoint: .topLeading,
@@ -104,7 +102,6 @@ struct SignupView: View {
                     }
                     Spacer()
                 }
-                
                 .padding(.horizontal)
                 .padding(.top, 45)
                 .background(Color.white)

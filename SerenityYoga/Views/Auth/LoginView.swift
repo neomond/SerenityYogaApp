@@ -38,9 +38,12 @@ struct LoginView: View {
                         
                         AuthTextField(placeholder: "Password", text: $password, isSecure: true, showPassword: $showPassword)
                         
-                        Text("Forgot Password?")
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .font(.footnote)
+                        NavigationLink(destination: ForgotPasswordView()) {
+                            Text("Forgot Password?")
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                                .font(.footnote)
+                                .foregroundColor(.black)
+                        }
                     }
                     
                     Spacer().frame(height: 30)

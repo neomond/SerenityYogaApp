@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0BB56B2CC7A0BF00681A88 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */; };
+		7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */; };
 		7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */; };
 		7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2222CB7A967002498A2 /* AuthTextField.swift */; };
 		7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2242CB7AA56002498A2 /* AppButton.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailView.swift; sourceTree = "<group>"; };
 		7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		7A12F2222CB7A967002498A2 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		7A12F2242CB7AA56002498A2 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
@@ -46,6 +50,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0BB56C2CC7A8FD00681A88 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7A922ECB2CB3EE29009F3E9C /* SignupView.swift */,
+				7A922EA82CAFBA6C009F3E9C /* LoginView.swift */,
+				7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */,
+				7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		7A12F21F2CB6FCDD002498A2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +130,8 @@
 		7A922EC52CB3E202009F3E9C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A0BB56C2CC7A8FD00681A88 /* Auth */,
 				7A922E9C2CAFB94F009F3E9C /* ContentView.swift */,
-				7A922EA82CAFBA6C009F3E9C /* LoginView.swift */,
-				7A922ECB2CB3EE29009F3E9C /* SignupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,7 +259,9 @@
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
+				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
+				7A0BB56B2CC7A0BF00681A88 /* ForgotPasswordView.swift in Sources */,
 				7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

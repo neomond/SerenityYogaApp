@@ -9,23 +9,36 @@ import SwiftUI
 
 struct AppButton: View {
     var title: String
-    var action: () -> Void
+    var destination: AnyView? = nil
+    var action: (() -> Void)? = nil
     
     var body: some View {
         Button(action: {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            action()
+            action?()
         }) {
-            Text(title)
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.primaryPurple)
-                .cornerRadius(25)
+            if let destination = destination {
+                NavigationLink(destination: destination) {
+                    Text(title)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.primaryPurple)
+                        .cornerRadius(25)
+                }
+            } else {
+                Text(title)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.primaryPurple)
+                    .cornerRadius(25)
+            }
         }
     }
 }
 
 #Preview {
-    AppButton(title: "Test Button", action: { print("Button tapped!")})
+    AppButton(title: "Test Button", action: { print("Button tapped!") })
 }
+
