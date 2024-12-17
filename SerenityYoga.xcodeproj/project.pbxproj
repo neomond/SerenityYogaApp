@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A0BB56B2CC7A0BF00681A88 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */; };
 		7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */; };
+		7A10C0FF2D121D84007ADA6F /* SizeMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A10C0FE2D121D84007ADA6F /* SizeMetrics.swift */; };
 		7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */; };
 		7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2222CB7A967002498A2 /* AuthTextField.swift */; };
 		7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2242CB7AA56002498A2 /* AppButton.swift */; };
@@ -20,11 +21,15 @@
 		7A922ECC2CB3EE29009F3E9C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922ECB2CB3EE29009F3E9C /* SignupView.swift */; };
 		7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922ECD2CB40BEC009F3E9C /* Color+Ext.swift */; };
 		7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922ECF2CB41E37009F3E9C /* Image+Ext.swift */; };
+		7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */; };
+		7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */; };
+		7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailView.swift; sourceTree = "<group>"; };
+		7A10C0FE2D121D84007ADA6F /* SizeMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeMetrics.swift; sourceTree = "<group>"; };
 		7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		7A12F2222CB7A967002498A2 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		7A12F2242CB7AA56002498A2 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
@@ -37,6 +42,9 @@
 		7A922ECB2CB3EE29009F3E9C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		7A922ECD2CB40BEC009F3E9C /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		7A922ECF2CB41E37009F3E9C /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
+		7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFlowView.swift; sourceTree = "<group>"; };
+		7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
+		7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +61,23 @@
 		7A0BB56C2CC7A8FD00681A88 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				7A10C0FD2D120C1F007ADA6F /* ForgotPwd */,
 				7A922ECB2CB3EE29009F3E9C /* SignupView.swift */,
 				7A922EA82CAFBA6C009F3E9C /* LoginView.swift */,
-				7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */,
-				7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		7A10C0FD2D120C1F007ADA6F /* ForgotPwd */ = {
+			isa = PBXGroup;
+			children = (
+				7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */,
+				7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */,
+				7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */,
+				7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */,
+				7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */,
+			);
+			path = ForgotPwd;
 			sourceTree = "<group>";
 		};
 		7A12F21F2CB6FCDD002498A2 /* Shared */ = {
@@ -162,6 +181,7 @@
 			children = (
 				7A922ECD2CB40BEC009F3E9C /* Color+Ext.swift */,
 				7A922ECF2CB41E37009F3E9C /* Image+Ext.swift */,
+				7A10C0FE2D121D84007ADA6F /* SizeMetrics.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -253,15 +273,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A922ECC2CB3EE29009F3E9C /* SignupView.swift in Sources */,
+				7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */,
 				7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */,
+				7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */,
 				7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
+				7A10C0FF2D121D84007ADA6F /* SizeMetrics.swift in Sources */,
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
 				7A0BB56B2CC7A0BF00681A88 /* ForgotPasswordView.swift in Sources */,
+				7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */,
 				7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

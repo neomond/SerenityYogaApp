@@ -38,7 +38,7 @@ struct LoginView: View {
                         
                         AuthTextField(placeholder: "Password", text: $password, isSecure: true, showPassword: $showPassword)
                         
-                        NavigationLink(destination: ForgotPasswordView()) {
+                        NavigationLink(destination: ForgotPasswordFlowView()) {
                             Text("Forgot Password?")
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                                 .font(.footnote)

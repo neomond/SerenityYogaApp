@@ -32,11 +32,11 @@ struct SignupView: View {
                     )
                     
                     VStack(spacing: 12) {
-                       AuthTextField(placeholder: "Email", text: $email, isSecure: false, showPassword: .constant(false))
+                        AuthTextField(placeholder: "Email", text: $email, isSecure: false, showPassword: .constant(false))
                         AuthTextField(placeholder: "Password", text: $password, isSecure: true, showPassword: $showPassword)
                         AuthTextField(placeholder: "Confirm Password", text: $confirmPassword, isSecure: true, showPassword: $showPassword)
-                                              
-                       
+                        
+                        
                         HStack {
                             Button(action: {}) {
                                 HStack {
@@ -63,7 +63,7 @@ struct SignupView: View {
                         AppButton(title: "Sign Up") {
                             print("Email: \(email), Password: \(password)")
                         }
-                                        
+                        
                         HStack {
                             Rectangle()
                                 .frame(height: 0.5)
@@ -83,14 +83,14 @@ struct SignupView: View {
                         }) {
                             HStack(spacing: 0) {
                                 Image(.googleIcon)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 24, height: 24)
-                                    
-                                    Text("Login with Google")
-                                        .frame(minWidth: 0, maxWidth: .infinity)
-                                        .foregroundStyle(Color.secondaryGray)
-                                }
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 24, height: 24)
+                                
+                                Text("Login with Google")
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .foregroundStyle(Color.secondaryGray)
+                            }
                         }
                         .padding()
                         .foregroundColor(.black)

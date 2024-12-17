@@ -1,0 +1,43 @@
+//
+//  SizeMetrics.swift
+//  SerenityYoga
+//
+//  Created by Nazrin Atayeva on 18.12.24.
+//
+
+import SwiftUI
+
+struct SizeMetrics {
+    // MARK: - Padding
+    static let horizontalPadding: CGFloat = 16
+    static let verticalPadding: CGFloat = 12
+    static let smallPadding: CGFloat = 8
+    static let largePadding: CGFloat = 20
+    
+    // MARK: - Spacing
+    static let smallSpacing: CGFloat = 8
+    static let mediumSpacing: CGFloat = 12
+    static let largeSpacing: CGFloat = 20
+    static let extraLargeSpacing: CGFloat = 40
+    
+    // MARK: - Corner Radius
+    static let smallRadius: CGFloat = 8
+    static let mediumRadius: CGFloat = 10
+    static let largeRadius: CGFloat = 20
+    
+    // MARK: - Icon Sizes
+    static let smallIcon: CGFloat = 24
+    static let mediumIcon: CGFloat = 40
+    static let largeIcon: CGFloat = 80
+    
+    // MARK: - TextField Sizes
+    static let textFieldHeight: CGFloat = 50
+    
+    // MARK: - Fonts
+    struct Fonts {
+        static let title: Font = .title
+        static let subtitle: Font = .callout
+        static let button: Font = .headline
+        static let caption: Font = .caption
+    }
+}

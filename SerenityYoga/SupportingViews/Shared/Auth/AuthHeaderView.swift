@@ -19,7 +19,7 @@ struct AuthHeaderView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 80, height: 80)
-                .padding(.top, 10)
+                .padding(.bottom, 20)
             
             Text(title)
                 .font(.title)
