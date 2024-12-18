@@ -18,7 +18,7 @@ struct CreatePasswordView: View {
             Image(.appLogo)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 80, height: 80)
+                .frame(width: SizeMetrics.largeIcon, height: SizeMetrics.largeIcon)
                 .padding(.bottom, 80)
             
             Text("Create Password").font(.title)

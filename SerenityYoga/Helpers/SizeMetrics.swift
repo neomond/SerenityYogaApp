@@ -12,6 +12,7 @@ struct SizeMetrics {
     static let horizontalPadding: CGFloat = 16
     static let verticalPadding: CGFloat = 12
     static let smallPadding: CGFloat = 8
+    static let mediumPadding: CGFloat = 14
     static let largePadding: CGFloat = 20
     
     // MARK: - Spacing
@@ -36,6 +37,9 @@ struct SizeMetrics {
     // MARK: - Fonts
     struct Fonts {
         static let title: Font = .title
+        static let title2: Font = .title2
+        static let title3: Font = .title3
+        static let body: Font = .body
         static let subtitle: Font = .callout
         static let button: Font = .headline
         static let caption: Font = .caption

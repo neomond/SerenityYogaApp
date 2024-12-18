@@ -10,7 +10,8 @@ import SwiftUI
 struct ImageManager {
     static let applogo = Image("AppLogo")
     static let googleicon = Image("GoogleIcon")
-    
+    static let onboardingImg = Image("OnboardingImg")
+    static let onboardingImg1 = Image("Onboarding")
 }
 
 // Or you can use an extension
@@ -19,5 +20,6 @@ struct ImageManager {
 extension Image {
     static let appLogo = Image("AppLogo")
     static let googleIcon = Image("GoogleIcon")
-  
+    static let onboardingImg = Image("OnboardingImg")
+    static let onboardingImg1 = Image("Onboarding")
 }
