@@ -15,7 +15,7 @@ struct PersonalDetailsView: View {
     var onBack: () -> Void
     
     @State private var isAgePickerVisible: Bool = false
-    
+
     var body: some View {
         VStack(spacing: SizeMetrics.mediumSpacing) {
             Image(.appLogo)
@@ -27,37 +27,8 @@ struct PersonalDetailsView: View {
                 .font(SizeMetrics.Fonts.title2)
                 .padding(.bottom, SizeMetrics.mediumPadding)
             
-            // Collapsible Age Picker
-            VStack {
-                Button(action: {
-                    withAnimation {
-                        isAgePickerVisible.toggle()
-                    }
-                }) {
-                    HStack {
-                        Text("Age: \(age)")
-                            .foregroundColor(Color.secondaryGray)
-                            .font(SizeMetrics.Fonts.body)
-                        Spacer()
-                        Image(systemName: isAgePickerVisible ? "chevron.up" : "chevron.down")
-                            .foregroundColor(.gray)
-                    }
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(SizeMetrics.mediumRadius)
-                }
-                
-                if isAgePickerVisible {
-                    Picker("Age", selection: $age) {
-                        ForEach(10...100, id: \.self) { Text("\($0)") }
-                    }
-                    .pickerStyle(.wheel)
-                    .frame(height: 150)
-                    .clipped()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(SizeMetrics.mediumRadius)
-                }
-            }
+            // Use AgePickerView here
+            AgePickerViewWrapper(age: $age)
             
             // Weight and Height Fields
             AuthTextField(placeholder: "Weight", text: $weight, isSecure: false, showPassword: .constant(false))
@@ -76,7 +47,6 @@ struct PersonalDetailsView: View {
         .padding(SizeMetrics.horizontalPadding)
     }
 }
-
 
 
 #Preview {

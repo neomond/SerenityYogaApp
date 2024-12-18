@@ -18,7 +18,8 @@ struct ForgotPasswordFlowView: View {
     @State private var code = ""
     @State private var newPassword = ""
     @State private var confirmPassword = ""
-    @State private var codeError = false // Track wrong code entry
+    
+    @State private var codeError = false
     
     var body: some View {
         NavigationStack {
@@ -42,7 +43,7 @@ struct ForgotPasswordFlowView: View {
                         })
                     case .enterCode:
                         EnterCodeView(code: $code, codeError: $codeError, onNext: {
-                            if code == "1234" { // Simulate correct code
+                            if code == "1234" {
                                 codeError = false
                                 currentStep = .createPassword
                             } else {

@@ -27,25 +27,35 @@ struct ActivityLevelView: View {
             ForEach(activities, id: \.self) { activity in
                 HStack {
                     Text(activity)
+                    
                     Spacer()
-                    if selectedActivity == activity {
-                        Circle()
-                            .fill(Color.purple)
-                            .frame(width: 20, height: 20)
-                    } else {
-                        Circle()
-                            .stroke(Color.gray, lineWidth: 1)
-                            .frame(width: 20, height: 20)
+                    ZStack {
+                        if selectedActivity == activity {
+                            Circle()
+                                .fill(Color.primaryPurple)
+                                .frame(width: 20, height: 20)
+                            Circle()
+                                .fill(Color.white) // Inner white circle
+                                .frame(width: 8, height: 8)
+                        } else {
+                            Circle()
+                                .stroke(Color.gray, lineWidth: 1)
+                                .frame(width: 20, height: 20)
+                        }
                     }
                 }
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(SizeMetrics.mediumRadius)
+                
                 .onTapGesture {
                     selectedActivity = activity
                 }
             }
             
             HStack {
-                AppButton(title: "Back", action: onBack)
-                AppButton(title: "Continue", action: onNext)
+                AppButton(title: "Back", style: .secondary, action: onBack)
+                AppButton(title: "Continue", style: .primary, action: onNext)
             }
             .padding(.top, SizeMetrics.largePadding)
             Spacer()
@@ -61,7 +71,7 @@ struct ActivityLevelView: View {
                       "Active (exercise 3 times a week)",
                       "Intermittent (exercise once a week)",
                       "Not at all"]
-
+    
     return ActivityLevelView(
         selectedActivity: $previewSelectedActivity,
         activities: activities,

@@ -77,6 +77,8 @@
 				7A10C0FD2D120C1F007ADA6F /* ForgotPwd */,
 				7A922ECB2CB3EE29009F3E9C /* SignupView.swift */,
 				7A922EA82CAFBA6C009F3E9C /* LoginView.swift */,
+				7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */,
+				7A10C1022D12CA19007ADA6F /* OnboardingFlowView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -84,7 +86,6 @@
 		7A10C0FD2D120C1F007ADA6F /* ForgotPwd */ = {
 			isa = PBXGroup;
 			children = (
-				7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */,
 				7A0BB56A2CC7A0BF00681A88 /* ForgotPasswordView.swift */,
 				7A0BB56D2CC7A98A00681A88 /* CheckEmailView.swift */,
 				7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */,
@@ -96,7 +97,6 @@
 		7A10C1002D121F7A007ADA6F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				7A10C1022D12CA19007ADA6F /* OnboardingFlowView.swift */,
 				7A10C1042D12CC47007ADA6F /* NameInputView.swift */,
 				7A10C1062D12CD12007ADA6F /* ActivityLevelView.swift */,
 				7A10C1082D12CDD5007ADA6F /* PersonalDetailsView.swift */,

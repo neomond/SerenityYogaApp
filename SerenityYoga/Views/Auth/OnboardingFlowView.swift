@@ -30,7 +30,7 @@ struct OnboardingFlowView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Conditional Gradient
+                
                 if currentStep != .waitingScreen {
                     LinearGradient(
                         gradient: Gradient(colors: [

@@ -49,6 +49,7 @@ struct LoginView: View {
                     Spacer().frame(height: 30)
                     
                     VStack(spacing: 16) {
+                        
                         AppButton(title: "Sign In") {
                             print("Email: \(email), Password: \(password)")
                         }
