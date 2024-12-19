@@ -21,12 +21,21 @@ struct GreetingView: View {
                 .font(.title3)
                 .foregroundColor(.white)
         }
-        .frame(maxWidth: .infinity, minHeight: 150, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.leading, 20)
     }
 }
 
 
 #Preview {
-    GreetingView(name: "Nazrin")
+    ZStack {
+        LinearGradient(
+            gradient: Gradient(colors: [.primaryPurple, .mainPink]),
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+        .edgesIgnoringSafeArea(.all)
+        GreetingView(name: "Nazrin")
+    }
+    .frame(height: 120)
 }

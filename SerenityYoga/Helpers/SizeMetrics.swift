@@ -15,6 +15,7 @@ struct SizeMetrics {
     static let bottomPadding: CGFloat = 14
     static let mediumPadding: CGFloat = 14
     static let largePadding: CGFloat = 20
+    static let xlargePadding: CGFloat = 30
     
     // MARK: - Spacing
     static let smallSpacing: CGFloat = 8

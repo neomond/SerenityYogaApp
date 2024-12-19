@@ -35,6 +35,7 @@
 		7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */; };
 		7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */; };
 		7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */; };
+		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFlowView.swift; sourceTree = "<group>"; };
 		7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
 		7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
+		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				7A10C1192D143F96007ADA6F /* GreetingView.swift */,
 				7A10C11B2D14425F007ADA6F /* IconsView.swift */,
+				7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */,
 				7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */,
 				7A10C1072D12CD12007ADA6F /* ActivityLevelView.swift in Sources */,
+				7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */,
 				7A10C11A2D143F96007ADA6F /* GreetingView.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
 				7A10C0FF2D121D84007ADA6F /* SizeMetrics.swift in Sources */,
