@@ -81,7 +81,8 @@ struct LoginView: View {
                                 Text("Login with Google")
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .foregroundStyle(Color.secondaryGray)
-                            }                        }
+                            }
+                        }
                         .padding()
                         .foregroundColor(.black)
                         .background(Color.white)

@@ -14,9 +14,10 @@ struct ColorManager {
     static let quaternary = Color("PrimaryPink")
     static let peachBg = Color("PeachColor")
     static let mangoBg = Color("MangoColor")
-    static let blueBg = Color("BlueColor")
+    static let blueBg = Color("BluePrimaryColor")
     static let skyblueBg = Color("SkyBlueColor")
     static let cornflowerblueBg = Color("CornFlowerColor")
+    static let lavenderBg = Color("LavenderColor")
 }
 
 // Or you can use an extension
@@ -29,7 +30,8 @@ extension Color {
     static let mainPink = Color("PrimaryPink")
     static let peachBg = Color("PeachColor")
     static let mangoBg = Color("MangoColor")
-    static let blueBg = Color("BlueColor")
+    static let blueBg = Color("BluePrimaryColor")
     static let skyblueBg = Color("SkyBlueColor")
     static let cornflowerblueBg = Color("CornFlowerColor")
+    static let lavenderBg = Color("LavenderColor")
 }
