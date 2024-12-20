@@ -30,30 +30,52 @@ struct DashboardView: View {
             .edgesIgnoringSafeArea(.all)
             
             ScrollView {
-                VStack {
-                    
+                VStack(spacing: 0) {
                     // MARK: - Top Icons View
                     IconsView()
                         .padding(.bottom, SizeMetrics.xlargePadding)
                     
                     // MARK: - Greeting Section View
                     GreetingView(name: "Nazrin")
-                        .padding(.bottom, SizeMetrics.mediumPadding)
+                        .padding(.bottom, SizeMetrics.largePadding)
                     
                     // MARK: - Mood Selector View
                     MoodSelectorView()
-                        .padding(.bottom, SizeMetrics.largePadding)
+                        .padding(.bottom, SizeMetrics.xlargePadding)
                     
-                    // MARK: - Main Content Section View
-                    VStack {
-                        Text("White Content Area")
-                            .frame(maxWidth: .infinity, minHeight: 600)
-                            .background(Color.white)
-                            .padding(.horizontal)
-                            .background(Color.white)
-                            .clipShape(RoundedCorner(radius: 40, corners: [.topLeft, .topRight]))
+                    // MARK: - Main Content View
+                    ZStack(alignment: .top) {
+                        Color.white
+                            .frame(maxWidth: .infinity)
+                            .frame(height: UIScreen.main.bounds.height)
+                            .clipShape(RoundedCorner(radius: 36, corners: [.topLeft, .topRight]))
                             .edgesIgnoringSafeArea(.bottom)
-                            .shadow(radius: 5)
+                        
+                       
+                        VStack(spacing: 24) {
+                            HorizontalContentSection(
+                                title: "Try this",
+                                items: [
+                                    ContentCardModel(title: "Yoga Basic", duration: "25:00", imageName: "yogaImage"),
+                                    ContentCardModel(title: "Unwind", duration: "15:00", imageName: "yogaasana1")
+                                ],
+                                onViewAllTapped: {
+                                    print("Try this View All tapped")
+                                }
+                            )
+                            
+                            HorizontalContentSection(
+                                title: "Meditate",
+                                items: [
+                                    ContentCardModel(title: "Morning Meditation", duration: "10:00", imageName: "yogaasana2"),
+                                    ContentCardModel(title: "Guided Relaxation", duration: "19:00", imageName: "yogaasana3")
+                                ],
+                                onViewAllTapped: {
+                                    print("Meditate View All tapped")
+                                }
+                            )
+                        }
+                        .padding(.top, 32)
                     }
                 }
             }

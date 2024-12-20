@@ -36,6 +36,7 @@
 		7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */; };
 		7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
+		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
 		7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
+		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				7A10C1192D143F96007ADA6F /* GreetingView.swift */,
 				7A10C11B2D14425F007ADA6F /* IconsView.swift */,
 				7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */,
+				7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				7A10C1092D12CDD5007ADA6F /* PersonalDetailsView.swift in Sources */,
 				7A10C10E2D12D9F9007ADA6F /* AgePickerView.swift in Sources */,
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
+				7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,

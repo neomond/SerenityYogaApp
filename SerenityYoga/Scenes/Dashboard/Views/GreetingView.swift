@@ -14,11 +14,12 @@ struct GreetingView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Welcome, \(name)!")
                 .font(.title)
-                .bold()
+                .fontWeight(.semibold)
                 .foregroundColor(.white)
             
             Text("How are you feeling today?")
                 .font(.title3)
+                .fontWeight(.light)
                 .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
