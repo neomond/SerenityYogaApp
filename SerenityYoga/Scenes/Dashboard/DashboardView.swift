@@ -44,41 +44,40 @@ struct DashboardView: View {
                         .padding(.bottom, SizeMetrics.xlargePadding)
                     
                     // MARK: - Main Content View
-                    ZStack(alignment: .top) {
+                    VStack(spacing: 24) {
+                        HorizontalContentSection(
+                            title: "Try this",
+                            items: [
+                                ContentCardModel(title: "Yoga Basic", duration: "25:00", imageName: "yogaImage"),
+                                ContentCardModel(title: "Unwind", duration: "15:00", imageName: "yogaasana1")
+                            ],
+                            onViewAllTapped: {
+                                print("Try this View All tapped")
+                            }
+                        )
+                        
+                        HorizontalContentSection(
+                            title: "Meditate",
+                            items: [
+                                ContentCardModel(title: "Morning Meditation", duration: "10:00", imageName: "yogaasana2"),
+                                ContentCardModel(title: "Guided Relaxation", duration: "19:00", imageName: "yogaasana3")
+                            ],
+                            onViewAllTapped: {
+                                print("Meditate View All tapped")
+                            }
+                        )
+                    }
+                    .padding(.top, 32)
+                    .padding(.bottom, 16)
+                    .frame(maxWidth: .infinity)
+                    .background(
                         Color.white
-                            .frame(maxWidth: .infinity)
-                            .frame(height: UIScreen.main.bounds.height)
                             .clipShape(RoundedCorner(radius: 36, corners: [.topLeft, .topRight]))
                             .edgesIgnoringSafeArea(.bottom)
-                        
-                       
-                        VStack(spacing: 24) {
-                            HorizontalContentSection(
-                                title: "Try this",
-                                items: [
-                                    ContentCardModel(title: "Yoga Basic", duration: "25:00", imageName: "yogaImage"),
-                                    ContentCardModel(title: "Unwind", duration: "15:00", imageName: "yogaasana1")
-                                ],
-                                onViewAllTapped: {
-                                    print("Try this View All tapped")
-                                }
-                            )
-                            
-                            HorizontalContentSection(
-                                title: "Meditate",
-                                items: [
-                                    ContentCardModel(title: "Morning Meditation", duration: "10:00", imageName: "yogaasana2"),
-                                    ContentCardModel(title: "Guided Relaxation", duration: "19:00", imageName: "yogaasana3")
-                                ],
-                                onViewAllTapped: {
-                                    print("Meditate View All tapped")
-                                }
-                            )
-                        }
-                        .padding(.top, 32)
-                    }
+                    )
                 }
             }
+            .scrollBounce(enabled: false)
             
             // MARK: - Collapsible Tab Bar
             CollapsibleTabBar(

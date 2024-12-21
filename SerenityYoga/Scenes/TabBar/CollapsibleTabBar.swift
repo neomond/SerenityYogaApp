@@ -25,7 +25,7 @@ struct CollapsibleTabBar: View {
                 }
             }
         }
-        .padding(.horizontal, SizeMetrics.horizontalPadding)
+        .padding(.horizontal, SizeMetrics.xlargePadding)
         .padding(.vertical, isCollapsed ? SizeMetrics.verticalPaddingCollapsed : SizeMetrics.verticalPaddingExpanded)
         .background(Color.white)
         .padding(.bottom, SizeMetrics.bottomPadding)
