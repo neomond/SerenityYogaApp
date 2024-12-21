@@ -38,6 +38,7 @@
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
+		7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
+		7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				7A10C11B2D14425F007ADA6F /* IconsView.swift */,
 				7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */,
 				7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */,
+				7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
+				7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
 				7A10C1112D13751B007ADA6F /* DashboardView.swift in Sources */,
 				7A10C10B2D12CE5C007ADA6F /* WaitingScreenView.swift in Sources */,
