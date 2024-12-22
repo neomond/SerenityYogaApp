@@ -10,10 +10,11 @@ import SwiftUI
 struct DashboardView: View {
     @State private var isTabBarCollapsed = false
     @State private var selectedTab = 0
+    @State private var selectedMood: MoodItem?
     
     let tabs = [
         TabItem(icon: "house", title: "Home"),
-        TabItem(icon: "circle.grid.cross", title: "Explore"),
+        TabItem(icon: "bubbles.and.sparkles", title: "Practice"),
         TabItem(icon: "bookmark", title: "Saved"),
         TabItem(icon: "waveform", title: "Meditate")
     ]
@@ -41,8 +42,10 @@ struct DashboardView: View {
                             .padding(.bottom, SizeMetrics.largePadding)
                         
                         // MARK: - Mood Selector View
-                        MoodSelectorView()
-                            .padding(.bottom, SizeMetrics.xlargePadding)
+                        MoodSelectorView { mood in
+                            selectedMood = MoodItem(mood: mood)
+                        }
+                        .padding(.bottom, SizeMetrics.xlargePadding)
                         
                         // MARK: - Main Content View
                         VStack(spacing: 24) {
@@ -86,8 +89,13 @@ struct DashboardView: View {
                     selectedTab: $selectedTab,
                     tabs: tabs
                 )
+                .frame(maxWidth: .infinity)
+                .background(Color.white)
             }
             .edgesIgnoringSafeArea(.bottom)
+            .sheet(item: $selectedMood) { moodItem in
+                MoodDetailView(mood: moodItem.mood)
+            }
         }
     }
 }

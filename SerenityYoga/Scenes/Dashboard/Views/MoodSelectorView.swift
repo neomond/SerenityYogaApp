@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MoodSelectorView: View {
     @State private var selectedMood: String? = nil
+    let onMoodSelected: (String) -> Void
     
     let moods = [
         ("🤯", "Stress"),
@@ -18,16 +19,11 @@ struct MoodSelectorView: View {
     ]
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(moods, id: \.1) { mood in
-                    
-                    NavigationLink(destination: MoodDetailView(mood: mood.1),
-                                   tag: mood.1,
-                                   selection: $selectedMood) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(moods, id: \.1) { mood in
                         Button(action: {
-                            selectedMood = mood.1
-                            print("\(mood.1) selected")
+                            onMoodSelected(mood.1) // Trigger the callback
                         }) {
                             HStack(spacing: 4) {
                                 Text(mood.0)
@@ -37,18 +33,15 @@ struct MoodSelectorView: View {
                             }
                             .padding(.horizontal, 16)
                             .padding(.vertical, 12)
-                            .background(
-                                selectedMood == mood.1 ? Color.white.opacity(0.3) : Color.white.opacity(0.2)
-                            )
+                            .background(Color.white.opacity(0.2))
                             .foregroundColor(.white)
                             .cornerRadius(26)
                         }
                     }
                 }
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
         }
-    }
 }
 
 
@@ -60,7 +53,9 @@ struct MoodSelectorView: View {
             endPoint: .bottomTrailing
         )
         .edgesIgnoringSafeArea(.all)
-        MoodSelectorView()
+        MoodSelectorView { mood in
+               print("Selected Mood: \(mood)")
+           }
     }
     .frame(height: 120)
 }

@@ -53,7 +53,7 @@ struct TabBarButton: View {
                         .transition(.opacity.combined(with: .slide))
                 }
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 8)
             .padding(.vertical, 8)
             .background(isSelected ? .lavenderBg : Color.clear)
             .cornerRadius(SizeMetrics.largeRadius)
