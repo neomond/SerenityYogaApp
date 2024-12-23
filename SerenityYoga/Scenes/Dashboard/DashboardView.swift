@@ -8,16 +8,7 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @State private var isTabBarCollapsed = false
-    @State private var selectedTab = 0
     @State private var selectedMood: MoodItem?
-    
-    let tabs = [
-        TabItem(icon: "house", title: "Home"),
-        TabItem(icon: "bubbles.and.sparkles", title: "Practice"),
-        TabItem(icon: "bookmark", title: "Saved"),
-        TabItem(icon: "waveform", title: "Meditate")
-    ]
     
     var body: some View {
         NavigationStack {
@@ -83,12 +74,9 @@ struct DashboardView: View {
                 }
                 .scrollBounce(enabled: false)
                 
-                // MARK: - Collapsible Tab Bar
-                CollapsibleTabBar(
-                    isCollapsed: $isTabBarCollapsed,
-                    selectedTab: $selectedTab,
-                    tabs: tabs
-                )
+                // MARK: - Space for Collapsible Tab Bar
+                HStack{}
+                .frame(maxHeight: 85)
                 .frame(maxWidth: .infinity)
                 .background(Color.white)
             }

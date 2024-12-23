@@ -78,11 +78,9 @@ struct MoodDetailView: View {
                                     
                                     Text("\(10 + index * 5) min")
                                         .font(.callout)
+                                        .fontWeight(.regular)
                                         .foregroundColor(.white)
-                                        .padding(6)
-                                        .background(Color.black.opacity(0.5))
-                                        .cornerRadius(8)
-                                        .padding(6)
+                                        .padding(12)
                                 }
                                 
                                 VStack(alignment: .leading) {
@@ -148,7 +146,7 @@ struct MoodDetailView: View {
                             .clipShape(RoundedCorner(radius: 36, corners: [.topLeft, .topRight]))
                     )
                 }
-            }
+            }.scrollBounce(enabled: false)
         }
     }
 }

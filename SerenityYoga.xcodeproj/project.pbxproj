@@ -39,6 +39,8 @@
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
 		7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */; };
+		7AEE8BFD2D1960F200E89626 /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BFC2D1960F200E89626 /* CategoryDetailView.swift */; };
+		7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BFE2D19935600E89626 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
 		7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailView.swift; sourceTree = "<group>"; };
+		7AEE8BFC2D1960F200E89626 /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
+		7AEE8BFE2D19935600E89626 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 				7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */,
 				7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */,
 				7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */,
+				7AEE8BFC2D1960F200E89626 /* CategoryDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				7A10C1152D14122B007ADA6F /* CollapsibleTabBar.swift */,
+				7AEE8BFE2D19935600E89626 /* MainView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */,
 				7A10C1072D12CD12007ADA6F /* ActivityLevelView.swift in Sources */,
 				7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */,
+				7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */,
 				7A10C11A2D143F96007ADA6F /* GreetingView.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
 				7A10C0FF2D121D84007ADA6F /* SizeMetrics.swift in Sources */,
@@ -391,6 +398,7 @@
 				7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
+				7AEE8BFD2D1960F200E89626 /* CategoryDetailView.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
 				7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */,

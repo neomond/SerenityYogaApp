@@ -19,7 +19,7 @@ struct HorizontalContentSection: View {
                     .font(.title2)
                     .foregroundColor(.black)
                 Spacer()
-                Button(action: onViewAllTapped) {
+                NavigationLink(destination: CategoryDetailView(title: title, items: items)) {
                     Text("View All")
                         .font(.subheadline)
                         .foregroundColor(.gray)
