@@ -9,11 +9,11 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var selectedMood: MoodItem?
-    
+
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
-                
+
                 // MARK: - Full-Screen Linear Gradient Background
                 LinearGradient(
                     gradient: Gradient(colors: [.primaryPurple, .mainPink]),
@@ -21,25 +21,25 @@ struct DashboardView: View {
                     endPoint: .topTrailing
                 )
                 .edgesIgnoringSafeArea(.all)
-                
+
                 ScrollView {
                     VStack(spacing: 0) {
                         // MARK: - Top Icons View
                         IconsView()
                             .padding(.bottom, SizeMetrics.xlargePadding)
-                        
+
                         // MARK: - Greeting Section View
                         GreetingView(name: "Nazrin")
                             .padding(.bottom, SizeMetrics.largePadding)
-                        
+
                         // MARK: - Mood Selector View
                         MoodSelectorView { mood in
                             selectedMood = MoodItem(mood: mood)
                         }
                         .padding(.bottom, SizeMetrics.xlargePadding)
-                        
+
                         // MARK: - Main Content View
-                        VStack(spacing: 24) {
+                        VStack(spacing: SizeMetrics.xlargeSpacing) {
                             HorizontalContentSection(
                                 title: "Try this",
                                 items: [
@@ -50,7 +50,7 @@ struct DashboardView: View {
                                     print("Try this View All tapped")
                                 }
                             )
-                            
+
                             HorizontalContentSection(
                                 title: "Meditate",
                                 items: [
@@ -62,23 +62,23 @@ struct DashboardView: View {
                                 }
                             )
                         }
-                        .padding(.top, 32)
-                        .padding(.bottom, 16)
+                        .padding(.top, SizeMetrics.xlargePadding)
+                        .padding(.bottom, SizeMetrics.mediumPadding)
                         .frame(maxWidth: .infinity)
                         .background(
                             Color.white
-                                .clipShape(RoundedCorner(radius: 36, corners: [.topLeft, .topRight]))
+                                .clipShape(RoundedCorner(radius: SizeMetrics.xlargeRadius, corners: [.topLeft, .topRight]))
                                 .edgesIgnoringSafeArea(.bottom)
                         )
                     }
                 }
                 .scrollBounce(enabled: false)
-                
+
                 // MARK: - Space for Collapsible Tab Bar
-                HStack{}
-                .frame(maxHeight: 85)
-                .frame(maxWidth: .infinity)
-                .background(Color.white)
+                HStack {}
+                    .frame(height: SizeMetrics.tabBarHeight)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.white)
             }
             .edgesIgnoringSafeArea(.bottom)
             .sheet(item: $selectedMood) { moodItem in

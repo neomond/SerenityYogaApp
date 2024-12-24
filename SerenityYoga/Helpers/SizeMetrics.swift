@@ -16,27 +16,42 @@ struct SizeMetrics {
     static let mediumPadding: CGFloat = 14
     static let largePadding: CGFloat = 20
     static let xlargePadding: CGFloat = 30
-    
+
     // MARK: - Spacing
     static let smallSpacing: CGFloat = 8
     static let mediumSpacing: CGFloat = 12
     static let largeSpacing: CGFloat = 20
+    static let xlargeSpacing: CGFloat = 24
     static let extraLargeSpacing: CGFloat = 40
-    
+
     // MARK: - Corner Radius
     static let smallRadius: CGFloat = 8
     static let mediumRadius: CGFloat = 10
     static let mediumPlusRadius: CGFloat = 16
     static let largeRadius: CGFloat = 20
-    
+    static let xlargeRadius: CGFloat = 36
+
     // MARK: - Icon Sizes
+    static let extraSmallIcon: CGFloat = 20
     static let smallIcon: CGFloat = 24
     static let mediumIcon: CGFloat = 40
+    static let xmediumIcon: CGFloat = 45
     static let largeIcon: CGFloat = 80
-    
+
     // MARK: - TextField Sizes
     static let textFieldHeight: CGFloat = 50
     
+    //MARK: - Opacity
+    static let opacityThin: CGFloat = 0.2
+
+    // MARK: - TabBar
+    static let verticalPaddingCollapsed: CGFloat = 8
+    static let verticalPaddingExpanded: CGFloat = 16
+    static let tabSpacing: CGFloat = 24
+    static let tabIconSpacing: CGFloat = 8
+    static let tabIconSize: CGFloat = 24
+    static let tabBarHeight: CGFloat = 90
+
     // MARK: - Fonts
     struct Fonts {
         static let title: Font = .title
@@ -47,11 +62,4 @@ struct SizeMetrics {
         static let button: Font = .headline
         static let caption: Font = .caption
     }
-    
-    // MARK: - TabBar
-    static let verticalPaddingCollapsed: CGFloat = 8
-    static let verticalPaddingExpanded: CGFloat = 16
-    static let tabSpacing: CGFloat = 24
-    static let tabIconSpacing: CGFloat = 8
-    static let tabIconSize: CGFloat = 24
 }

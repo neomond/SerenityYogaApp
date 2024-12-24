@@ -11,29 +11,29 @@ struct IconsView: View {
     var body: some View {
         HStack {
             Circle()
-                .fill(Color.white.opacity(0.2))
-                .frame(width: 45, height: 45)
+                .fill(Color.white.opacity(SizeMetrics.opacityThin))
+                .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
                 .overlay(
                     Image(systemName: "person")
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(.white)
-                        .frame(width: 20, height: 20)
+                        .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
                 )
             Spacer()
             Circle()
-                .fill(Color.white.opacity(0.2))
-                .frame(width: 45, height: 45)
+                .fill(Color.white.opacity(SizeMetrics.opacityThin))
+                .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
                 .overlay(
                     Image(systemName: "bookmark")
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(.white)
-                        .frame(width: 20, height: 20)
+                        .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
                 )
             
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, SizeMetrics.largePadding)
     }
 }
 
@@ -47,6 +47,6 @@ struct IconsView: View {
                .edgesIgnoringSafeArea(.all)
         IconsView()
     }
-    .frame(height: 120)
+    .frame(height: SizeMetrics.tabBarHeight)
 }
 
