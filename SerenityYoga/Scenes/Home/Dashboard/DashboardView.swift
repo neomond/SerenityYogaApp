@@ -9,11 +9,11 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var selectedMood: MoodItem?
-
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
-
+                
                 // MARK: - Full-Screen Linear Gradient Background
                 LinearGradient(
                     gradient: Gradient(colors: [.primaryPurple, .mainPink]),
@@ -21,23 +21,23 @@ struct DashboardView: View {
                     endPoint: .topTrailing
                 )
                 .edgesIgnoringSafeArea(.all)
-
+                
                 ScrollView {
                     VStack(spacing: 0) {
                         // MARK: - Top Icons View
                         IconsView()
                             .padding(.bottom, SizeMetrics.xlargePadding)
-
+                        
                         // MARK: - Greeting Section View
                         GreetingView(name: "Nazrin")
                             .padding(.bottom, SizeMetrics.largePadding)
-
+                        
                         // MARK: - Mood Selector View
                         MoodSelectorView { mood in
                             selectedMood = MoodItem(mood: mood)
                         }
                         .padding(.bottom, SizeMetrics.xlargePadding)
-
+                        
                         // MARK: - Main Content View
                         VStack(spacing: SizeMetrics.xlargeSpacing) {
                             HorizontalContentSection(
@@ -50,7 +50,7 @@ struct DashboardView: View {
                                     print("Try this View All tapped")
                                 }
                             )
-
+                            
                             HorizontalContentSection(
                                 title: "Meditate",
                                 items: [
@@ -73,7 +73,7 @@ struct DashboardView: View {
                     }
                 }
                 .scrollBounce(enabled: false)
-
+                
                 // MARK: - Space for Collapsible Tab Bar
                 HStack {}
                     .frame(height: SizeMetrics.tabBarHeight)

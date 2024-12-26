@@ -13,13 +13,14 @@ struct SizeMetrics {
     static let verticalPadding: CGFloat = 12
     static let smallPadding: CGFloat = 8
     static let bottomPadding: CGFloat = 14
-    static let mediumPadding: CGFloat = 14
+    static let mediumPadding: CGFloat = 16
     static let largePadding: CGFloat = 20
     static let xlargePadding: CGFloat = 30
 
     // MARK: - Spacing
     static let smallSpacing: CGFloat = 8
     static let mediumSpacing: CGFloat = 12
+    static let xmediumSpacing: CGFloat = 14
     static let largeSpacing: CGFloat = 20
     static let xlargeSpacing: CGFloat = 24
     static let extraLargeSpacing: CGFloat = 40
@@ -32,6 +33,7 @@ struct SizeMetrics {
     static let xlargeRadius: CGFloat = 36
 
     // MARK: - Icon Sizes
+    static let xxSmallIcon: CGFloat = 18
     static let extraSmallIcon: CGFloat = 20
     static let smallIcon: CGFloat = 24
     static let mediumIcon: CGFloat = 40
