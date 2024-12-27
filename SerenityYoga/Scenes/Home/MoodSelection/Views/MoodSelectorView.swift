@@ -20,26 +20,26 @@ struct MoodSelectorView: View {
     
     var body: some View {
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
+                HStack(spacing: SizeMetrics.smallPadding) {
                     ForEach(moods, id: \.1) { mood in
                         Button(action: {
                             onMoodSelected(mood.1) // Trigger the callback
                         }) {
-                            HStack(spacing: 4) {
+                            HStack(spacing: SizeMetrics.xsSmallPadding) {
                                 Text(mood.0)
-                                    .font(.system(size: 16))
+                                    .font(.system(size: SizeMetrics.mediumPadding))
                                 Text(mood.1)
-                                    .font(.system(size: 14, weight: .semibold))
+                                    .font(.system(size: SizeMetrics.xmediumSpacing, weight: .semibold))
                             }
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 12)
-                            .background(Color.white.opacity(0.2))
+                            .padding(.horizontal, SizeMetrics.mediumPadding)
+                            .padding(.vertical, SizeMetrics.verticalPadding)
+                            .background(Color.white.opacity(SizeMetrics.opacityThin))
                             .foregroundColor(.white)
-                            .cornerRadius(26)
+                            .cornerRadius(SizeMetrics.mRadius)
                         }
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, SizeMetrics.largePadding)
             }
         }
 }

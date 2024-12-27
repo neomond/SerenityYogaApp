@@ -11,6 +11,8 @@ struct SizeMetrics {
     // MARK: - Padding
     static let horizontalPadding: CGFloat = 16
     static let verticalPadding: CGFloat = 12
+    static let xsverticalPadding: CGFloat = 6
+    static let xsSmallPadding: CGFloat = 4
     static let smallPadding: CGFloat = 8
     static let bottomPadding: CGFloat = 14
     static let mediumPadding: CGFloat = 16
@@ -30,6 +32,7 @@ struct SizeMetrics {
     static let mediumRadius: CGFloat = 10
     static let mediumPlusRadius: CGFloat = 16
     static let largeRadius: CGFloat = 20
+    static let mRadius: CGFloat = 26
     static let xlargeRadius: CGFloat = 36
 
     // MARK: - Icon Sizes
@@ -39,12 +42,19 @@ struct SizeMetrics {
     static let mediumIcon: CGFloat = 40
     static let xmediumIcon: CGFloat = 45
     static let largeIcon: CGFloat = 80
+    
+    // MARK: - Image Sizes
+    static let mediumImgSize: CGFloat = 200
+    static let bgImgSize: CGFloat = 300
 
     // MARK: - TextField Sizes
     static let textFieldHeight: CGFloat = 50
     
     //MARK: - Opacity
+    static let xsopacityThin: CGFloat = 0.09
     static let opacityThin: CGFloat = 0.2
+    static let opacityThinSecond: CGFloat = 0.4
+    static let opacityMedium: CGFloat = 0.8
 
     // MARK: - TabBar
     static let verticalPaddingCollapsed: CGFloat = 8

@@ -10,29 +10,26 @@ import SwiftUI
 struct WaitingScreenView: View {
     var body: some View {
         ZStack {
-            // Background Image
             Image(.onboarding)
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
-            // Overlay with shadow for better text readability
-            Color.black.opacity(0.4)
+            Color.black.opacity(SizeMetrics.opacityThinSecond)
                 .edgesIgnoringSafeArea(.all)
             
-            // Centered Content
             VStack(spacing: SizeMetrics.mediumSpacing) {
                 Text("We build a plan based on your answers")
                     .font(SizeMetrics.Fonts.title)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                    .frame(maxWidth: 300)
+                    .frame(maxWidth: SizeMetrics.bgImgSize)
                 
                 Text("Please wait, it may take a little time")
                     .font(.callout)
-                    .foregroundColor(.white.opacity(0.8))
+                    .foregroundColor(.white.opacity(SizeMetrics.opacityMedium))
                     .multilineTextAlignment(.center)
-                    .frame(maxWidth: 300)
+                    .frame(maxWidth: SizeMetrics.bgImgSize)
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .center)

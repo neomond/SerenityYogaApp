@@ -11,7 +11,7 @@ struct GreetingView: View {
     let name: String
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: SizeMetrics.smallPadding) {
             Text("Welcome, \(name)!")
                 .font(.title)
                 .fontWeight(.semibold)
@@ -23,7 +23,7 @@ struct GreetingView: View {
                 .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.leading, 20)
+        .padding(.leading, SizeMetrics.largePadding)
     }
 }
 

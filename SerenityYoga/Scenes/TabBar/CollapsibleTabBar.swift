@@ -10,9 +10,9 @@ import SwiftUI
 struct CollapsibleTabBar: View {
     @Binding var isCollapsed: Bool
     @Binding var selectedTab: Int
-
+    
     let tabs: [TabItem]
-
+    
     var body: some View {
         HStack(spacing: SizeMetrics.tabSpacing) {
             ForEach(tabs.indices, id: \.self) { index in
@@ -38,14 +38,14 @@ struct TabBarButton: View {
     let isSelected: Bool
     let isCollapsed: Bool
     let action: () -> Void
-
+    
     var body: some View {
         Button(action: action) {
             HStack(spacing: SizeMetrics.tabIconSpacing) {
                 Image(systemName: tab.icon)
                     .font(.system(size: SizeMetrics.tabIconSize))
                     .foregroundColor(isSelected ? .primaryPurple : .gray)
-
+                
                 if isSelected && !isCollapsed {
                     Text(tab.title)
                         .foregroundColor(.primaryPurple)
@@ -53,8 +53,8 @@ struct TabBarButton: View {
                         .transition(.opacity.combined(with: .slide))
                 }
             }
-            .padding(.horizontal, 8)
-            .padding(.vertical, 8)
+            .padding(.horizontal, SizeMetrics.smallPadding)
+            .padding(.vertical, SizeMetrics.smallPadding)
             .background(isSelected ? .lavenderBg : Color.clear)
             .cornerRadius(SizeMetrics.largeRadius)
         }
@@ -70,14 +70,14 @@ struct TabItem {
 #Preview {
     @State var previewIsCollapsed: Bool = false
     @State var previewSelectedTab: Int = 0
-
+    
     let previewTabs = [
         TabItem(icon: "house", title: "Home"),
         TabItem(icon: "circle.grid.cross", title: "Explore"),
         TabItem(icon: "bookmark", title: "Saved"),
         TabItem(icon: "waveform", title: "Music")
     ]
-
+    
     return Group {
         CollapsibleTabBar(
             isCollapsed: $previewIsCollapsed,
@@ -85,7 +85,7 @@ struct TabItem {
             tabs: previewTabs
         )
         .previewDisplayName("Expanded")
-
+        
         CollapsibleTabBar(
             isCollapsed: .constant(true),
             selectedTab: $previewSelectedTab,

@@ -18,13 +18,13 @@ struct SmallCardView: View {
                 Image(item.imageName)
                     .resizable()
                     .frame(width: 114, height: 86)
-                    .cornerRadius(10)
+                    .cornerRadius(SizeMetrics.mediumRadius)
                 
                 Text(item.duration)
                     .font(.callout)
                     .foregroundColor(.white)
                     .fontWeight(.regular)
-                    .padding(12)
+                    .padding(SizeMetrics.mediumSpacing)
             }
             
             VStack(alignment: .leading) {
@@ -35,15 +35,15 @@ struct SmallCardView: View {
                     Button("Listen") {
                         print("Play tapped")
                     }
-                    .padding(.horizontal, 24)
-                    .padding(.vertical, 6)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(16)
+                    .padding(.horizontal, SizeMetrics.xlargeSpacing)
+                    .padding(.vertical, SizeMetrics.xsverticalPadding)
+                    .background(Color.gray.opacity(SizeMetrics.opacityThin))
+                    .cornerRadius(SizeMetrics.mediumPlusRadius)
                     .foregroundColor(.black)
                     
                     Spacer()
                     
-                    HStack(spacing: 16) {
+                    HStack(spacing: SizeMetrics.mediumPadding) {
                         Button(action: {
                             isDownloaded.toggle()
                             print("Download \(isDownloaded ? "started" : "canceled")")
@@ -51,7 +51,8 @@ struct SmallCardView: View {
                             Image(systemName: isDownloaded ? "arrow.down.circle.fill" : "arrow.down.circle")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: SizeMetrics.extraSmallIcon,
+                                       height: SizeMetrics.extraSmallIcon)
                                 .foregroundColor(isDownloaded ? .green : .black)
                         }
 
@@ -61,18 +62,19 @@ struct SmallCardView: View {
                             Image(systemName: isLiked ? "suit.heart.fill" : "suit.heart")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: SizeMetrics.extraSmallIcon,
+                                       height: SizeMetrics.extraSmallIcon)
                                 .foregroundColor(isLiked ? .purple : .black)
                         }
                     }
                 }
             }
-            .padding(.leading, 8)
+            .padding(.leading, SizeMetrics.smallPadding)
             
             Spacer()
         }
         .background(Color.white)
-        .cornerRadius(12)
+        .cornerRadius(SizeMetrics.mediumSpacing)
     }
 }
 

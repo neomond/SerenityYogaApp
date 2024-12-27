@@ -26,7 +26,7 @@ struct ContentCardView: View {
                 .cornerRadius(SizeMetrics.mediumSpacing)
                 .clipped()
                 .overlay(
-                    Color.gray.opacity(0.09)
+                    Color.gray.opacity(SizeMetrics.xsopacityThin)
                         .cornerRadius(SizeMetrics.mediumSpacing)
                 )
             VStack(alignment: .leading) {

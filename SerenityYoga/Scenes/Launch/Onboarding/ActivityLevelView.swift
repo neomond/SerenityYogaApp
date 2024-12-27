@@ -33,14 +33,17 @@ struct ActivityLevelView: View {
                         if selectedActivity == activity {
                             Circle()
                                 .fill(Color.primaryPurple)
-                                .frame(width: 20, height: 20)
+                                .frame(width: SizeMetrics.extraSmallIcon,
+                                       height: SizeMetrics.extraSmallIcon)
                             Circle()
-                                .fill(Color.white) // Inner white circle
-                                .frame(width: 8, height: 8)
+                                .fill(Color.white)
+                                .frame(width: SizeMetrics.smallPadding,
+                                       height: SizeMetrics.smallPadding)
                         } else {
                             Circle()
                                 .stroke(Color.gray, lineWidth: 1)
-                                .frame(width: 20, height: 20)
+                                .frame(width: SizeMetrics.extraSmallIcon,
+                                       height: SizeMetrics.extraSmallIcon)
                         }
                     }
                 }

@@ -11,14 +11,16 @@ struct LargeCardView: View {
     let item: ContentCardModel
     @State private var isLiked: Bool = false
     @State private var isDownloaded: Bool = false
-
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             Image(item.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(maxWidth: .infinity, minHeight: 200, maxHeight: 200)
-                .cornerRadius(16)
+                .frame(maxWidth: .infinity,
+                       minHeight: SizeMetrics.mediumImgSize,
+                       maxHeight: SizeMetrics.mediumImgSize)
+                .cornerRadius(SizeMetrics.mediumPlusRadius)
                 .clipped()
             VStack(alignment: .leading) {
                 HStack {
@@ -26,13 +28,14 @@ struct LargeCardView: View {
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(.white)
-                        .frame(width: 20, height: 20)
+                        .frame(width: SizeMetrics.extraSmallIcon,
+                               height: SizeMetrics.extraSmallIcon)
                     Text(item.duration)
                         .font(.headline)
                         .foregroundColor(.white)
                     Spacer()
                     
-                    HStack(spacing: 16) {
+                    HStack(spacing: SizeMetrics.mediumPadding) {
                         Button(action: {
                             isDownloaded.toggle()
                             print("Download \(isDownloaded ? "started" : "canceled")")
@@ -40,7 +43,8 @@ struct LargeCardView: View {
                             Image(systemName: isDownloaded ? "arrow.down.circle.fill" : "arrow.down.circle")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: SizeMetrics.extraSmallIcon,
+                                       height: SizeMetrics.extraSmallIcon)
                                 .foregroundColor(isDownloaded ? .green : .white)
                         }
                         
@@ -50,12 +54,13 @@ struct LargeCardView: View {
                             Image(systemName: isLiked ? "suit.heart.fill" : "suit.heart")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20, height: 20)
+                                .frame(width: SizeMetrics.extraSmallIcon,
+                                       height: SizeMetrics.extraSmallIcon)
                                 .foregroundColor(isLiked ? .purple : .white)
                         }
                     }
                 }
-                .padding(20)
+                .padding(SizeMetrics.largePadding)
                 Spacer()
                 HStack {
                     Text(item.title)
@@ -65,17 +70,17 @@ struct LargeCardView: View {
                     Button("Play") {
                         print("\(item.title) Play tapped")
                     }
-                    .padding(.horizontal, 34)
-                    .padding(.vertical, 6)
+                    .padding(.horizontal, SizeMetrics.xlargePadding)
+                    .padding(.vertical, SizeMetrics.smallPadding)
                     .background(Color.lavenderBg)
-                    .cornerRadius(16)
+                    .cornerRadius(SizeMetrics.mediumPlusRadius)
                     .foregroundColor(.black)
                 }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 12)
+                .padding(.horizontal, SizeMetrics.mediumPadding)
+                .padding(.bottom, SizeMetrics.mediumSpacing)
             }
-            .background(Color.black.opacity(0.2))
-            .cornerRadius(16)
+            .background(Color.black.opacity(SizeMetrics.opacityThin))
+            .cornerRadius(SizeMetrics.mediumPlusRadius)
         }
     }
 }

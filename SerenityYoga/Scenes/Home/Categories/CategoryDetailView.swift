@@ -28,7 +28,7 @@ struct CategoryDetailView: View {
                         }
                         .padding(.bottom, SizeMetrics.verticalPadding)
                         
-                        VStack(spacing: 16) {
+                        VStack(spacing: SizeMetrics.mediumPadding) {
                             if let firstItem = items.first {
                                 LargeCardView(item: firstItem)
                                     .padding(.bottom, SizeMetrics.mediumSpacing)
@@ -38,16 +38,16 @@ struct CategoryDetailView: View {
                                 
                                 // MARK: - Light Gray Divider
                                 Divider()
-                                    .background(Color.gray.opacity(0.3))
+                                    .background(Color.gray.opacity(SizeMetrics.opacityThin))
                             }
                             Spacer()
                         }
-                        .padding(.horizontal, 20)
-                        .padding(.top, 35)
+                        .padding(.horizontal, SizeMetrics.largePadding)
+                        .padding(.top, SizeMetrics.xlargePadding)
                         
                         .background(
                             Color.white
-                                .clipShape(RoundedCorner(radius: 36, corners: [.topLeft, .topRight]))
+                                .clipShape(RoundedCorner(radius: SizeMetrics.xlargeRadius, corners: [.topLeft, .topRight]))
                                 .edgesIgnoringSafeArea(.bottom)
                         )
                     }
