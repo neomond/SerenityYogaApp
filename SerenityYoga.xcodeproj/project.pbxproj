@@ -40,6 +40,10 @@
 		7AEB12632D1B276600C64AD5 /* SmallCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12622D1B276600C64AD5 /* SmallCardView.swift */; };
 		7AEB12672D1B28F700C64AD5 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12662D1B28F700C64AD5 /* HeaderView.swift */; };
 		7AEB12692D1C115C00C64AD5 /* ContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12682D1C115C00C64AD5 /* ContentCardView.swift */; };
+		7AEB126C2D2D05C700C64AD5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB126B2D2D05C700C64AD5 /* ProfileView.swift */; };
+		7AEB126F2D2D16E900C64AD5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB126E2D2D16E900C64AD5 /* CircularProgressView.swift */; };
+		7AEB12712D2D399A00C64AD5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12702D2D399A00C64AD5 /* CalendarView.swift */; };
+		7AEB12732D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12722D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
@@ -83,6 +87,10 @@
 		7AEB12622D1B276600C64AD5 /* SmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCardView.swift; sourceTree = "<group>"; };
 		7AEB12662D1B28F700C64AD5 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		7AEB12682D1C115C00C64AD5 /* ContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardView.swift; sourceTree = "<group>"; };
+		7AEB126B2D2D05C700C64AD5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		7AEB126E2D2D16E900C64AD5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		7AEB12702D2D399A00C64AD5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		7AEB12722D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyGoalSheet.swift; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
@@ -322,6 +330,7 @@
 		7AEB12582D1B18FA00C64AD5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7AEB126A2D2D05AF00C64AD5 /* Profile */,
 				7AEB125C2D1B232900C64AD5 /* Categories */,
 				7AEB125B2D1B22CD00C64AD5 /* MoodSelection */,
 				7A10C10F2D136EE5007ADA6F /* Dashboard */,
@@ -370,6 +379,25 @@
 				7AEB12662D1B28F700C64AD5 /* HeaderView.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		7AEB126A2D2D05AF00C64AD5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB126D2D2D05DA00C64AD5 /* Views */,
+				7AEB126B2D2D05C700C64AD5 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7AEB126D2D2D05DA00C64AD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB126E2D2D16E900C64AD5 /* CircularProgressView.swift */,
+				7AEB12702D2D399A00C64AD5 /* CalendarView.swift */,
+				7AEB12722D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,12 +480,14 @@
 				7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */,
 				7A10C1072D12CD12007ADA6F /* ActivityLevelView.swift in Sources */,
 				7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */,
+				7AEB12712D2D399A00C64AD5 /* CalendarView.swift in Sources */,
 				7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */,
 				7A10C11A2D143F96007ADA6F /* GreetingView.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
 				7AEB125F2D1B24AC00C64AD5 /* GradientBg.swift in Sources */,
 				7A10C0FF2D121D84007ADA6F /* SizeMetrics.swift in Sources */,
 				7A10C1092D12CDD5007ADA6F /* PersonalDetailsView.swift in Sources */,
+				7AEB126C2D2D05C700C64AD5 /* ProfileView.swift in Sources */,
 				7A10C10E2D12D9F9007ADA6F /* AgePickerView.swift in Sources */,
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */,
@@ -466,6 +496,7 @@
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
 				7AEE8BFD2D1960F200E89626 /* CategoryDetailView.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
+				7AEB12732D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
 				7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
@@ -478,6 +509,7 @@
 				7A10C1162D14122B007ADA6F /* CollapsibleTabBar.swift in Sources */,
 				7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */,
 				7AEB12612D1B255C00C64AD5 /* LargeCardView.swift in Sources */,
+				7AEB126F2D2D16E900C64AD5 /* CircularProgressView.swift in Sources */,
 				7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
