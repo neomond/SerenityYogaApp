@@ -10,7 +10,9 @@ import SwiftUI
 struct WeeklyGoalSheet: View {
     @Binding var selectedDays: [String] // Selected days, e.g., ["Tue", "Wed"]
     @Binding var totalDays: Int // Total selected days
-    
+
+    @State private var currentDetent: PresentationDetent = .medium
+
     let allDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
     var body: some View {
@@ -51,21 +53,40 @@ struct WeeklyGoalSheet: View {
                 Spacer()
             }
 
-            // Day selection
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 7), spacing: 8) {
-                ForEach(allDays, id: \.self) { day in
-                    Button(action: {
-                        toggleDaySelection(day: day)
-                    }) {
-                        Text(day)
-                            .frame(maxWidth: .infinity, minHeight: 40)
-                            .foregroundColor(selectedDays.contains(day) ? .white : .gray)
-                            .background(selectedDays.contains(day) ? Color.primaryPurple : Color.gray.opacity(0.1))
-                            .cornerRadius(8)
+            // Day selection in 2 rows
+            VStack(spacing: 12) {
+                // First row (4 days)
+                HStack(spacing: 8) {
+                    ForEach(allDays.prefix(4), id: \.self) { day in
+                        Button(action: {
+                            toggleDaySelection(day: day)
+                        }) {
+                            Text(day)
+                                .frame(maxWidth: 64, minHeight: 46)
+                                .foregroundColor(selectedDays.contains(day) ? .white : .gray)
+                                .background(selectedDays.contains(day) ? Color.primaryPurple : Color.gray.opacity(0.1))
+                                .cornerRadius(8)
+                        }
                     }
                 }
+                .padding(.horizontal)
+
+                // Second row (3 days)
+                HStack(spacing: 8) {
+                    ForEach(allDays.suffix(3), id: \.self) { day in
+                        Button(action: {
+                            toggleDaySelection(day: day)
+                        }) {
+                            Text(day)
+                                .frame(maxWidth: 64, minHeight: 46)
+                                .foregroundColor(selectedDays.contains(day) ? .white : .gray)
+                                .background(selectedDays.contains(day) ? Color.primaryPurple : Color.gray.opacity(0.1))
+                                .cornerRadius(8)
+                        }
+                    }
+                }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
 
             // Done Button
             Button(action: {
@@ -74,14 +95,15 @@ struct WeeklyGoalSheet: View {
                 Text("Done")
                     .font(.headline)
                     .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .frame(maxWidth: .infinity, minHeight: 58)
                     .background(Color.primaryPurple)
-                    .cornerRadius(25)
+                    .cornerRadius(30)
             }
             .padding(.horizontal)
         }
         .padding(.top, 20)
-        .presentationDetents([.medium, .large]) // Optional: Sheet height
+        .presentationDetents([.fraction(0.98), .large], selection: $currentDetent)
+        .presentationDragIndicator(.hidden)
     }
 
     private func toggleDaySelection(day: String) {
