@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State private var navigateToSettings = false
     @State private var selectedDays: [String] = []
     @State private var totalDays: Int = 0
     @Environment(\.dismiss) var dismiss
@@ -45,16 +46,20 @@ struct ProfileView: View {
                         
                         Spacer()
                         
-                        Circle()
-                            .fill(Color.white.opacity(SizeMetrics.opacityThin))
-                            .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
-                            .overlay(
-                                Image(systemName: "gearshape")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundColor(.white)
-                                    .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
-                            )
+                        Button(action: {
+                                navigateToSettings = true
+                        }) {
+                            Circle()
+                                .fill(Color.white.opacity(SizeMetrics.opacityThin))
+                                .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
+                                .overlay(
+                                    Image(systemName: "gearshape")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.white)
+                                        .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
+                                )
+                        }
                     }
                     .padding(.horizontal, SizeMetrics.largePadding)
                     .padding(.bottom, SizeMetrics.mediumPadding)
@@ -122,11 +127,16 @@ struct ProfileView: View {
                     .ignoresSafeArea(edges: .bottom)
                 }
             }
+            .navigationDestination(isPresented: $navigateToSettings){
+                SettingsView()
+            }
         }
         .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    ProfileView()
+    NavigationStack {
+        ProfileView()
+    }
 }

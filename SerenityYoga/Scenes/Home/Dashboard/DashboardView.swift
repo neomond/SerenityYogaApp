@@ -21,9 +21,7 @@ struct DashboardView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         // MARK: - Top Icons View
-                        IconsView {
-                            showProfileView = true 
-                        }
+                        IconsView { showProfileView = true }
                         .padding(.bottom, SizeMetrics.xlargePadding)
                         
                         // MARK: - Greeting Section View
@@ -83,7 +81,7 @@ struct DashboardView: View {
                 MoodDetailView(mood: moodItem.mood)
             }
             
-            // MARK: - NavigationLink for ProfileView
+            // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {
                 ProfileView()
             }

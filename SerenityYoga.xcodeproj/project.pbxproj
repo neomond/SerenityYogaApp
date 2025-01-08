@@ -44,6 +44,8 @@
 		7AEB126F2D2D16E900C64AD5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB126E2D2D16E900C64AD5 /* CircularProgressView.swift */; };
 		7AEB12712D2D399A00C64AD5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12702D2D399A00C64AD5 /* CalendarView.swift */; };
 		7AEB12732D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12722D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift */; };
+		7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12762D2EDB5E00C64AD5 /* SettingsView.swift */; };
+		7AEB12792D2F004400C64AD5 /* BackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12782D2F004300C64AD5 /* BackButtonModifier.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
@@ -91,6 +93,8 @@
 		7AEB126E2D2D16E900C64AD5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		7AEB12702D2D399A00C64AD5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		7AEB12722D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyGoalSheet.swift; sourceTree = "<group>"; };
+		7AEB12762D2EDB5E00C64AD5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7AEB12782D2F004300C64AD5 /* BackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonModifier.swift; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				7A10C1172D1415AD007ADA6F /* ScrollViewWithOffset.swift */,
 				7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */,
 				7AEB125E2D1B24AC00C64AD5 /* GradientBg.swift */,
+				7AEB12782D2F004300C64AD5 /* BackButtonModifier.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 		7AEB12582D1B18FA00C64AD5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7AEB12742D2EDB2E00C64AD5 /* Settings */,
 				7AEB126A2D2D05AF00C64AD5 /* Profile */,
 				7AEB125C2D1B232900C64AD5 /* Categories */,
 				7AEB125B2D1B22CD00C64AD5 /* MoodSelection */,
@@ -396,6 +402,22 @@
 				7AEB126E2D2D16E900C64AD5 /* CircularProgressView.swift */,
 				7AEB12702D2D399A00C64AD5 /* CalendarView.swift */,
 				7AEB12722D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AEB12742D2EDB2E00C64AD5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB12752D2EDB3C00C64AD5 /* Views */,
+				7AEB12762D2EDB5E00C64AD5 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7AEB12752D2EDB3C00C64AD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -491,10 +513,12 @@
 				7A10C10E2D12D9F9007ADA6F /* AgePickerView.swift in Sources */,
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */,
+				7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7AEB12672D1B28F700C64AD5 /* HeaderView.swift in Sources */,
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
 				7AEE8BFD2D1960F200E89626 /* CategoryDetailView.swift in Sources */,
+				7AEB12792D2F004400C64AD5 /* BackButtonModifier.swift in Sources */,
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
 				7AEB12732D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
