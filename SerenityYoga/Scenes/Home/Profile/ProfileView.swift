@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State private var selectedDays: [String] = []
+    @State private var totalDays: Int = 0
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
@@ -16,19 +20,22 @@ struct ProfileView: View {
                 GradientBg(colors: [.blueBg, .skyblueBg])
                 
                 VStack(spacing: 0) {
-
+                    
                     HStack {
-                        Circle()
-                            .fill(Color.white.opacity(SizeMetrics.opacityThin))
-                            .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
-                            .overlay(
-                                Image(systemName: "arrow.backward")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundColor(.white)
-                                    .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
-                            )
-                        
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            Circle()
+                                .fill(Color.white.opacity(SizeMetrics.opacityThin))
+                                .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
+                                .overlay(
+                                    Image(systemName: "arrow.backward")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.white)
+                                        .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
+                                )
+                        }
                         Spacer()
                         
                         Text("Profile")
@@ -66,7 +73,12 @@ struct ProfileView: View {
                                     .padding(.bottom, 24)
                                 
                                 // MARK: - Progress View
-                                CircularProgressView()
+                                CircularProgressView(
+                                    selectedDays: $selectedDays,
+                                    totalDays: $totalDays,
+                                    isEditable: true,
+                                    subtitleText: "/\(totalDays) days"
+                                )
                                 
                                 // MARK: - Calendar
                                 Text("Calendar")
@@ -105,12 +117,13 @@ struct ProfileView: View {
                                     radius: SizeMetrics.xlargeRadius,
                                     corners: [.topLeft, .topRight]))
                         )
-                      
+                        
                     }
                     .ignoresSafeArea(edges: .bottom)
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

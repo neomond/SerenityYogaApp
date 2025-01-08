@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct IconsView: View {
+    let onProfileTapped: () -> Void
+
     var body: some View {
         HStack {
-            Circle()
-                .fill(Color.white.opacity(SizeMetrics.opacityThin))
-                .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
-                .overlay(
-                    Image(systemName: "person")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.white)
-                        .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
-                )
+            Button(action: onProfileTapped) {
+                Circle()
+                    .fill(Color.white.opacity(SizeMetrics.opacityThin))
+                    .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
+                    .overlay(
+                        Image(systemName: "person")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
+                    )
+            }
+
             Spacer()
+
             Circle()
                 .fill(Color.white.opacity(SizeMetrics.opacityThin))
                 .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
@@ -31,22 +37,24 @@ struct IconsView: View {
                         .foregroundColor(.white)
                         .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
                 )
-            
         }
         .padding(.horizontal, SizeMetrics.largePadding)
     }
 }
 
-#Preview {
-    ZStack {
-        LinearGradient(
-                   gradient: Gradient(colors: [.primaryPurple, .mainPink]),
-                   startPoint: .topLeading,
-                   endPoint: .bottomTrailing
-               )
-               .edgesIgnoringSafeArea(.all)
-        IconsView()
-    }
-    .frame(height: SizeMetrics.tabBarHeight)
-}
+
+
+
+//#Preview {
+//    ZStack {
+//        LinearGradient(
+//                   gradient: Gradient(colors: [.primaryPurple, .mainPink]),
+//                   startPoint: .topLeading,
+//                   endPoint: .bottomTrailing
+//               )
+//               .edgesIgnoringSafeArea(.all)
+//        IconsView()
+//    }
+//    .frame(height: SizeMetrics.tabBarHeight)
+//}
 

@@ -8,64 +8,73 @@
 import SwiftUI
 
 struct CircularProgressView: View {
-    /// Progress value between 0 and 1
-    @State private var progress: Double = 0.25 /// Example: 25% progress
-    @State private var selectedDays: [String] = [] // Selected days
-       @State private var totalDays: Int = 0
-    let completedDays: Int = 1
+    @Binding var selectedDays: [String] // Shared state for selected days
+    @Binding var totalDays: Int // Shared state for total selected days
+    let isEditable: Bool
+    let subtitleText: String // Dynamically set the subtitle text
+
     @State private var isSheetPresented: Bool = false
-    
-    
+
+    var completedDays: Int {
+//    MARK: - Replace
+        return selectedDays.count
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
+                // Background Circle (track)
                 Circle()
-                    .trim(from: 0.15, to: 0.85)   /// Partial circle for the track
+                    .trim(from: 0.15, to: 0.85)
                     .stroke(
                         Color.gray.opacity(0.1),
                         style: StrokeStyle(lineWidth: 24, lineCap: .round)
                     )
-                    .rotationEffect(.degrees(90)) /// Rotate to align with the foreground arc
+                    .rotationEffect(.degrees(90))
                 
+                // Foreground Circle (progress)
                 Circle()
-                    .trim(from: 0.15, to: CGFloat(0.15 + 0.7 * progress))
-                /// Match progress within the arc range
+                    .trim(from: 0.15, to: CGFloat(0.15 + 0.7 * (Double(totalDays) / 7.0)))
                     .stroke(
                         Color.primaryPurple,
                         style: StrokeStyle(lineWidth: 24, lineCap: .round)
                     )
-                    .rotationEffect(.degrees(90)) /// Rotate to align with the track
+                    .rotationEffect(.degrees(90))
                 
+                // Center Text
                 VStack {
-                    Text("\(completedDays)")
+                    Text("\(completedDays)") // Dynamically display completed days
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                     
-                    Text("/\(totalDays) days")
+                    Text(subtitleText) // Dynamically display the subtitle
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
             }
             .frame(width: 160, height: 160)
             
-            Button(action: {
-                isSheetPresented.toggle()
-            }) {
-                Text("Edit")
-                    .font(.body)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.primaryPurple)
-            }
-            .padding(.top, -10)
-            .padding(.bottom, 28)
-            .sheet(isPresented: $isSheetPresented) {
-                WeeklyGoalSheet(selectedDays: $selectedDays, totalDays: $totalDays)
+            // "Edit" Button
+            if isEditable {
+                Button(action: {
+                    isSheetPresented.toggle()
+                }) {
+                    Text("Edit")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primaryPurple)
+                }
+                .padding(.top, -10)
+                .padding(.bottom, 28)
+                .sheet(isPresented: $isSheetPresented) {
+                    WeeklyGoalSheet(
+                        selectedDays: $selectedDays,
+                        totalDays: $totalDays
+                    )
+                }
             }
         }
     }
 }
 
-#Preview {
-    CircularProgressView()
-}

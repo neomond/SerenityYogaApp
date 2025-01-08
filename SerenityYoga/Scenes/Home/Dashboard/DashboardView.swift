@@ -9,24 +9,22 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var selectedMood: MoodItem?
+    @State private var showProfileView: Bool = false
     
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
                 
-                // MARK: - Full-Screen Linear Gradient Background
-                LinearGradient(
-                    gradient: Gradient(colors: [.primaryPurple, .mainPink]),
-                    startPoint: .topLeading,
-                    endPoint: .topTrailing
-                )
-                .edgesIgnoringSafeArea(.all)
+                // MARK: - Gradient Background
+                GradientBg(colors: [.primaryPurple, .mainPink])
                 
                 ScrollView {
                     VStack(spacing: 0) {
                         // MARK: - Top Icons View
-                        IconsView()
-                            .padding(.bottom, SizeMetrics.xlargePadding)
+                        IconsView {
+                            showProfileView = true 
+                        }
+                        .padding(.bottom, SizeMetrics.xlargePadding)
                         
                         // MARK: - Greeting Section View
                         GreetingView(name: "Nazrin")
@@ -84,9 +82,16 @@ struct DashboardView: View {
             .sheet(item: $selectedMood) { moodItem in
                 MoodDetailView(mood: moodItem.mood)
             }
+            
+            // MARK: - NavigationLink for ProfileView
+            .navigationDestination(isPresented: $showProfileView) {
+                ProfileView()
+            }
         }
     }
 }
+
+
 
 #Preview {
     DashboardView()

@@ -10,11 +10,11 @@ import SwiftUI
 struct WeeklyGoalSheet: View {
     @Binding var selectedDays: [String] // Selected days, e.g., ["Tue", "Wed"]
     @Binding var totalDays: Int // Total selected days
-
+    
     @State private var currentDetent: PresentationDetent = .medium
-
+    
     let allDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-
+    
     var body: some View {
         VStack(spacing: 24) {
             // Header
@@ -29,11 +29,18 @@ struct WeeklyGoalSheet: View {
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal)
-
+            
             // Progress View
             ZStack {
-                CircularProgressView()
-                    .frame(height: 200)
+                // Pass @Binding to CircularProgressView
+                CircularProgressView(
+                    selectedDays: $selectedDays,
+                    totalDays: $totalDays,
+                    isEditable: false,
+                    subtitleText: "days / week"// Hide "Edit" button in bottom sheet
+                )
+                .frame(height: 200)
+                
                 VStack {
                     Text("\(totalDays)")
                         .font(.largeTitle)
@@ -44,15 +51,19 @@ struct WeeklyGoalSheet: View {
                         .foregroundColor(.gray)
                 }
             }
-
+            
+            // Motivation Text
             HStack {
                 Spacer()
                 Text("🚀 Perfect")
                     .font(.subheadline)
                     .foregroundColor(.black)
+                   
                 Spacer()
             }
-
+            .padding(.top, -10)
+            .padding(.bottom, 28)
+            
             // Day selection in 2 rows
             VStack(spacing: 12) {
                 // First row (4 days)
@@ -70,7 +81,7 @@ struct WeeklyGoalSheet: View {
                     }
                 }
                 .padding(.horizontal)
-
+                
                 // Second row (3 days)
                 HStack(spacing: 8) {
                     ForEach(allDays.suffix(3), id: \.self) { day in
@@ -87,10 +98,10 @@ struct WeeklyGoalSheet: View {
                 }
                 .padding(.horizontal)
             }
-
+            
             // Done Button
             Button(action: {
-                // Handle Done action
+                // Close the sheet or handle Done action
             }) {
                 Text("Done")
                     .font(.headline)
@@ -102,10 +113,11 @@ struct WeeklyGoalSheet: View {
             .padding(.horizontal)
         }
         .padding(.top, 20)
-        .presentationDetents([.fraction(0.98), .large], selection: $currentDetent)
+        .presentationDetents([.fraction(0.94), .large], selection: $currentDetent)
         .presentationDragIndicator(.hidden)
     }
-
+    
+    // Toggle selection for days
     private func toggleDaySelection(day: String) {
         if selectedDays.contains(day) {
             selectedDays.removeAll { $0 == day }
@@ -120,3 +132,4 @@ struct WeeklyGoalSheet: View {
 #Preview {
     WeeklyGoalSheet(selectedDays: .constant(["Tue", "Wed"]), totalDays: .constant(2))
 }
+
