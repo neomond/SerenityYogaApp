@@ -47,7 +47,7 @@ struct ProfileView: View {
                         Spacer()
                         
                         Button(action: {
-                                navigateToSettings = true
+                            navigateToSettings = true
                         }) {
                             Circle()
                                 .fill(Color.white.opacity(SizeMetrics.opacityThin))
