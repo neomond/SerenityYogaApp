@@ -53,6 +53,9 @@
 		7AEB12832D2FE4B100C64AD5 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12822D2FE4B100C64AD5 /* NotificationsView.swift */; };
 		7AEB12852D2FE57A00C64AD5 /* ActivityLvlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12842D2FE57A00C64AD5 /* ActivityLvlView.swift */; };
 		7AEB12872D2FEA4900C64AD5 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12862D2FEA4900C64AD5 /* AboutAppView.swift */; };
+		7AEB12892D31958400C64AD5 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12882D31958400C64AD5 /* RateUsView.swift */; };
+		7AEB128B2D319FF400C64AD5 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB128A2D319FF400C64AD5 /* FAQs.swift */; };
+		7AEB128D2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB128C2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
@@ -109,6 +112,9 @@
 		7AEB12822D2FE4B100C64AD5 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		7AEB12842D2FE57A00C64AD5 /* ActivityLvlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLvlView.swift; sourceTree = "<group>"; };
 		7AEB12862D2FEA4900C64AD5 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
+		7AEB12882D31958400C64AD5 /* RateUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsView.swift; sourceTree = "<group>"; };
+		7AEB128A2D319FF400C64AD5 /* FAQs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
+		7AEB128C2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewWithNavBar.swift; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
@@ -439,6 +445,9 @@
 				7AEB12822D2FE4B100C64AD5 /* NotificationsView.swift */,
 				7AEB12842D2FE57A00C64AD5 /* ActivityLvlView.swift */,
 				7AEB12862D2FEA4900C64AD5 /* AboutAppView.swift */,
+				7AEB12882D31958400C64AD5 /* RateUsView.swift */,
+				7AEB128A2D319FF400C64AD5 /* FAQs.swift */,
+				7AEB128C2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +535,7 @@
 				7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */,
 				7AEB12712D2D399A00C64AD5 /* CalendarView.swift in Sources */,
 				7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */,
+				7AEB12892D31958400C64AD5 /* RateUsView.swift in Sources */,
 				7A10C11A2D143F96007ADA6F /* GreetingView.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
 				7AEB125F2D1B24AC00C64AD5 /* GradientBg.swift in Sources */,
@@ -536,6 +546,7 @@
 				7A10C10E2D12D9F9007ADA6F /* AgePickerView.swift in Sources */,
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */,
+				7AEB128B2D319FF400C64AD5 /* FAQs.swift in Sources */,
 				7AEB12832D2FE4B100C64AD5 /* NotificationsView.swift in Sources */,
 				7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
@@ -549,6 +560,7 @@
 				7AEB12852D2FE57A00C64AD5 /* ActivityLvlView.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
 				7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */,
+				7AEB128D2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
 				7A10C1112D13751B007ADA6F /* DashboardView.swift in Sources */,
 				7A10C10B2D12CE5C007ADA6F /* WaitingScreenView.swift in Sources */,

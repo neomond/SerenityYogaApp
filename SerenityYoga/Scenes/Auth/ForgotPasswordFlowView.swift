@@ -51,9 +51,19 @@ struct ForgotPasswordFlowView: View {
                             }
                         })
                     case .createPassword:
-                        CreatePasswordView(newPassword: $newPassword, confirmPassword: $confirmPassword, onFinish: {
-                            print("Password reset successfully!")
-                        })                }
+                        CreatePasswordView(
+                              title: "Create Password",
+                              description: "Create a new strong password.",
+                              buttonText: "Continue",
+                              newPassword: $newPassword,
+                              confirmPassword: $confirmPassword
+                          ) {
+                              print("Password reset successfully!")
+                              newPassword = ""
+                              confirmPassword = ""
+                              currentStep = .forgotPassword
+                          }
+                    }
                 }
                 
                 .frame(maxWidth: .infinity)

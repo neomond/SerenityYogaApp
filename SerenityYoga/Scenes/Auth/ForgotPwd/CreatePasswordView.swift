@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CreatePasswordView: View {
+    var title: String
+    var description: String
+    var buttonText: String
     @Binding var newPassword: String
     @Binding var confirmPassword: String
     var onFinish: () -> Void
@@ -21,8 +24,8 @@ struct CreatePasswordView: View {
                 .frame(width: SizeMetrics.largeIcon, height: SizeMetrics.largeIcon)
                 .padding(.bottom, 80)
             
-            Text("Create Password").font(.title)
-            Text("Create a new strong password")
+            Text(title).font(.title)
+            Text(description)
                 .foregroundColor(.gray).font(.callout)
                 .padding(.bottom, 10)
             
@@ -42,7 +45,7 @@ struct CreatePasswordView: View {
             )
             
             
-            AppButton(title: "Continue") {
+            AppButton(title: buttonText) {
                 if newPassword == confirmPassword && !newPassword.isEmpty {
                     print("Passwords match, proceeding...")
                     onFinish()
@@ -62,6 +65,9 @@ struct CreatePasswordView: View {
     @State var previewConfirmPassword: String = ""
     
     return CreatePasswordView(
+        title: "title",
+        description: "title",
+        buttonText: "title",
         newPassword: $previewNewPassword,
         confirmPassword: $previewConfirmPassword,
         onFinish: { print("Reset Password button tapped") }

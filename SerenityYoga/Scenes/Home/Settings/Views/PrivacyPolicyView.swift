@@ -10,7 +10,7 @@ import SwiftUI
 struct PrivacyPolicyView: View {
     var body: some View {
         NavigationStack {
-            CustomNavigationBar(title: "Privacy Policy")
+            CustomNavigationBar(title: "Privacy Policy 🐾")
             
             VStack {
                 Text("Lorem ipsum odor amet, consectetuer adipiscing elit. Mattis blandit rhoncus arcu non consectetur sed sollicitudin. At nisi per inceptos ullamcorper commodo in. Magna vehicula tempor magna elit luctus tristique maximus. Porta fermentum magna velit nibh senectus pulvinar commodo ridiculus nascetur. Et fermentum sit vitae tristique enim fames class sodales. Nec placerat augue tristique vehicula sodales; congue est lobortis.Molestie risus tortor in porta per eget sapien mus.")

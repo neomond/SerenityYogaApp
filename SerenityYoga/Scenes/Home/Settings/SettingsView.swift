@@ -9,10 +9,12 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var isNotificationsEnabled = false
+    @State private var newPassword: String = ""
+    @State private var confirmPassword: String = ""
     
     var body: some View {
         NavigationStack {
-            CustomNavigationBar(title: "Settings")
+            CustomNavigationBar(title: "Settings ⚙️")
             
             // MARK: - Scroll View
             ScrollView {
@@ -41,7 +43,12 @@ struct SettingsView: View {
                         .font(.headline)
                         .padding(.top, 8)
                     
-                    NavigationLink(destination: PersonalInformationView()) {
+                    NavigationLink(
+                        destination: CreatePasswordViewWithNavBar(
+                            newPassword: $newPassword,
+                            confirmPassword: $confirmPassword
+                        )
+                    ) {
                         SettingsRow(title: "Change Password")
                     }
                     
@@ -63,10 +70,10 @@ struct SettingsView: View {
                         NavigationLink(destination: PrivacyPolicyView()) {
                             SettingsRow(title: "Privacy Policy")
                         }
-                        NavigationLink(destination: AboutAppView()) {
+                        NavigationLink(destination: RateUsView()) {
                             SettingsRow(title: "Rate Us")
                         }
-                        NavigationLink(destination: AboutAppView()) {
+                        NavigationLink(destination: FAQs()) {
                             SettingsRow(title: "FAQs")
                         }
                     }
