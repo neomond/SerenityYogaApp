@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct RateUsView: View {
-    @State private var rating: Int = 0
-    @State private var feedback: String = ""
-    @State private var isSubmitted: Bool = false
+    
+    @StateObject private var viewModel = RateUsViewModel()
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
+            VStack(spacing: SizeMetrics.largeSpacing) {
                 CustomNavigationBar(title: "Rate Us ✨")
                 
-                if !isSubmitted {
+                if !viewModel.isSubmitted {
                     // MARK: - Title and Description
-                    VStack(spacing: 12) {
+                    VStack(spacing: SizeMetrics.mediumSpacing) {
                         Text("We value your feedback!")
                             .font(.title2)
                             .fontWeight(.semibold)
@@ -32,30 +31,31 @@ struct RateUsView: View {
                     }
                     
                     // MARK: - Star Rating
-                    HStack(spacing: 12) {
+                    HStack(spacing: SizeMetrics.mediumSpacing) {
                         ForEach(1...5, id: \.self) { index in
-                            Image(systemName: index <= rating ? "star.fill" : "star")
+                            Image(systemName: index <= viewModel.rating ? "star.fill" : "star")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 35, height: 35)
-                                .foregroundColor(index <= rating ? .yellow : .lavenderBg)
+                                .frame(width: SizeMetrics.ratingImgSize,
+                                       height: SizeMetrics.ratingImgSize)
+                                .foregroundColor(index <= viewModel.rating ? .yellow : .lavenderBg)
                                 .onTapGesture {
                                     withAnimation {
-                                        rating = index
+                                        viewModel.rating = index
                                     }
                                 }
                         }
                     }
                     
                     // MARK: - Feedback Text Input
-                    TextField("Leave a comment...", text: $feedback, axis: .vertical)
+                    TextField("Leave a comment...", text: $viewModel.feedback, axis: .vertical)
                         .padding()
                         .lineLimit(3...6)
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(8)
+                        .background(Color.gray.opacity(SizeMetrics.xsopacityThin))
+                        .cornerRadius(SizeMetrics.smallRadius)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+                            RoundedRectangle(cornerRadius: SizeMetrics.smallRadius)
+                                .stroke(Color.gray.opacity(SizeMetrics.opacityThin), lineWidth: 1)
                         )
                     
                     // MARK: - Submit Button
@@ -64,17 +64,18 @@ struct RateUsView: View {
                         style: .primary,
                         action: {
                             withAnimation {
-                                isSubmitted = true
+                                viewModel.submitFeedback()
                             }
                         }
                     )
                 } else {
                     // MARK: - Thank You Message
-                    VStack(spacing: 20) {
+                    VStack(spacing: SizeMetrics.largeSpacing) {
                         Image(systemName: "checkmark.circle.fill")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 60, height: 60)
+                            .frame(width: SizeMetrics.tyImgSize,
+                                   height: SizeMetrics.tyImgSize)
                             .foregroundColor(.primaryPurple)
                         
                         Text("Thank you for your feedback!")
@@ -92,9 +93,7 @@ struct RateUsView: View {
                             style: .secondary,
                             action: {
                                 withAnimation {
-                                    isSubmitted = false
-                                    rating = 0
-                                    feedback = ""
+                                    viewModel.resetFeedback()
                                 }
                             }
                         )

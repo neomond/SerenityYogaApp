@@ -45,7 +45,10 @@ struct SizeMetrics {
     
     // MARK: - Image Sizes
     static let mediumImgSize: CGFloat = 200
+    static let xmediumImgSize: CGFloat = 120
     static let bgImgSize: CGFloat = 300
+    static let ratingImgSize: CGFloat = 35
+    static let tyImgSize: CGFloat = 60
 
     // MARK: - TextField Sizes
     static let textFieldHeight: CGFloat = 50

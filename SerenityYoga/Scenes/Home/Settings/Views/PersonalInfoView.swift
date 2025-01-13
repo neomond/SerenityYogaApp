@@ -7,30 +7,27 @@
 
 import SwiftUI
 
-struct PersonalInformationView: View {
-    @State private var email: String = "nazrinatayeva@example.com"
-    @State private var name: String = "Nazrin"
-    @State private var age: String = "24"
-    @State private var weight: String = "55kg"
+struct PersonalInfoView: View {
+    @State private var viewModel = PersonalInfoViewModel()
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: SizeMetrics.mediumPadding) {
                 CustomNavigationBar(title: "Personal Information")
                 
-                VStack(spacing: 12) {
-                    InputFieldWithIcon(placeholder: "", text: $email, icon: "pencil")
+                VStack(spacing: SizeMetrics.mediumSpacing) {
+                    InputFieldWithIcon(placeholder: "", text: $viewModel.email, icon: "pencil")
                     
-                    InputFieldWithIcon(placeholder: "", text: $name, icon: "pencil")
+                    InputFieldWithIcon(placeholder: "", text: $viewModel.name, icon: "pencil")
                     
-                    InputFieldWithIcon(placeholder: "", text: $age, icon: "pencil")
+                    InputFieldWithIcon(placeholder: "", text: $viewModel.age, icon: "pencil")
                     
-                    InputFieldWithIcon(placeholder: "", text: $weight, icon: "pencil")
+                    InputFieldWithIcon(placeholder: "", text: $viewModel.weight, icon: "pencil")
                     
                     AppButton(title: "Save") {
-                        print("Saved!")
+                        viewModel.savePersonalInfo()
                     }
-                    .padding(.top, 20)
+                    .padding(.top, SizeMetrics.largePadding)
                 }
                 Spacer()
             }
@@ -42,7 +39,7 @@ struct PersonalInformationView: View {
 
 #Preview {
     NavigationStack {
-        PersonalInformationView()
+        PersonalInfoView()
     }
 }
 
@@ -61,7 +58,7 @@ struct InputFieldWithIcon: View {
                 .foregroundColor(.gray)
         }
         .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(10)
+        .background(Color.gray.opacity(SizeMetrics.xsopacityThin))
+        .cornerRadius(SizeMetrics.mediumRadius)
     }
 }

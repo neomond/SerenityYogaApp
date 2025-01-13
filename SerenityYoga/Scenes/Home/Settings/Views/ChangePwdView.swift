@@ -1,5 +1,5 @@
 //
-//  CreatePasswordViewWithNavBar.swift
+//  ChangePwdView.swift
 //  SerenityYoga
 //
 //  Created by Nazrin Atayeva on 10.01.25.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct CreatePasswordViewWithNavBar: View {
+struct ChangePwdView: View {
     @Binding var newPassword: String
     @Binding var confirmPassword: String
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             CustomNavigationBar(title: "Change Password")
             
             CreatePasswordView(

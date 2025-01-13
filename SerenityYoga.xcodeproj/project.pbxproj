@@ -48,14 +48,22 @@
 		7AEB12792D2F004400C64AD5 /* BackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12782D2F004300C64AD5 /* BackButtonModifier.swift */; };
 		7AEB127B2D2FA54200C64AD5 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB127A2D2FA54200C64AD5 /* PrivacyPolicyView.swift */; };
 		7AEB127D2D2FA8EC00C64AD5 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB127C2D2FA8EC00C64AD5 /* CustomNavigationBar.swift */; };
-		7AEB127F2D2FAA2100C64AD5 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB127E2D2FAA2100C64AD5 /* PersonalInformationView.swift */; };
+		7AEB127F2D2FAA2100C64AD5 /* PersonalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB127E2D2FAA2100C64AD5 /* PersonalInfoView.swift */; };
 		7AEB12812D2FD78C00C64AD5 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12802D2FD78C00C64AD5 /* SupportView.swift */; };
 		7AEB12832D2FE4B100C64AD5 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12822D2FE4B100C64AD5 /* NotificationsView.swift */; };
-		7AEB12852D2FE57A00C64AD5 /* ActivityLvlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12842D2FE57A00C64AD5 /* ActivityLvlView.swift */; };
+		7AEB12852D2FE57A00C64AD5 /* ChangeActivityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12842D2FE57A00C64AD5 /* ChangeActivityLevelView.swift */; };
 		7AEB12872D2FEA4900C64AD5 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12862D2FEA4900C64AD5 /* AboutAppView.swift */; };
 		7AEB12892D31958400C64AD5 /* RateUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12882D31958400C64AD5 /* RateUsView.swift */; };
 		7AEB128B2D319FF400C64AD5 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB128A2D319FF400C64AD5 /* FAQs.swift */; };
-		7AEB128D2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB128C2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift */; };
+		7AEB128D2D31B15800C64AD5 /* ChangePwdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB128C2D31B15800C64AD5 /* ChangePwdView.swift */; };
+		7AEB128F2D34FB6800C64AD5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB128E2D34FB6800C64AD5 /* SettingsViewModel.swift */; };
+		7AEB12912D34FD7D00C64AD5 /* PersonalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12902D34FD7D00C64AD5 /* PersonalInfoViewModel.swift */; };
+		7AEB12932D34FE0500C64AD5 /* SupportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12922D34FE0500C64AD5 /* SupportViewModel.swift */; };
+		7AEB12952D34FE7900C64AD5 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12942D34FE7900C64AD5 /* NotificationsViewModel.swift */; };
+		7AEB12972D35016600C64AD5 /* ChangeActivityLvlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12962D35016600C64AD5 /* ChangeActivityLvlViewModel.swift */; };
+		7AEB12992D3501F800C64AD5 /* AboutAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12982D3501F800C64AD5 /* AboutAppViewModel.swift */; };
+		7AEB129B2D35027600C64AD5 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB129A2D35027600C64AD5 /* FAQsViewModel.swift */; };
+		7AEB129D2D3502FF00C64AD5 /* RateUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB129C2D3502FF00C64AD5 /* RateUsViewModel.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
@@ -107,14 +115,22 @@
 		7AEB12782D2F004300C64AD5 /* BackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonModifier.swift; sourceTree = "<group>"; };
 		7AEB127A2D2FA54200C64AD5 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		7AEB127C2D2FA8EC00C64AD5 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		7AEB127E2D2FAA2100C64AD5 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
+		7AEB127E2D2FAA2100C64AD5 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		7AEB12802D2FD78C00C64AD5 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		7AEB12822D2FE4B100C64AD5 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
-		7AEB12842D2FE57A00C64AD5 /* ActivityLvlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLvlView.swift; sourceTree = "<group>"; };
+		7AEB12842D2FE57A00C64AD5 /* ChangeActivityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeActivityLevelView.swift; sourceTree = "<group>"; };
 		7AEB12862D2FEA4900C64AD5 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
 		7AEB12882D31958400C64AD5 /* RateUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsView.swift; sourceTree = "<group>"; };
 		7AEB128A2D319FF400C64AD5 /* FAQs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
-		7AEB128C2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewWithNavBar.swift; sourceTree = "<group>"; };
+		7AEB128C2D31B15800C64AD5 /* ChangePwdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwdView.swift; sourceTree = "<group>"; };
+		7AEB128E2D34FB6800C64AD5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		7AEB12902D34FD7D00C64AD5 /* PersonalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewModel.swift; sourceTree = "<group>"; };
+		7AEB12922D34FE0500C64AD5 /* SupportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewModel.swift; sourceTree = "<group>"; };
+		7AEB12942D34FE7900C64AD5 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		7AEB12962D35016600C64AD5 /* ChangeActivityLvlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeActivityLvlViewModel.swift; sourceTree = "<group>"; };
+		7AEB12982D3501F800C64AD5 /* AboutAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewModel.swift; sourceTree = "<group>"; };
+		7AEB129A2D35027600C64AD5 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
+		7AEB129C2D3502FF00C64AD5 /* RateUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsViewModel.swift; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
@@ -304,6 +320,7 @@
 		7A922EC62CB3E207009F3E9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7AEB129E2D3507CC00C64AD5 /* Settings */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -440,16 +457,31 @@
 			isa = PBXGroup;
 			children = (
 				7AEB127A2D2FA54200C64AD5 /* PrivacyPolicyView.swift */,
-				7AEB127E2D2FAA2100C64AD5 /* PersonalInformationView.swift */,
+				7AEB127E2D2FAA2100C64AD5 /* PersonalInfoView.swift */,
 				7AEB12802D2FD78C00C64AD5 /* SupportView.swift */,
 				7AEB12822D2FE4B100C64AD5 /* NotificationsView.swift */,
-				7AEB12842D2FE57A00C64AD5 /* ActivityLvlView.swift */,
+				7AEB12842D2FE57A00C64AD5 /* ChangeActivityLevelView.swift */,
 				7AEB12862D2FEA4900C64AD5 /* AboutAppView.swift */,
 				7AEB12882D31958400C64AD5 /* RateUsView.swift */,
 				7AEB128A2D319FF400C64AD5 /* FAQs.swift */,
-				7AEB128C2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift */,
+				7AEB128C2D31B15800C64AD5 /* ChangePwdView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7AEB129E2D3507CC00C64AD5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB128E2D34FB6800C64AD5 /* SettingsViewModel.swift */,
+				7AEB12902D34FD7D00C64AD5 /* PersonalInfoViewModel.swift */,
+				7AEB12922D34FE0500C64AD5 /* SupportViewModel.swift */,
+				7AEB12942D34FE7900C64AD5 /* NotificationsViewModel.swift */,
+				7AEB12962D35016600C64AD5 /* ChangeActivityLvlViewModel.swift */,
+				7AEB12982D3501F800C64AD5 /* AboutAppViewModel.swift */,
+				7AEB129A2D35027600C64AD5 /* FAQsViewModel.swift */,
+				7AEB129C2D3502FF00C64AD5 /* RateUsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,15 +558,19 @@
 				7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */,
 				7A10C1182D1415AD007ADA6F /* ScrollViewWithOffset.swift in Sources */,
 				7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */,
+				7AEB12912D34FD7D00C64AD5 /* PersonalInfoViewModel.swift in Sources */,
+				7AEB129B2D35027600C64AD5 /* FAQsViewModel.swift in Sources */,
 				7AEB12692D1C115C00C64AD5 /* ContentCardView.swift in Sources */,
-				7AEB127F2D2FAA2100C64AD5 /* PersonalInformationView.swift in Sources */,
+				7AEB127F2D2FAA2100C64AD5 /* PersonalInfoView.swift in Sources */,
 				7A10C1052D12CC47007ADA6F /* NameInputView.swift in Sources */,
+				7AEB129D2D3502FF00C64AD5 /* RateUsViewModel.swift in Sources */,
 				7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */,
 				7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */,
 				7A10C1072D12CD12007ADA6F /* ActivityLevelView.swift in Sources */,
 				7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */,
 				7AEB12712D2D399A00C64AD5 /* CalendarView.swift in Sources */,
 				7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */,
+				7AEB12972D35016600C64AD5 /* ChangeActivityLvlViewModel.swift in Sources */,
 				7AEB12892D31958400C64AD5 /* RateUsView.swift in Sources */,
 				7A10C11A2D143F96007ADA6F /* GreetingView.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
@@ -547,6 +583,7 @@
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */,
 				7AEB128B2D319FF400C64AD5 /* FAQs.swift in Sources */,
+				7AEB12952D34FE7900C64AD5 /* NotificationsViewModel.swift in Sources */,
 				7AEB12832D2FE4B100C64AD5 /* NotificationsView.swift in Sources */,
 				7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
@@ -557,13 +594,14 @@
 				7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */,
 				7AEB12732D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift in Sources */,
 				7AEB12812D2FD78C00C64AD5 /* SupportView.swift in Sources */,
-				7AEB12852D2FE57A00C64AD5 /* ActivityLvlView.swift in Sources */,
+				7AEB12852D2FE57A00C64AD5 /* ChangeActivityLevelView.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
 				7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */,
-				7AEB128D2D31B15800C64AD5 /* CreatePasswordViewWithNavBar.swift in Sources */,
+				7AEB128D2D31B15800C64AD5 /* ChangePwdView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
 				7A10C1112D13751B007ADA6F /* DashboardView.swift in Sources */,
 				7A10C10B2D12CE5C007ADA6F /* WaitingScreenView.swift in Sources */,
+				7AEB12992D3501F800C64AD5 /* AboutAppViewModel.swift in Sources */,
 				7A10C11C2D14425F007ADA6F /* IconsView.swift in Sources */,
 				7A0BB56B2CC7A0BF00681A88 /* ForgotPasswordView.swift in Sources */,
 				7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */,
@@ -571,10 +609,12 @@
 				7AEB127D2D2FA8EC00C64AD5 /* CustomNavigationBar.swift in Sources */,
 				7A10C1162D14122B007ADA6F /* CollapsibleTabBar.swift in Sources */,
 				7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */,
+				7AEB12932D34FE0500C64AD5 /* SupportViewModel.swift in Sources */,
 				7AEB12872D2FEA4900C64AD5 /* AboutAppView.swift in Sources */,
 				7AEB12612D1B255C00C64AD5 /* LargeCardView.swift in Sources */,
 				7AEB126F2D2D16E900C64AD5 /* CircularProgressView.swift in Sources */,
 				7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */,
+				7AEB128F2D34FB6800C64AD5 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

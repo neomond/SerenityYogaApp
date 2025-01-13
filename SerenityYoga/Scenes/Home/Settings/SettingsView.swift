@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var isNotificationsEnabled = false
-    @State private var newPassword: String = ""
-    @State private var confirmPassword: String = ""
+    @StateObject private var viewModel = SettingsViewModel()
     
     var body: some View {
         NavigationStack {
@@ -18,35 +16,35 @@ struct SettingsView: View {
             
             // MARK: - Scroll View
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: SizeMetrics.mediumPadding) {
                     Text("Profile")
                         .font(.headline)
                     
-                    VStack(spacing: 8) {
-                        NavigationLink(destination: PersonalInformationView()) {
+                    VStack(spacing: SizeMetrics.smallPadding) {
+                        NavigationLink(destination: PersonalInfoView()) {
                             SettingsRow(title: "Personal Information")
                         }
-                        NavigationLink(destination: ActivityLvlView()) {
+                        NavigationLink(destination: ChangeActivityLevelView(viewModel: viewModel.activityLevelViewModel)) {
                             SettingsRow(title: "Activity level")
                         }
                     }
                     .background(Color.white)
-                    .cornerRadius(8)
+                    .cornerRadius(SizeMetrics.smallPadding)
                     
                     Text("Notifications")
                         .font(.headline)
-                        .padding(.top, 8)
+                        .padding(.top, SizeMetrics.smallPadding)
                     
-                    NotificationsView(title: "Notifications", isOn: $isNotificationsEnabled)
+                    NotificationsView(title: "Notifications", isOn: $viewModel.isNotificationsEnabled)
                     
                     Text("Password")
                         .font(.headline)
-                        .padding(.top, 8)
+                        .padding(.top, SizeMetrics.smallPadding)
                     
                     NavigationLink(
-                        destination: CreatePasswordViewWithNavBar(
-                            newPassword: $newPassword,
-                            confirmPassword: $confirmPassword
+                        destination: ChangePwdView(
+                            newPassword: $viewModel.newPassword,
+                            confirmPassword: $viewModel.confirmPassword
                         )
                     ) {
                         SettingsRow(title: "Change Password")
@@ -54,16 +52,16 @@ struct SettingsView: View {
                     
                     Text("Support")
                         .font(.headline)
-                        .padding(.top, 8)
+                        .padding(.top, SizeMetrics.smallPadding)
                     NavigationLink(destination: SupportView()){
                         SettingsRow(title: "Contact Us")
                     }
                     
                     Text("About App")
                         .font(.headline)
-                        .padding(.top, 8)
+                        .padding(.top, SizeMetrics.smallPadding)
                     
-                    VStack(spacing: 8) {
+                    VStack(spacing: SizeMetrics.smallPadding) {
                         NavigationLink(destination: AboutAppView()) {
                             SettingsRow(title: "About App")
                         }
@@ -97,12 +95,10 @@ struct SettingsRow: View {
             Image(systemName: "chevron.right")
                 .foregroundColor(.gray)
         }
-        
         .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(8)
+        .background(Color.gray.opacity(SizeMetrics.xsopacityThin))
+        .cornerRadius(SizeMetrics.smallRadius)
     }
-    
 }
 
 #Preview {

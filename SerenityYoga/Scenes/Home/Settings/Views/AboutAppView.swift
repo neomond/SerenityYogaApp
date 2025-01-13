@@ -8,47 +8,51 @@
 import SwiftUI
 
 struct AboutAppView: View {
+    @StateObject var viewModel = AboutAppViewModel()
+    
     var body: some View {
         NavigationStack {
             VStack {
                 CustomNavigationBar(title: "About Us 🕊️")
                 
                 ScrollView {
-                    VStack(spacing: 20) {
+                    VStack(spacing: SizeMetrics.xlargeSpacing) {
                         // MARK: - App Logo
                         Image(.appLogo)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 120, height: 120)
+                            .frame(width: SizeMetrics.xmediumImgSize,
+                                   height: SizeMetrics.xmediumImgSize)
                             .clipShape(Circle())
-                            .shadow(color: .primaryPurple.opacity(0.5), radius: 5)
-                            .padding(.top, 20)
+                            .shadow(color: .primaryPurple.opacity(SizeMetrics.opacityThinSecond),
+                                    radius: SizeMetrics.smallRadius)
+                            .padding(.top, SizeMetrics.largePadding)
                         
                         // MARK: - App Description
                         Text("Serenity Yoga is designed to bring mindfulness, health, and balance into your life. With expertly crafted yoga sessions, progress tracking, and personalized plans, Serenity Yoga is your companion on the journey to wellness.")
                             .font(.body)
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
-                            .padding(.horizontal, 16)
+                            .padding(.horizontal, SizeMetrics.mediumPadding)
                         
                         // MARK: - Features Section
-                        VStack(alignment: .leading, spacing: 12) {
+                        VStack(alignment: .leading,
+                               spacing: SizeMetrics.mediumSpacing) {
                             Text("Features")
                                 .font(.headline)
                                 .foregroundColor(.black)
                             
-                            FeatureRow(icon: "figure.yoga", title: "Personalized Yoga Plans")
-                            FeatureRow(icon: "heart.text.square", title: "Track Your Progress")
-                            FeatureRow(icon: "music.note", title: "Relaxing Music and Sounds")
-                            FeatureRow(icon: "star", title: "Premium Content for Subscribers")
+                            ForEach(viewModel.features, id: \.title) { feature in
+                                FeatureRow(icon: feature.icon, title: feature.title)
+                            }
                         }
-                        .padding(.horizontal, 16)
+                               .padding(.horizontal, SizeMetrics.mediumPadding)
                         
                         Spacer()
                         
                         // MARK: - Footer Section
-                        VStack(spacing: 8) {
-                            Text("Version 1.0.0")
+                        VStack(spacing: SizeMetrics.smallSpacing) {
+                            Text("Version \(viewModel.appVersion)")
                                 .font(.footnote)
                                 .foregroundColor(.gray)
                             
@@ -68,8 +72,8 @@ struct AboutAppView: View {
                                     }
                             }
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.top, 20)
+                        .padding(.horizontal, SizeMetrics.mediumPadding)
+                        .padding(.top, SizeMetrics.largePadding)
                     }
                 }
                 .scrollBounce(enabled: false)
@@ -85,14 +89,15 @@ struct FeatureRow: View {
     let title: String
     
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: SizeMetrics.mediumSpacing) {
             Image(systemName: icon)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 24, height: 24)
+                .frame(width: SizeMetrics.xlargeSpacing,
+                       height: SizeMetrics.xlargeSpacing)
                 .foregroundColor(.primaryPurple)
-                .padding(8)
-                .background(Color.primaryPurple.opacity(0.1))
+                .padding(SizeMetrics.smallPadding)
+                .background(Color.primaryPurple.opacity(SizeMetrics.xsopacityThin))
                 .clipShape(Circle())
             
             Text(title)
