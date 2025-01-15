@@ -9,7 +9,8 @@ import SwiftUI
 
 struct IconsView: View {
     let onProfileTapped: () -> Void
-
+    let label: String?
+    
     var body: some View {
         HStack {
             Button(action: onProfileTapped) {
@@ -24,9 +25,19 @@ struct IconsView: View {
                             .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
                     )
             }
-
+            
             Spacer()
-
+            
+            // MARK: - Optional label in the center
+            if let label = label {
+                Text(label)
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
+            
+            Spacer()
+            
             Circle()
                 .fill(Color.white.opacity(SizeMetrics.opacityThin))
                 .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
@@ -45,16 +56,16 @@ struct IconsView: View {
 
 
 
-//#Preview {
-//    ZStack {
-//        LinearGradient(
-//                   gradient: Gradient(colors: [.primaryPurple, .mainPink]),
-//                   startPoint: .topLeading,
-//                   endPoint: .bottomTrailing
-//               )
-//               .edgesIgnoringSafeArea(.all)
-//        IconsView()
-//    }
-//    .frame(height: SizeMetrics.tabBarHeight)
-//}
+#Preview {
+    ZStack {
+        LinearGradient(
+                   gradient: Gradient(colors: [.primaryPurple, .mainPink]),
+                   startPoint: .topLeading,
+                   endPoint: .bottomTrailing
+               )
+               .edgesIgnoringSafeArea(.all)
+        IconsView(onProfileTapped: { print("meow") }, label: "Meow")
+    }
+    .frame(height: SizeMetrics.tabBarHeight)
+}
 

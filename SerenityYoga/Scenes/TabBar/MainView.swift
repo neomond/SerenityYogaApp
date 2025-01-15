@@ -30,7 +30,7 @@ struct MainView: View {
                     case 1:
                         DashboardView()
                     case 2:
-                        DashboardView()
+                        BlogPageView()
                     case 3:
                         DashboardView()
                     default:

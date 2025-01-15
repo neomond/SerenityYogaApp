@@ -64,6 +64,15 @@
 		7AEB12992D3501F800C64AD5 /* AboutAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12982D3501F800C64AD5 /* AboutAppViewModel.swift */; };
 		7AEB129B2D35027600C64AD5 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB129A2D35027600C64AD5 /* FAQsViewModel.swift */; };
 		7AEB129D2D3502FF00C64AD5 /* RateUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB129C2D3502FF00C64AD5 /* RateUsViewModel.swift */; };
+		7AEB12A12D368B7400C64AD5 /* BlogPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12A02D368B7400C64AD5 /* BlogPageView.swift */; };
+		7AEB12A42D369BC900C64AD5 /* StoriesComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12A32D369BC900C64AD5 /* StoriesComponentView.swift */; };
+		7AEB12A62D36A01100C64AD5 /* BlogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12A52D36A01100C64AD5 /* BlogCardView.swift */; };
+		7AEB12A82D36B5E300C64AD5 /* StoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12A72D36B5E300C64AD5 /* StoryDetailView.swift */; };
+		7AEB12AA2D37C40C00C64AD5 /* AddStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12A92D37C40C00C64AD5 /* AddStoryView.swift */; };
+		7AEB12AC2D37CDEB00C64AD5 /* AllBlogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12AB2D37CDEB00C64AD5 /* AllBlogsView.swift */; };
+		7AEB12AE2D37D26B00C64AD5 /* BlogCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12AD2D37D26B00C64AD5 /* BlogCardDetailView.swift */; };
+		7AEB12B02D37FD5900C64AD5 /* QuoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12AF2D37FD5900C64AD5 /* QuoteCardView.swift */; };
+		7AEB12B42D382F1800C64AD5 /* FeedbackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12B32D382F1800C64AD5 /* FeedbackComponent.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
@@ -131,6 +140,15 @@
 		7AEB12982D3501F800C64AD5 /* AboutAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewModel.swift; sourceTree = "<group>"; };
 		7AEB129A2D35027600C64AD5 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
 		7AEB129C2D3502FF00C64AD5 /* RateUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsViewModel.swift; sourceTree = "<group>"; };
+		7AEB12A02D368B7400C64AD5 /* BlogPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPageView.swift; sourceTree = "<group>"; };
+		7AEB12A32D369BC900C64AD5 /* StoriesComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesComponentView.swift; sourceTree = "<group>"; };
+		7AEB12A52D36A01100C64AD5 /* BlogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCardView.swift; sourceTree = "<group>"; };
+		7AEB12A72D36B5E300C64AD5 /* StoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailView.swift; sourceTree = "<group>"; };
+		7AEB12A92D37C40C00C64AD5 /* AddStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoryView.swift; sourceTree = "<group>"; };
+		7AEB12AB2D37CDEB00C64AD5 /* AllBlogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBlogsView.swift; sourceTree = "<group>"; };
+		7AEB12AD2D37D26B00C64AD5 /* BlogCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogCardDetailView.swift; sourceTree = "<group>"; };
+		7AEB12AF2D37FD5900C64AD5 /* QuoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCardView.swift; sourceTree = "<group>"; };
+		7AEB12B32D382F1800C64AD5 /* FeedbackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackComponent.swift; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
@@ -308,6 +326,7 @@
 		7A922EC52CB3E202009F3E9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7AEB129F2D368B6100C64AD5 /* Stories */,
 				7AEB12582D1B18FA00C64AD5 /* Home */,
 				7A10C1142D14109D007ADA6F /* TabBar */,
 				7A10C1132D13763A007ADA6F /* Launch */,
@@ -484,6 +503,46 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		7AEB129F2D368B6100C64AD5 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB12A22D369B5800C64AD5 /* Views */,
+				7AEB12A02D368B7400C64AD5 /* BlogPageView.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		7AEB12A22D369B5800C64AD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB12B22D3800B900C64AD5 /* StoriesViews */,
+				7AEB12B12D38007F00C64AD5 /* BlogViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AEB12B12D38007F00C64AD5 /* BlogViews */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB12AF2D37FD5900C64AD5 /* QuoteCardView.swift */,
+				7AEB12AB2D37CDEB00C64AD5 /* AllBlogsView.swift */,
+				7AEB12AD2D37D26B00C64AD5 /* BlogCardDetailView.swift */,
+				7AEB12A52D36A01100C64AD5 /* BlogCardView.swift */,
+				7AEB12B32D382F1800C64AD5 /* FeedbackComponent.swift */,
+			);
+			path = BlogViews;
+			sourceTree = "<group>";
+		};
+		7AEB12B22D3800B900C64AD5 /* StoriesViews */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB12A32D369BC900C64AD5 /* StoriesComponentView.swift */,
+				7AEB12A72D36B5E300C64AD5 /* StoryDetailView.swift */,
+				7AEB12A92D37C40C00C64AD5 /* AddStoryView.swift */,
+			);
+			path = StoriesViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -556,12 +615,18 @@
 			files = (
 				7A922ECC2CB3EE29009F3E9C /* SignupView.swift in Sources */,
 				7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */,
+				7AEB12AA2D37C40C00C64AD5 /* AddStoryView.swift in Sources */,
 				7A10C1182D1415AD007ADA6F /* ScrollViewWithOffset.swift in Sources */,
 				7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */,
+				7AEB12A12D368B7400C64AD5 /* BlogPageView.swift in Sources */,
 				7AEB12912D34FD7D00C64AD5 /* PersonalInfoViewModel.swift in Sources */,
+				7AEB12AC2D37CDEB00C64AD5 /* AllBlogsView.swift in Sources */,
+				7AEB12A42D369BC900C64AD5 /* StoriesComponentView.swift in Sources */,
 				7AEB129B2D35027600C64AD5 /* FAQsViewModel.swift in Sources */,
 				7AEB12692D1C115C00C64AD5 /* ContentCardView.swift in Sources */,
 				7AEB127F2D2FAA2100C64AD5 /* PersonalInfoView.swift in Sources */,
+				7AEB12A82D36B5E300C64AD5 /* StoryDetailView.swift in Sources */,
+				7AEB12AE2D37D26B00C64AD5 /* BlogCardDetailView.swift in Sources */,
 				7A10C1052D12CC47007ADA6F /* NameInputView.swift in Sources */,
 				7AEB129D2D3502FF00C64AD5 /* RateUsViewModel.swift in Sources */,
 				7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */,
@@ -588,6 +653,7 @@
 				7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7AEB12672D1B28F700C64AD5 /* HeaderView.swift in Sources */,
+				7AEB12A62D36A01100C64AD5 /* BlogCardView.swift in Sources */,
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
 				7AEE8BFD2D1960F200E89626 /* CategoryDetailView.swift in Sources */,
 				7AEB12792D2F004400C64AD5 /* BackButtonModifier.swift in Sources */,
@@ -599,11 +665,13 @@
 				7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */,
 				7AEB128D2D31B15800C64AD5 /* ChangePwdView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
+				7AEB12B02D37FD5900C64AD5 /* QuoteCardView.swift in Sources */,
 				7A10C1112D13751B007ADA6F /* DashboardView.swift in Sources */,
 				7A10C10B2D12CE5C007ADA6F /* WaitingScreenView.swift in Sources */,
 				7AEB12992D3501F800C64AD5 /* AboutAppViewModel.swift in Sources */,
 				7A10C11C2D14425F007ADA6F /* IconsView.swift in Sources */,
 				7A0BB56B2CC7A0BF00681A88 /* ForgotPasswordView.swift in Sources */,
+				7AEB12B42D382F1800C64AD5 /* FeedbackComponent.swift in Sources */,
 				7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */,
 				7AEB12632D1B276600C64AD5 /* SmallCardView.swift in Sources */,
 				7AEB127D2D2FA8EC00C64AD5 /* CustomNavigationBar.swift in Sources */,

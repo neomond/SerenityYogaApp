@@ -21,7 +21,9 @@ struct DashboardView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         // MARK: - Top Icons View
-                        IconsView { showProfileView = true }
+                        IconsView( onProfileTapped:
+                                    { showProfileView = true },
+                                   label: nil)
                         .padding(.bottom, SizeMetrics.xlargePadding)
                         
                         // MARK: - Greeting Section View
