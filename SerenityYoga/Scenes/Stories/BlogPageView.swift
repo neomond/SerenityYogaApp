@@ -7,11 +7,22 @@
 
 import SwiftUI
 
+struct Blog: Identifiable {
+    let id = UUID()
+    let title: String
+    let quote: String
+    let description: String
+    let image: String?
+    let author: String?
+}
+
 struct BlogPageView: View {
     @State private var showProfileView: Bool = false
     @State private var isSheetPresented: Bool = false
     @State private var isAddStorySheetPresented: Bool = false
     @State private var selectedStory: Story?
+    @State private var currentIndex: Int = 0
+
     
     @State private var stories: [Story] = [
         Story(name: "Your Story", image: "system:add.circle.fill", isAddStory: true),
@@ -33,20 +44,20 @@ struct BlogPageView: View {
                         onProfileTapped: { showProfileView = true },
                         label: "Stories 🧡"
                     )
-                    .padding(.bottom, SizeMetrics.xlargePadding)
+                    .padding(.bottom, SizeMetrics.largePadding)
                     
                     ScrollView {
                         VStack(spacing: 20) {
                             
                             // MARK: - Stories ScrollView
-                            StoriesComponentView(stories: stories) { story in
-                                if story.isAddStory {
-                                    isAddStorySheetPresented = true
-                                } else {
-                                    selectedStory = story
-                                    isSheetPresented = true
-                                }
-                            }
+//                            StoriesComponentView(stories: stories) { story in
+//                                if story.isAddStory {
+//                                    isAddStorySheetPresented = true
+//                                } else {
+//                                    selectedStory = story
+//                                    isSheetPresented = true
+//                                }
+//                            }
                             
                             HStack {
                                 Text("Daily Stories")
@@ -54,7 +65,7 @@ struct BlogPageView: View {
                                     .foregroundColor(.black)
                                 Spacer()
                                 
-                                NavigationLink(destination: AllBlogsView(stories: stories)) {
+                                NavigationLink(destination: AllBlogsView()) {
                                     Text("View All")
                                         .font(.subheadline)
                                         .foregroundColor(.gray)
@@ -89,7 +100,6 @@ But more often, the inner voice is not very nice at all. It is defeatist and pun
                         .padding(.top, 28)
                         .frame(maxWidth: .infinity)
                     }
-                    .scrollBounce(enabled: false)
                     .background(
                         Color.white
                             .clipShape(RoundedCorner(
@@ -100,21 +110,28 @@ But more often, the inner voice is not very nice at all. It is defeatist and pun
                 }
                 .frame(maxWidth: .infinity)
             }
+            .scrollBounce(enabled: false)
             .edgesIgnoringSafeArea(.bottom)
             
-            // MARK: - Present Story
-            .sheet(isPresented: $isSheetPresented) {
-                if let story = selectedStory {
-                    StoryDetailView(story: story)
-                }
-            }
-            
-            // MARK: - Add story
-            .sheet(isPresented: $isAddStorySheetPresented) {
-                AddStoryView { newStory in
-                    stories.append(newStory)
-                }
-            }
+//            // MARK: - Present Story
+//            .sheet(isPresented: $isSheetPresented) {
+//                if let story = selectedStory,
+//                   let index = stories.firstIndex(where: { $0.id == story.id }) {
+//                    StoryDetailView(currentIndex: Binding(
+//                        get: { index },
+//                        set: { newIndex in currentIndex = newIndex }
+//                    ), stories: stories)
+//                } else {
+//                    EmptyView()
+//                }
+//            }
+//
+//            // MARK: - Add story
+//            .sheet(isPresented: $isAddStorySheetPresented) {
+//                AddStoryView { newStory in
+//                    stories.append(newStory)
+//                }
+//            }
             
             // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {

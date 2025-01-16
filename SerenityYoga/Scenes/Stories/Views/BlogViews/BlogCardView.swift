@@ -24,6 +24,8 @@ struct BlogCardView: View {
                 Text(quote)
                     .font(.subheadline)
                     .foregroundColor(.white.opacity(0.8))
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom)
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -42,7 +44,7 @@ struct BlogCardView: View {
                                 )
                             )
                     } else {
-                        Color.red
+                        Color.coralpeachBg
                     }
                 }
             )

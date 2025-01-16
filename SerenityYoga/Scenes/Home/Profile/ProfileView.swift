@@ -28,13 +28,12 @@ struct ProfileView: View {
                         }) {
                             Circle()
                                 .fill(Color.white.opacity(SizeMetrics.opacityThin))
-                                .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
+                                .frame(width: SizeMetrics.xmediumIcon,
+                                       height: SizeMetrics.xmediumIcon)
                                 .overlay(
-                                    Image(systemName: "arrow.backward")
-                                        .resizable()
-                                        .scaledToFit()
+                                    Image(systemName: "chevron.left")
+                                        .font(.system(size: 20))
                                         .foregroundColor(.white)
-                                        .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
                                 )
                         }
                         Spacer()

@@ -45,7 +45,6 @@ struct StoriesComponentView: View {
                                     .clipShape(Circle())
                             }
                             
-                            // Add "+" icon for "Add Story"
                             if story.isAddStory {
                                 Image(systemName: "plus")
                                     .resizable()
@@ -70,18 +69,16 @@ struct StoriesComponentView: View {
     }
 }
 
-    
-#Preview {
-    StoriesComponentView(
-        stories: [
-            Story(name: "Your Story", image: "system:add.circle.fill", isAddStory: true),
-            Story(name: "John", image: "yogaasana2", isAddStory: false),
-            Story(name: "Emma", image: "yogaImage", isAddStory: false),
-            Story(name: "Andy", image: "yogaImage", isAddStory: false),
-            Story(name: "Sara", image: "system:person.circle", isAddStory: false)
-        ]
-    ) { story in
-        print("Tapped on story: \(story.name)")
-    }
-}
+//
+//#Preview {
+//    StoriesComponentView(
+//        stories: [
+//            Story(name: "Your Story", image: "system:add.circle.fill", isAddStory: true),
+//            Story(name: "John", image: "yogaasana2", isAddStory: false),
+//            Story(name: "Emma", image: "yogaImage", isAddStory: false),
+//            Story(name: "Andy", image: "yogaImage", isAddStory: false),
+//            Story(name: "Sara", image: "system:person.circle", isAddStory: false)
+//        ]
+//    )
+//}
 
