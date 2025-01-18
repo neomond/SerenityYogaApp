@@ -8,31 +8,28 @@
 import SwiftUI
 
 struct BlogCardView: View {
-    let image: String?
-    let title: String
-    let description: String
-    let quote: String
+    let blog: Blog
 
     var body: some View {
-        NavigationLink(destination: BlogCardDetailView(title: title, quote: quote, description: description, image: image, author: nil)) {
+        NavigationLink(destination: BlogCardDetailView(blog: blog)) {
             VStack(alignment: .leading, spacing: 8) {
                 Spacer()
-                Text(title)
+                Text(blog.title)
                     .font(.headline)
                     .foregroundColor(.white)
                 
-                Text(quote)
+                Text(blog.quote)
                     .font(.subheadline)
                     .foregroundColor(.white.opacity(0.8))
                     .multilineTextAlignment(.leading)
-                    .padding(.bottom)
+                    .padding(.bottom, 8)
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
             .frame(height: 200)
             .background(
                 Group {
-                    if let image = image {
+                    if let image = blog.image {
                         Image(image)
                             .resizable()
                             .scaledToFill()
@@ -57,12 +54,18 @@ struct BlogCardView: View {
 
 
 
+
 #Preview {
     BlogCardView(
-        image: "yogaImage",
-        title: "Self-love",
-        description: "We can’t always change what’s happening around us, but we can change what happens within us.We can’t always change what’s happening around us, but we can change what happens within us.We can’t always change what’s happening around us, but we can change what happens within us.",
-        quote: "We can’t always change what’s happening around us, but we can change what happens within us."
+        blog: Blog(
+            title: "Self-love",
+            quote: "Bring awareness back onto the menu. \nReconnect with yourself.",
+            description: """
+            Somewhere in our minds, removed from the day to day, there sits a judge. They watch what we do, study how we perform, examine the effect we have on others, track our successes and failures - and then, eventually, they pass a verdict.
+            """,
+            image: "yogaImage",
+            author: "Nazrin Atayeva"
+        )
     )
 }
 
