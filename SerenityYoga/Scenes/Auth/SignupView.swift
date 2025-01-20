@@ -105,7 +105,7 @@ struct SignupView: View {
                 .padding(.horizontal)
                 .padding(.top, 45)
                 .background(Color.white)
-                .clipShape(RoundedCorner(radius: 40, corners: [.topLeft, .topRight]))
+                .cornerRadius(40, corners: [.topLeft, .topRight])
                 .edgesIgnoringSafeArea(.bottom)
             }
         }

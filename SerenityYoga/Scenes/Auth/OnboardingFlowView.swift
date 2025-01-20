@@ -80,7 +80,7 @@ struct OnboardingFlowView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.top, 10)
                     .background(Color.white) 
-                    .clipShape(RoundedCorner(radius: 40, corners: [.topLeft, .topRight]))
+                    .cornerRadius(40, corners: [.topLeft, .topRight])
                     .animation(.easeInOut, value: currentStep)
                     .edgesIgnoringSafeArea(.bottom)
                 }

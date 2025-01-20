@@ -97,26 +97,11 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .padding(.top, 45)
                 .background(Color.white)
-                .clipShape(RoundedCorner(radius: 40, corners: [.topLeft, .topRight]))
+                .cornerRadius(40, corners: [.topLeft, .topRight])
                 .edgesIgnoringSafeArea(.bottom)
             }
         }
         .navigationBarBackButtonHidden(true)
-    }
-}
-
-// Custom shape for rounding specific corners
-struct RoundedCorner: Shape {
-    var radius: CGFloat = 30
-    var corners: UIRectCorner = .allCorners
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(
-            roundedRect: rect,
-            byRoundingCorners: corners,
-            cornerRadii: CGSize(width: radius, height: radius)
-        )
-        return Path(path.cgPath)
     }
 }
 

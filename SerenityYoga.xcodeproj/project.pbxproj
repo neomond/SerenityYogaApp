@@ -71,6 +71,9 @@
 		7AEB12B02D37FD5900C64AD5 /* QuoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12AF2D37FD5900C64AD5 /* QuoteCardView.swift */; };
 		7AEB12B42D382F1800C64AD5 /* FeedbackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12B32D382F1800C64AD5 /* FeedbackComponent.swift */; };
 		7AEB12B72D3ADFDF00C64AD5 /* BlogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12B62D3ADFDF00C64AD5 /* BlogViewModel.swift */; };
+		7AEB12BA2D3EB28800C64AD5 /* MeditationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12B92D3EB28800C64AD5 /* MeditationsView.swift */; };
+		7AEB12BD2D3EB93900C64AD5 /* MeditationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12BC2D3EB93900C64AD5 /* MeditationCardView.swift */; };
+		7AEB12BF2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12BE2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
@@ -145,6 +148,9 @@
 		7AEB12AF2D37FD5900C64AD5 /* QuoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCardView.swift; sourceTree = "<group>"; };
 		7AEB12B32D382F1800C64AD5 /* FeedbackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackComponent.swift; sourceTree = "<group>"; };
 		7AEB12B62D3ADFDF00C64AD5 /* BlogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewModel.swift; sourceTree = "<group>"; };
+		7AEB12B92D3EB28800C64AD5 /* MeditationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationsView.swift; sourceTree = "<group>"; };
+		7AEB12BC2D3EB93900C64AD5 /* MeditationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationCardView.swift; sourceTree = "<group>"; };
+		7AEB12BE2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundedCorner+Ext.swift"; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
@@ -322,7 +328,8 @@
 		7A922EC52CB3E202009F3E9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				7AEB129F2D368B6100C64AD5 /* Stories */,
+				7AEB12B82D3EB27500C64AD5 /* Meditations */,
+				7AEB129F2D368B6100C64AD5 /* Blogs */,
 				7AEB12582D1B18FA00C64AD5 /* Home */,
 				7A10C1142D14109D007ADA6F /* TabBar */,
 				7A10C1132D13763A007ADA6F /* Launch */,
@@ -366,6 +373,7 @@
 				7AEB125E2D1B24AC00C64AD5 /* GradientBg.swift */,
 				7AEB12782D2F004300C64AD5 /* BackButtonModifier.swift */,
 				7AEB127C2D2FA8EC00C64AD5 /* CustomNavigationBar.swift */,
+				7AEB12BE2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -500,13 +508,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		7AEB129F2D368B6100C64AD5 /* Stories */ = {
+		7AEB129F2D368B6100C64AD5 /* Blogs */ = {
 			isa = PBXGroup;
 			children = (
 				7AEB12A22D369B5800C64AD5 /* Views */,
 				7AEB12A02D368B7400C64AD5 /* BlogPageView.swift */,
 			);
-			path = Stories;
+			path = Blogs;
 			sourceTree = "<group>";
 		};
 		7AEB12A22D369B5800C64AD5 /* Views */ = {
@@ -535,6 +543,23 @@
 				7AEB12B62D3ADFDF00C64AD5 /* BlogViewModel.swift */,
 			);
 			path = Blog;
+			sourceTree = "<group>";
+		};
+		7AEB12B82D3EB27500C64AD5 /* Meditations */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB12BB2D3EB5D000C64AD5 /* Views */,
+				7AEB12B92D3EB28800C64AD5 /* MeditationsView.swift */,
+			);
+			path = Meditations;
+			sourceTree = "<group>";
+		};
+		7AEB12BB2D3EB5D000C64AD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB12BC2D3EB93900C64AD5 /* MeditationCardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,6 +642,7 @@
 				7AEB129B2D35027600C64AD5 /* FAQsViewModel.swift in Sources */,
 				7AEB12692D1C115C00C64AD5 /* ContentCardView.swift in Sources */,
 				7AEB127F2D2FAA2100C64AD5 /* PersonalInfoView.swift in Sources */,
+				7AEB12BF2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift in Sources */,
 				7AEB12AE2D37D26B00C64AD5 /* BlogCardDetailView.swift in Sources */,
 				7A10C1052D12CC47007ADA6F /* NameInputView.swift in Sources */,
 				7AEB129D2D3502FF00C64AD5 /* RateUsViewModel.swift in Sources */,
@@ -625,6 +651,7 @@
 				7A10C1072D12CD12007ADA6F /* ActivityLevelView.swift in Sources */,
 				7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */,
 				7AEB12712D2D399A00C64AD5 /* CalendarView.swift in Sources */,
+				7AEB12BD2D3EB93900C64AD5 /* MeditationCardView.swift in Sources */,
 				7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */,
 				7AEB12972D35016600C64AD5 /* ChangeActivityLvlViewModel.swift in Sources */,
 				7AEB12892D31958400C64AD5 /* RateUsView.swift in Sources */,
@@ -645,6 +672,7 @@
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7AEB12672D1B28F700C64AD5 /* HeaderView.swift in Sources */,
 				7AEB12A62D36A01100C64AD5 /* BlogCardView.swift in Sources */,
+				7AEB12BA2D3EB28800C64AD5 /* MeditationsView.swift in Sources */,
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
 				7AEE8BFD2D1960F200E89626 /* CategoryDetailView.swift in Sources */,
 				7AEB12792D2F004400C64AD5 /* BackButtonModifier.swift in Sources */,

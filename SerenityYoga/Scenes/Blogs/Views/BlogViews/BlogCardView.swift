@@ -35,7 +35,7 @@ struct BlogCardView: View {
                             .scaledToFill()
                             .overlay(
                                 LinearGradient(
-                                    gradient: Gradient(colors: [.clear, .black.opacity(0.7)]),
+                                    gradient: Gradient(colors: [.clear, .black.opacity(0.4)]),
                                     startPoint: .top,
                                     endPoint: .bottom
                                 )

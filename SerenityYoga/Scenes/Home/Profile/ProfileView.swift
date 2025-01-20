@@ -117,9 +117,7 @@ struct ProfileView: View {
                         .frame(maxWidth: .infinity)
                         .background(
                             Color.white
-                                .clipShape(RoundedCorner(
-                                    radius: SizeMetrics.xlargeRadius,
-                                    corners: [.topLeft, .topRight]))
+                                .cornerRadius(40, corners: [.topLeft, .topRight])
                         )
                         
                     }

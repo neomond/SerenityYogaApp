@@ -32,7 +32,7 @@ struct MainView: View {
                     case 2:
                         BlogPageView()
                     case 3:
-                        DashboardView()
+                        MeditationsView()
                     default:
                         Text("Invalid Tab")
                     }

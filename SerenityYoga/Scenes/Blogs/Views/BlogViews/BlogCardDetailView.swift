@@ -67,7 +67,7 @@ struct BlogCardDetailView: View {
                                            height: SizeMetrics.xmediumIcon)
                                     .overlay(
                                         Image(systemName: isLiked ? "heart.fill" : "heart")
-                                            .font(.system(size: 20))
+                                            .font(.system(size: SizeMetrics.extraSmallIcon))
                                             .foregroundColor(isLiked ? .primaryPurple : .white)
                                     )
                             }
