@@ -31,21 +31,24 @@ struct MeditationsView: View {
                                         image: "yogaImage",
                                         title: "Remember to Breathe",
                                         description: "Bring awareness back onto the menu. Reconnect with yourself.",
-                                        meditationsCount: 10
+                                        meditationsCount: 10,
+                                        destination: { MeditationCardDetailView() }
                                     )
                                 
                                 MeditationCardView(
                                         image: "yogaasana1",
                                         title: "Remember to Breathe",
                                         description: "Bring awareness back onto the menu. Reconnect with yourself.",
-                                        meditationsCount: 10
+                                        meditationsCount: 10,
+                                        destination: { MeditationCardDetailView() }
                                     )
                                 
                                 MeditationCardView(
                                         image: "yogaasana2",
                                         title: "Remember to Breathe",
                                         description: "Bring awareness back onto the menu. Reconnect with yourself.",
-                                        meditationsCount: 10
+                                        meditationsCount: 10,
+                                        destination: { MeditationCardDetailView() }
                                     )
                             }
                         

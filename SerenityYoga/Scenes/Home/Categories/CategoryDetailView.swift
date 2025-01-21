@@ -34,7 +34,7 @@ struct CategoryDetailView: View {
                                     .padding(.bottom, SizeMetrics.mediumSpacing)
                             }
                             ForEach(items.dropFirst(), id: \.id) { item in
-                                SmallCardView(item: item)
+                                SmallCardView(item: item, onListenTap: {})
                                 
                                 // MARK: - Light Gray Divider
                                 Divider()

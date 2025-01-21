@@ -74,6 +74,8 @@
 		7AEB12BA2D3EB28800C64AD5 /* MeditationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12B92D3EB28800C64AD5 /* MeditationsView.swift */; };
 		7AEB12BD2D3EB93900C64AD5 /* MeditationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12BC2D3EB93900C64AD5 /* MeditationCardView.swift */; };
 		7AEB12BF2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12BE2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift */; };
+		7AEB12C12D3FC0B900C64AD5 /* MeditationCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12C02D3FC0B900C64AD5 /* MeditationCardDetailView.swift */; };
+		7AEB12C32D3FC5C400C64AD5 /* MeditationPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB12C22D3FC5C400C64AD5 /* MeditationPlayerView.swift */; };
 		7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */; };
 		7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */; };
 		7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */; };
@@ -151,6 +153,8 @@
 		7AEB12B92D3EB28800C64AD5 /* MeditationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationsView.swift; sourceTree = "<group>"; };
 		7AEB12BC2D3EB93900C64AD5 /* MeditationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationCardView.swift; sourceTree = "<group>"; };
 		7AEB12BE2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundedCorner+Ext.swift"; sourceTree = "<group>"; };
+		7AEB12C02D3FC0B900C64AD5 /* MeditationCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationCardDetailView.swift; sourceTree = "<group>"; };
+		7AEB12C22D3FC5C400C64AD5 /* MeditationPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationPlayerView.swift; sourceTree = "<group>"; };
 		7AEE8BF42D14B05200E89626 /* MoodSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelectorView.swift; sourceTree = "<group>"; };
 		7AEE8BF62D155BCE00E89626 /* HorizontalContentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalContentSection.swift; sourceTree = "<group>"; };
 		7AEE8BF82D158EBC00E89626 /* ScrollBounceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollBounceModifier.swift; sourceTree = "<group>"; };
@@ -558,6 +562,8 @@
 			isa = PBXGroup;
 			children = (
 				7AEB12BC2D3EB93900C64AD5 /* MeditationCardView.swift */,
+				7AEB12C02D3FC0B900C64AD5 /* MeditationCardDetailView.swift */,
+				7AEB12C22D3FC5C400C64AD5 /* MeditationPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -633,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A922ECC2CB3EE29009F3E9C /* SignupView.swift in Sources */,
+				7AEB12C32D3FC5C400C64AD5 /* MeditationPlayerView.swift in Sources */,
 				7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */,
 				7A10C1182D1415AD007ADA6F /* ScrollViewWithOffset.swift in Sources */,
 				7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */,
@@ -655,6 +662,7 @@
 				7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */,
 				7AEB12972D35016600C64AD5 /* ChangeActivityLvlViewModel.swift in Sources */,
 				7AEB12892D31958400C64AD5 /* RateUsView.swift in Sources */,
+				7AEB12C12D3FC0B900C64AD5 /* MeditationCardDetailView.swift in Sources */,
 				7A10C11A2D143F96007ADA6F /* GreetingView.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
 				7AEB125F2D1B24AC00C64AD5 /* GradientBg.swift in Sources */,

@@ -67,7 +67,8 @@ struct MoodDetailView: View {
                                 title: "Session \(index)",
                                 duration: "\(10 + index * 5) min",
                                 imageName: "yogaasana1"
-                            ))
+                            ),
+                                          onListenTap: {})
                             .padding(.leading, SizeMetrics.smallPadding)
                             
                             // MARK: - Light Gray Divider

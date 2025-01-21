@@ -11,6 +11,8 @@ struct SmallCardView: View {
     let item: ContentCardModel
     @State private var isLiked: Bool = false
     @State private var isDownloaded: Bool = false
+    
+    let onListenTap: () -> Void
 
     var body: some View {
         HStack {
@@ -33,6 +35,7 @@ struct SmallCardView: View {
                 Spacer()
                 HStack {
                     Button("Listen") {
+                        onListenTap()
                         print("Play tapped")
                     }
                     .padding(.horizontal, SizeMetrics.xlargeSpacing)
