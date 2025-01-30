@@ -19,6 +19,7 @@ struct ColorManager {
     static let cornflowerblueBg = Color("CornFlowerColor")
     static let lavenderBg = Color("LavenderColor")
     static let coralpeachBg = Color("CoralPeachColor")
+    static let yellowprimaryBg = Color("YellowBgColor")
 }
 
 // Or you can use an extension
@@ -36,4 +37,5 @@ extension Color {
     static let cornflowerblueBg = Color("CornFlowerColor")
     static let lavenderBg = Color("LavenderColor")
     static let coralpeachBg = Color("CoralPeachColor")
+    static let yellowprimaryBg = Color("YellowBgColor")
 }

@@ -24,6 +24,15 @@
 		7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */; };
 		7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2222CB7A967002498A2 /* AuthTextField.swift */; };
 		7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2242CB7AA56002498A2 /* AppButton.swift */; };
+		7A3F0F352D4808B8000C0547 /* PlayBackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F342D4808B8000C0547 /* PlayBackControlButton.swift */; };
+		7A3F0F382D480DD5000C0547 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F372D480DD5000C0547 /* MeditationViewModel.swift */; };
+		7A3F0F3A2D4812D6000C0547 /* TrackDurationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F392D4812D6000C0547 /* TrackDurationFormatter.swift */; };
+		7A3F0F3F2D48BECD000C0547 /* PracticesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F3E2D48BECD000C0547 /* PracticesViewModel.swift */; };
+		7A3F0F412D48C38A000C0547 /* PracticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F402D48C38A000C0547 /* PracticesView.swift */; };
+		7A3F0F432D48C582000C0547 /* PracticesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F422D48C582000C0547 /* PracticesCardView.swift */; };
+		7A3F0F452D48D86E000C0547 /* PracticeCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */; };
+		7A3F0F492D4A8D52000C0547 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F482D4A8D52000C0547 /* Session.swift */; };
+		7A3F0F4B2D4A9978000C0547 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F4A2D4A9978000C0547 /* Practice.swift */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
 		7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A922E9E2CAFB950009F3E9C /* Assets.xcassets */; };
@@ -32,6 +41,8 @@
 		7A922ECC2CB3EE29009F3E9C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922ECB2CB3EE29009F3E9C /* SignupView.swift */; };
 		7A922ECE2CB40BEC009F3E9C /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922ECD2CB40BEC009F3E9C /* Color+Ext.swift */; };
 		7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922ECF2CB41E37009F3E9C /* Image+Ext.swift */; };
+		7ABC0C502D4B5C7000A19413 /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC0C4F2D4B5C7000A19413 /* Meditation.swift */; };
+		7ABC0C522D4B68F800A19413 /* ContentCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABC0C512D4B68F800A19413 /* ContentCardModel.swift */; };
 		7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */; };
 		7AC57B282D11FDA100C99B0A /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */; };
 		7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */; };
@@ -102,6 +113,15 @@
 		7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		7A12F2222CB7A967002498A2 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		7A12F2242CB7AA56002498A2 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		7A3F0F342D4808B8000C0547 /* PlayBackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackControlButton.swift; sourceTree = "<group>"; };
+		7A3F0F372D480DD5000C0547 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
+		7A3F0F392D4812D6000C0547 /* TrackDurationFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDurationFormatter.swift; sourceTree = "<group>"; };
+		7A3F0F3E2D48BECD000C0547 /* PracticesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesViewModel.swift; sourceTree = "<group>"; };
+		7A3F0F402D48C38A000C0547 /* PracticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesView.swift; sourceTree = "<group>"; };
+		7A3F0F422D48C582000C0547 /* PracticesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesCardView.swift; sourceTree = "<group>"; };
+		7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCardDetailView.swift; sourceTree = "<group>"; };
+		7A3F0F482D4A8D52000C0547 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7A3F0F4A2D4A9978000C0547 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
 		7A922E9C2CAFB94F009F3E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +131,8 @@
 		7A922ECB2CB3EE29009F3E9C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		7A922ECD2CB40BEC009F3E9C /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		7A922ECF2CB41E37009F3E9C /* Image+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Ext.swift"; sourceTree = "<group>"; };
+		7ABC0C4F2D4B5C7000A19413 /* Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
+		7ABC0C512D4B68F800A19413 /* ContentCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardModel.swift; sourceTree = "<group>"; };
 		7AC57B252D11F95B00C99B0A /* ForgotPasswordFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFlowView.swift; sourceTree = "<group>"; };
 		7AC57B272D11FDA100C99B0A /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
 		7AC57B292D11FDBE00C99B0A /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
@@ -212,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				7A12F2242CB7AA56002498A2 /* AppButton.swift */,
+				7A3F0F342D4808B8000C0547 /* PlayBackControlButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -281,6 +304,40 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		7A3F0F362D480DC0000C0547 /* Meditation */ = {
+			isa = PBXGroup;
+			children = (
+				7A3F0F372D480DD5000C0547 /* MeditationViewModel.swift */,
+			);
+			path = Meditation;
+			sourceTree = "<group>";
+		};
+		7A3F0F3B2D48BAFF000C0547 /* Practices */ = {
+			isa = PBXGroup;
+			children = (
+				7A3F0F3C2D48BB17000C0547 /* Views */,
+				7A3F0F402D48C38A000C0547 /* PracticesView.swift */,
+			);
+			path = Practices;
+			sourceTree = "<group>";
+		};
+		7A3F0F3C2D48BB17000C0547 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A3F0F422D48C582000C0547 /* PracticesCardView.swift */,
+				7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A3F0F3D2D48BEB5000C0547 /* Practices */ = {
+			isa = PBXGroup;
+			children = (
+				7A3F0F3E2D48BECD000C0547 /* PracticesViewModel.swift */,
+			);
+			path = Practices;
+			sourceTree = "<group>";
+		};
 		7A922E8E2CAFB94F009F3E9C = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +389,7 @@
 		7A922EC52CB3E202009F3E9C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7A3F0F3B2D48BAFF000C0547 /* Practices */,
 				7AEB12B82D3EB27500C64AD5 /* Meditations */,
 				7AEB129F2D368B6100C64AD5 /* Blogs */,
 				7AEB12582D1B18FA00C64AD5 /* Home */,
@@ -346,6 +404,8 @@
 		7A922EC62CB3E207009F3E9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7A3F0F3D2D48BEB5000C0547 /* Practices */,
+				7A3F0F362D480DC0000C0547 /* Meditation */,
 				7AEB12B52D3ADFD000C64AD5 /* Blog */,
 				7AEB129E2D3507CC00C64AD5 /* Settings */,
 			);
@@ -355,6 +415,10 @@
 		7A922EC82CB3E218009F3E9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A3F0F482D4A8D52000C0547 /* Session.swift */,
+				7A3F0F4A2D4A9978000C0547 /* Practice.swift */,
+				7ABC0C4F2D4B5C7000A19413 /* Meditation.swift */,
+				7ABC0C512D4B68F800A19413 /* ContentCardModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +442,7 @@
 				7AEB12782D2F004300C64AD5 /* BackButtonModifier.swift */,
 				7AEB127C2D2FA8EC00C64AD5 /* CustomNavigationBar.swift */,
 				7AEB12BE2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift */,
+				7A3F0F392D4812D6000C0547 /* TrackDurationFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -641,15 +706,21 @@
 				7A922ECC2CB3EE29009F3E9C /* SignupView.swift in Sources */,
 				7AEB12C32D3FC5C400C64AD5 /* MeditationPlayerView.swift in Sources */,
 				7AC57B2A2D11FDBE00C99B0A /* CreatePasswordView.swift in Sources */,
+				7A3F0F412D48C38A000C0547 /* PracticesView.swift in Sources */,
 				7A10C1182D1415AD007ADA6F /* ScrollViewWithOffset.swift in Sources */,
+				7A3F0F382D480DD5000C0547 /* MeditationViewModel.swift in Sources */,
 				7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */,
 				7AEB12A12D368B7400C64AD5 /* BlogPageView.swift in Sources */,
 				7AEB12912D34FD7D00C64AD5 /* PersonalInfoViewModel.swift in Sources */,
 				7AEB12AC2D37CDEB00C64AD5 /* AllBlogsView.swift in Sources */,
+				7A3F0F452D48D86E000C0547 /* PracticeCardDetailView.swift in Sources */,
+				7A3F0F352D4808B8000C0547 /* PlayBackControlButton.swift in Sources */,
 				7AEB129B2D35027600C64AD5 /* FAQsViewModel.swift in Sources */,
 				7AEB12692D1C115C00C64AD5 /* ContentCardView.swift in Sources */,
 				7AEB127F2D2FAA2100C64AD5 /* PersonalInfoView.swift in Sources */,
 				7AEB12BF2D3EBEC200C64AD5 /* RoundedCorner+Ext.swift in Sources */,
+				7A3F0F4B2D4A9978000C0547 /* Practice.swift in Sources */,
+				7A3F0F3A2D4812D6000C0547 /* TrackDurationFormatter.swift in Sources */,
 				7AEB12AE2D37D26B00C64AD5 /* BlogCardDetailView.swift in Sources */,
 				7A10C1052D12CC47007ADA6F /* NameInputView.swift in Sources */,
 				7AEB129D2D3502FF00C64AD5 /* RateUsViewModel.swift in Sources */,
@@ -677,6 +748,7 @@
 				7AEB12952D34FE7900C64AD5 /* NotificationsViewModel.swift in Sources */,
 				7AEB12832D2FE4B100C64AD5 /* NotificationsView.swift in Sources */,
 				7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */,
+				7A3F0F492D4A8D52000C0547 /* Session.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7AEB12672D1B28F700C64AD5 /* HeaderView.swift in Sources */,
 				7AEB12A62D36A01100C64AD5 /* BlogCardView.swift in Sources */,
@@ -701,10 +773,14 @@
 				7AEB12B42D382F1800C64AD5 /* FeedbackComponent.swift in Sources */,
 				7AEE8BF92D158EBC00E89626 /* ScrollBounceModifier.swift in Sources */,
 				7AEB12632D1B276600C64AD5 /* SmallCardView.swift in Sources */,
+				7ABC0C502D4B5C7000A19413 /* Meditation.swift in Sources */,
+				7ABC0C522D4B68F800A19413 /* ContentCardModel.swift in Sources */,
 				7AEB127D2D2FA8EC00C64AD5 /* CustomNavigationBar.swift in Sources */,
 				7AEB12B72D3ADFDF00C64AD5 /* BlogViewModel.swift in Sources */,
+				7A3F0F3F2D48BECD000C0547 /* PracticesViewModel.swift in Sources */,
 				7A10C1162D14122B007ADA6F /* CollapsibleTabBar.swift in Sources */,
 				7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */,
+				7A3F0F432D48C582000C0547 /* PracticesCardView.swift in Sources */,
 				7AEB12932D34FE0500C64AD5 /* SupportViewModel.swift in Sources */,
 				7AEB12872D2FEA4900C64AD5 /* AboutAppView.swift in Sources */,
 				7AEB12612D1B255C00C64AD5 /* LargeCardView.swift in Sources */,

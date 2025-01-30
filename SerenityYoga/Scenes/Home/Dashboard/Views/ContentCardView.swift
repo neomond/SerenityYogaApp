@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct ContentCardModel: Identifiable {
-    let id = UUID()
-    let title: String
-    let duration: String
-    let imageName: String
-}
-
 struct ContentCardView: View {
     let item: ContentCardModel
     
@@ -36,7 +29,7 @@ struct ContentCardView: View {
                         .scaledToFit()
                         .foregroundColor(.white)
                         .frame(width: SizeMetrics.xxSmallIcon, height: SizeMetrics.xxSmallIcon)
-                    Text(item.duration)
+                    Text(item.duration.formatted)
                         .font(SizeMetrics.Fonts.subtitle)
                     .foregroundColor(.white)}
                 .fontWeight(.medium)
@@ -62,7 +55,7 @@ struct ContentCardView: View {
 #Preview {
     ContentCardView(item: ContentCardModel(
         title: "Yoga Basic",
-        duration: "25:00",
+        duration: .time(600),
         imageName: "yogaasana3"))
     .previewLayout(.sizeThatFits)
     .padding()

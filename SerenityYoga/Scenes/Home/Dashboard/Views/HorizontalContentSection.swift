@@ -45,8 +45,8 @@ struct HorizontalContentSection: View {
     HorizontalContentSection(
         title: "Try this",
         items: [
-            ContentCardModel(title: "Yoga Basic", duration: "25:00", imageName: "yogaImage"),
-            ContentCardModel(title: "Unwind", duration: "15:00", imageName: "yogaImage")
+            ContentCardModel(title: "Yoga Basic", duration: .string("10:00"), imageName: "yogaImage"),
+            ContentCardModel(title: "Unwind", duration: .string("10:00"), imageName: "yogaImage")
         ],
         onViewAllTapped: {
             print("View All tapped")

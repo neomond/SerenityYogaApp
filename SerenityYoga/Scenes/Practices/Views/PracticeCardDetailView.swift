@@ -1,19 +1,17 @@
 //
-//  MeditationCardDetailView.swift
+//  PracticeCardDetailView.swift
 //  SerenityYoga
 //
-//  Created by Nazrin Atayeva on 21.01.25.
+//  Created by Nazrin Atayeva on 28.01.25.
 //
 
 import SwiftUI
 
-struct MeditationCardDetailView: View {
-    
+struct PracticeCardDetailView: View {
     @Environment(\.dismiss) var dismiss
     @State private var isLiked: Bool = false
-    @State private var showPlayerView: Bool = false
     
-    let meditate: Meditation
+    let practice: Practice
     
     var body: some View {
         ZStack {
@@ -22,7 +20,7 @@ struct MeditationCardDetailView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     // MARK: - Image Section with Buttons
                     ZStack(alignment: .top) {
-                        Image(meditate.image)
+                        Image(practice.image)
                             .resizable()
                             .scaledToFill()
                             .frame(maxWidth: .infinity)
@@ -36,7 +34,6 @@ struct MeditationCardDetailView: View {
                                     endPoint: .bottom
                                 )
                             )
-                        
                         HStack {
                             Button(action: {
                                 dismiss()
@@ -51,7 +48,6 @@ struct MeditationCardDetailView: View {
                                             .foregroundColor(.white)
                                     )
                             }
-                            
                             Spacer()
                             
                             Button(action: {
@@ -73,15 +69,15 @@ struct MeditationCardDetailView: View {
                     }
                     
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("\(meditate.meditations.count) meditations")
+                        Text("\(practice.sessions.count) sessions")
                             .font(.subheadline)
                             .foregroundColor(.primaryPurple)
                         
-                        Text(meditate.title)
+                        Text(practice.title)
                             .font(.headline)
                             .foregroundColor(.black)
                         
-                        Text(meditate.description)
+                        Text(practice.description)
                             .font(.subheadline)
                             .foregroundColor(.black.opacity(0.7))
                             .multilineTextAlignment(.leading)
@@ -98,13 +94,13 @@ struct MeditationCardDetailView: View {
                     
                     // MARK: - Sessions Section
                     VStack(spacing: SizeMetrics.mediumPadding) {
-                        ForEach(meditate.meditations) { meditate in
+                        ForEach(practice.sessions) { session in
                             SmallCardView(item: ContentCardModel(
-                                title: meditate.title,
-                                duration: .time(meditate.duration),
-                                imageName: meditate.imageName
+                                title: session.title,
+                                duration: .string(session.duration),
+                                imageName: session.imageName
                             ),
-                                onListenTap: { showPlayerView = true }
+                                          onListenTap: { print("\(session.title) tapped") }
                             )
                             .padding(.leading, SizeMetrics.smallPadding)
                             
@@ -119,35 +115,28 @@ struct MeditationCardDetailView: View {
                         Color.white
                             .cornerRadius(40, corners: [.topLeft, .topRight])
                     )
-                    
                 }
             }
         }
-        
-        .fullScreenCover(isPresented: $showPlayerView){
-            MeditationPlayerView()
-        }
-        
         .scrollBounce(enabled: false)
         .scrollIndicators(ScrollIndicatorVisibility.hidden)
         .navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
-        
     }
 }
 
 #Preview {
-    MeditationCardDetailView(meditate: Meditation(
-        title: "Best Self",
+    PracticeCardDetailView(practice: Practice(
+        title: "Morning yoga",
         description: "Learn how to bring your best self forward in more moments of your life",
-        duration: 70,
-        track: "image-stones",
-        image: "image-stones",
-        meditations: [
-            Meditate(
-                title: "Best Self",
-                duration: 70,
-                imageName: "image-stones",
-                description: "Learn how to bring your best self forward in more moments of your life",
-                track: "image-stones")]))
+        duration: 1500,
+        image: "yogaasana1",
+        sessions: [
+            Session(
+                title: "Sun Salutation",
+                duration: "10 min",
+                imageName: "yogaasana1",
+                description: "Learn how to bring your best self forward in more moments of your life"),
+            Session(title: "Final Relaxation", duration: "20 min", imageName: "yogaasana3", description: "Cool down and relax.")
+        ]))
 }

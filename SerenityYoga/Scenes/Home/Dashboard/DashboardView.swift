@@ -41,8 +41,8 @@ struct DashboardView: View {
                             HorizontalContentSection(
                                 title: "Try this",
                                 items: [
-                                    ContentCardModel(title: "Yoga Basic", duration: "25:00", imageName: "yogaImage"),
-                                    ContentCardModel(title: "Unwind", duration: "15:00", imageName: "yogaasana1")
+                                    ContentCardModel(title: "Yoga Basic", duration: .string("25:00"), imageName: "yogaImage"),
+                                    ContentCardModel(title: "Unwind", duration: .string("15:00"), imageName: "yogaasana1")
                                 ],
                                 onViewAllTapped: {
                                     print("Try this View All tapped")
@@ -52,8 +52,8 @@ struct DashboardView: View {
                             HorizontalContentSection(
                                 title: "Meditate",
                                 items: [
-                                    ContentCardModel(title: "Morning Meditation", duration: "10:00", imageName: "yogaasana2"),
-                                    ContentCardModel(title: "Guided Relaxation", duration: "19:00", imageName: "yogaasana3")
+                                    ContentCardModel(title: "Morning Meditation", duration: .string("10:00"), imageName: "yogaasana2"),
+                                    ContentCardModel(title: "Guided Relaxation", duration: .string("19:00"), imageName: "yogaasana3")
                                 ],
                                 onViewAllTapped: {
                                     print("Meditate View All tapped")
@@ -69,6 +69,7 @@ struct DashboardView: View {
                                 .edgesIgnoringSafeArea(.bottom)
                         )
                     }
+                    .frame(maxWidth: .infinity)
                 }
                 .scrollBounce(enabled: false)
                 
@@ -79,6 +80,7 @@ struct DashboardView: View {
                     .background(Color.white)
             }
             .edgesIgnoringSafeArea(.bottom)
+            
             .sheet(item: $selectedMood) { moodItem in
                 MoodDetailView(mood: moodItem.mood)
             }

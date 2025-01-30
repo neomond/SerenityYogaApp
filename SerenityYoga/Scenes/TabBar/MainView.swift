@@ -28,7 +28,7 @@ struct MainView: View {
                     case 0:
                         DashboardView()
                     case 1:
-                        DashboardView()
+                        PracticesView()
                     case 2:
                         BlogPageView()
                     case 3:

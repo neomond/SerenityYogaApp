@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MeditationsView: View {
     @State private var showProfileView: Bool = false
-    
+    @StateObject var viewModel = MeditationViewModel()
+
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
@@ -27,34 +28,19 @@ struct MeditationsView: View {
                     ScrollView {  
                             // MARK: - Meditation Collections
                             VStack(spacing: 24) {
-                                MeditationCardView(
-                                        image: "yogaImage",
-                                        title: "Remember to Breathe",
-                                        description: "Bring awareness back onto the menu. Reconnect with yourself.",
-                                        meditationsCount: 10,
-                                        destination: { MeditationCardDetailView() }
+                                ForEach(viewModel.meditations, id: \.id) { meditate in
+                                    MeditationCardView(
+                                        meditate: meditate,
+                                        destination: {
+                                            MeditationCardDetailView(meditate: meditate)
+                                        }
                                     )
-                                
-                                MeditationCardView(
-                                        image: "yogaasana1",
-                                        title: "Remember to Breathe",
-                                        description: "Bring awareness back onto the menu. Reconnect with yourself.",
-                                        meditationsCount: 10,
-                                        destination: { MeditationCardDetailView() }
-                                    )
-                                
-                                MeditationCardView(
-                                        image: "yogaasana2",
-                                        title: "Remember to Breathe",
-                                        description: "Bring awareness back onto the menu. Reconnect with yourself.",
-                                        meditationsCount: 10,
-                                        destination: { MeditationCardDetailView() }
-                                    )
+                                }
                             }
                         
-                        .padding(.vertical, 38)
                         .frame(maxWidth: .infinity)
                     }
+                    .padding(.vertical, 32)
                     .background(
                         Color.white
                             .cornerRadius(40, corners: [.topLeft, .topRight])
@@ -63,7 +49,9 @@ struct MeditationsView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+            
             .scrollBounce(enabled: false)
+            .scrollIndicators(ScrollIndicatorVisibility.hidden)
             .edgesIgnoringSafeArea(.bottom)
             
             
@@ -76,5 +64,5 @@ struct MeditationsView: View {
 }
 
 #Preview {
-    MeditationsView()
+    MeditationsView(viewModel: MeditationViewModel.mock)
 }

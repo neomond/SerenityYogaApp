@@ -65,7 +65,7 @@ struct MoodDetailView: View {
                         ForEach(1...15, id: \.self) { index in
                             SmallCardView(item: ContentCardModel(
                                 title: "Session \(index)",
-                                duration: "\(10 + index * 5) min",
+                                duration: .string("\(10 + index * 5) min"),
                                 imageName: "yogaasana1"
                             ),
                                           onListenTap: {})
@@ -84,15 +84,11 @@ struct MoodDetailView: View {
                             .cornerRadius(40, corners: [.topLeft, .topRight])
                     )
                 }
-                
-            }.scrollBounce(enabled: false)
+            }
+            .edgesIgnoringSafeArea(.bottom)
+            .scrollBounce(enabled: false)
             
         }
-        // MARK: - Space for Bottom part
-        //        HStack{}
-        //        .frame(minHeight: 85)
-        //        .frame(maxWidth: .infinity)
-        //        .background(Color.white)
     }
 }
 

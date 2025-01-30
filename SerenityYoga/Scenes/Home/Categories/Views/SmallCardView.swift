@@ -22,7 +22,7 @@ struct SmallCardView: View {
                     .frame(width: 114, height: 86)
                     .cornerRadius(SizeMetrics.mediumRadius)
                 
-                Text(item.duration)
+                Text(item.duration.formatted)
                     .font(.callout)
                     .foregroundColor(.white)
                     .fontWeight(.regular)

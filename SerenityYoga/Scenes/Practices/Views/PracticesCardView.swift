@@ -1,24 +1,24 @@
 //
-//  MeditationCardView.swift
+//  PracticesCardView.swift
 //  SerenityYoga
 //
-//  Created by Nazrin Atayeva on 20.01.25.
+//  Created by Nazrin Atayeva on 28.01.25.
 //
 
 import SwiftUI
 
-struct MeditationCardView: View {
-    let meditate: Meditation
-    
+struct PracticesCardView: View {
+    let practice: Practice
+
     @State private var isLiked: Bool = false
     
-    let destination: () -> MeditationCardDetailView
-    
+    let destination: () -> PracticeCardDetailView
+
     var body: some View {
         NavigationLink(destination: destination()) {
             VStack(alignment: .leading) {
                 ZStack(alignment: .topTrailing) {
-                    Image(meditate.image)
+                    Image(practice.image)
                         .resizable()
                         .scaledToFill()
                         .frame(height: 190)
@@ -47,17 +47,17 @@ struct MeditationCardView: View {
                     }
                     .padding()
                 }
-                
+
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("\(meditate.meditations.count) meditations")
+                    Text("\(practice.sessions.count) practices")
                         .font(.subheadline)
                         .foregroundColor(.primaryPurple)
                     
-                    Text(meditate.title)
+                    Text(practice.title)
                         .font(.headline)
                         .foregroundColor(.black)
                     
-                    Text(meditate.description)
+                    Text(practice.description)
                         .font(.subheadline)
                         .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.leading)
@@ -73,20 +73,19 @@ struct MeditationCardView: View {
 }
 
 #Preview {
-    MeditationCardView(
-        meditate: Meditation(
-            title: "Best Self",
+    PracticesCardView(
+        practice: Practice(
+            title: "Morning yoga",
             description: "Learn how to bring your best self forward in more moments of your life",
-            duration: 70,
-            track: "image-stones",
-            image: "yogaasana2",
-            meditations: [
-                Meditate(
-                    title: "Best Self",
-                    duration: 70,
-                    imageName: "yogaasana2",
-                    description: "Learn how to bring your best self forward in more moments of your life", track: "yogaasana2")]),
-        destination: { MeditationCardDetailView(meditate: Meditation.data)}
+            duration: 1500,
+            image: "yogaasana1",
+            sessions: [
+                Session(
+                    title: "Sun Salutation",
+                    duration: "10 min",
+                    imageName: "yogaasana1",
+                    description: "Learn how to bring your best self forward in more moments of your life")]
+        ),
+        destination: { PracticeCardDetailView(practice: Practice.data) }
     )
-    
 }
