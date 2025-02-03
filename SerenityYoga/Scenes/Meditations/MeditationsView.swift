@@ -20,7 +20,7 @@ struct MeditationsView: View {
                 VStack(spacing: 0) {
                     // MARK: - Top Icons View
                     IconsView(
-                        onProfileTapped: { showProfileView = true },
+                        onProfileTapped: { showProfileView = true }, onFavoritesTapped: {},
                         label: "Meditation 🧘‍♀️"
                     )
                     .padding(.bottom, SizeMetrics.largePadding)
@@ -65,4 +65,5 @@ struct MeditationsView: View {
 
 #Preview {
     MeditationsView(viewModel: MeditationViewModel.mock)
+        .environmentObject(AudioManager())
 }

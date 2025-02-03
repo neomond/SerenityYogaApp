@@ -9,6 +9,7 @@ import SwiftUI
 
 struct IconsView: View {
     let onProfileTapped: () -> Void
+    let onFavoritesTapped: () -> Void
     let label: String?
     
     var body: some View {
@@ -38,16 +39,18 @@ struct IconsView: View {
             
             Spacer()
             
-            Circle()
-                .fill(Color.white.opacity(SizeMetrics.opacityThin))
-                .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
-                .overlay(
-                    Image(systemName: "bookmark")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.white)
-                        .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
-                )
+            Button(action: onFavoritesTapped) {
+                Circle()
+                    .fill(Color.white.opacity(SizeMetrics.opacityThin))
+                    .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
+                    .overlay(
+                        Image(systemName: "bookmark")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width: SizeMetrics.extraSmallIcon, height: SizeMetrics.extraSmallIcon)
+                    )
+            }
         }
         .padding(.horizontal, SizeMetrics.largePadding)
     }
@@ -64,7 +67,8 @@ struct IconsView: View {
                    endPoint: .bottomTrailing
                )
                .edgesIgnoringSafeArea(.all)
-        IconsView(onProfileTapped: { print("meow") }, label: "Meow")
+        IconsView(onProfileTapped: { },
+                  onFavoritesTapped: { }, label: "Meow")
     }
     .frame(height: SizeMetrics.tabBarHeight)
 }

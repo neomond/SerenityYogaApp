@@ -10,7 +10,7 @@ import Foundation
 final class MeditationViewModel: ObservableObject {
     @Published var meditations: [Meditation]
     
-    init(meditations: [Meditation] = []) {
+    init(meditations: [Meditation] = [Meditation.data]) {
         self.meditations = meditations
     }
     

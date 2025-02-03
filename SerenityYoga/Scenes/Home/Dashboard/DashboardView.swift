@@ -10,6 +10,7 @@ import SwiftUI
 struct DashboardView: View {
     @State private var selectedMood: MoodItem?
     @State private var showProfileView: Bool = false
+    @State private var showFavoritesView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -23,6 +24,8 @@ struct DashboardView: View {
                         // MARK: - Top Icons View
                         IconsView( onProfileTapped:
                                     { showProfileView = true },
+                                   onFavoritesTapped: 
+                                    { showFavoritesView = true },
                                    label: nil)
                         .padding(.bottom, SizeMetrics.xlargePadding)
                         
@@ -88,6 +91,11 @@ struct DashboardView: View {
             // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {
                 ProfileView()
+            }
+            
+            // MARK: - Navigation to Favorites
+            .navigationDestination(isPresented: $showFavoritesView) {
+                FavoritesView()
             }
         }
     }

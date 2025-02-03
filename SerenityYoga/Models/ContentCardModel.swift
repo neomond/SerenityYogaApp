@@ -21,10 +21,13 @@ struct ContentCardModel: Identifiable {
             switch self {
             case .string(let value):
                 return value
+//            case .time(let seconds):
+//                let minutes = Int(seconds) / 60
+//                let remainingSeconds = Int(seconds) % 60
+//                return String(format: "%02d:%02d", minutes, remainingSeconds) /// "05:30"
             case .time(let seconds):
-                let minutes = Int(seconds) / 60
-                let remainingSeconds = Int(seconds) % 60
-                return String(format: "%02d:%02d", minutes, remainingSeconds) /// "05:30"
+                            return DateComponentsFormatter.positional.string(from: seconds) ?? "00:00"
+                       
             }
         }
     }

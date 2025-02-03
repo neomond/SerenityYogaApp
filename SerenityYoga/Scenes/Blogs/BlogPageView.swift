@@ -23,7 +23,7 @@ struct BlogPageView: View {
                 VStack(spacing: 0) {
                     // MARK: - Top Icons View
                     IconsView(
-                        onProfileTapped: { showProfileView = true },
+                        onProfileTapped: { showProfileView = true }, onFavoritesTapped: {},
                         label: "Stories 🧡"
                     )
                     .padding(.bottom, SizeMetrics.largePadding)

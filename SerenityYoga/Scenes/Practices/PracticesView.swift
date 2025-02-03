@@ -19,7 +19,7 @@ struct PracticesView: View {
                 
                 VStack(spacing: 0){
                     // MARK: - Top Icons View
-                    IconsView(onProfileTapped: { showProfileView = true },
+                    IconsView(onProfileTapped: { showProfileView = true }, onFavoritesTapped: {},
                               label: "Practices 🌟")
                     .padding(.bottom, SizeMetrics.largePadding)
                     

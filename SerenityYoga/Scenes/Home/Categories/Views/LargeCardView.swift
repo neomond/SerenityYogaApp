@@ -30,7 +30,7 @@ struct LargeCardView: View {
                         .foregroundColor(.white)
                         .frame(width: SizeMetrics.extraSmallIcon,
                                height: SizeMetrics.extraSmallIcon)
-                    Text(item.duration)
+                    Text(item.duration.formatted)
                         .font(.headline)
                         .foregroundColor(.white)
                     Spacer()

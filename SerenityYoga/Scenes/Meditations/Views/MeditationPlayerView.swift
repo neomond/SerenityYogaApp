@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct MeditationPlayerView: View {    
+    @EnvironmentObject var audioManager: AudioManager
     @Environment(\.dismiss) var dismiss
     @State private var isLiked: Bool = false
     @State private var value: Double = 0.0
+    var isPreview: Bool = false
+    
+    let meditation: Meditate
     
     var body: some View {
         ZStack(alignment: .top) {
             
             // MARK: Background Image
             
-            Image("image-stones")
+            Image(meditation.imageName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: UIScreen.main.bounds.width)
@@ -68,12 +72,12 @@ struct MeditationPlayerView: View {
                 
                 // MARK: Texts
                 VStack(spacing: 16) {
-                    Text("Best Self")
+                    Text(meditation.title)
                         .font(.title)
-                    Text("Learn how to bring your best self forward in more moments of your life")
+                    Text(meditation.description)
                         .multilineTextAlignment(.center)
                         .font(.title3)
-                    Text("by Best Self")
+                    Text(meditation.title)
                         .font(.callout)
                 }
                
@@ -84,14 +88,14 @@ struct MeditationPlayerView: View {
                 
                 VStack(spacing: 5) {
                     // MARK: Playback Timeline
-                    Slider(value: $value, in: 0...60)
+                    Slider(value: $value, in: 0...meditation.duration)
                         .accentColor(.white)
                     
                     // MARK: Playback Time
                     HStack {
                         Text("0:00")
                         Spacer()
-                        Text("01:00")
+                        Text(DateComponentsFormatter.positional.string(from: meditation.duration) ?? "00:00") // ✅ Format duration
                     }
                     .font(.caption)
                     .foregroundStyle(.white)
@@ -131,11 +135,16 @@ struct MeditationPlayerView: View {
                 .padding(.vertical, 60)
                 .padding(.horizontal, 20)
         }
+        .onAppear {
+//            AudioManager.shared.startPlayer(track: meditation.track, isPreview: isPreview)
+            audioManager.startPlayer(track: meditation.track, isPreview: isPreview)
+        }
         .edgesIgnoringSafeArea(.vertical)
         .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    MeditationPlayerView()
+    MeditationPlayerView(isPreview: true, meditation: Meditate(title: "meow", duration: 80, imageName: "yogaImage", description: "meow", track: "meditation1"))
+        .environmentObject(AudioManager())
 }
