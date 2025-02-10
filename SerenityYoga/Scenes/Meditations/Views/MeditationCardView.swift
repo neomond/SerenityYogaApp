@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct MeditationCardView: View {
-    let meditate: Meditation
-    
+    let viewModel: MeditationViewModel
+    let meditation: Meditation
     @State private var isLiked: Bool = false
-    
-    let destination: () -> MeditationCardDetailView
-    
+        
     var body: some View {
-        NavigationLink(destination: destination()) {
+        NavigationLink(
+            destination: MeditationCardDetailView(viewModel: viewModel)
+                .onAppear {
+                    /// Update selectedMeditation when the card is tapped
+                    viewModel.selectedMeditation = meditation
+                }
+        ) {
             VStack(alignment: .leading) {
                 ZStack(alignment: .topTrailing) {
-                    Image(meditate.image)
+                    Image(meditation.image)
                         .resizable()
                         .scaledToFill()
                         .frame(height: 190)
@@ -49,15 +53,15 @@ struct MeditationCardView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("\(meditate.meditations.count) meditations")
+                    Text("\(meditation.meditations.count) meditations")
                         .font(.subheadline)
                         .foregroundColor(.primaryPurple)
                     
-                    Text(meditate.title)
+                    Text(meditation.title)
                         .font(.headline)
                         .foregroundColor(.black)
                     
-                    Text(meditate.description)
+                    Text(meditation.description)
                         .font(.subheadline)
                         .foregroundColor(.black.opacity(0.7))
                         .multilineTextAlignment(.leading)
@@ -73,20 +77,31 @@ struct MeditationCardView: View {
 }
 
 #Preview {
-    MeditationCardView(
-        meditate: Meditation(
-            title: "Best Self",
-            description: "Learn how to bring your best self forward in more moments of your life",
-            duration: 70,
-            track: "image-stones",
-            image: "yogaasana2",
-            meditations: [
-                Meditate(
-                    title: "Best Self",
-                    duration: 70,
-                    imageName: "yogaasana2",
-                    description: "Learn how to bring your best self forward in more moments of your life", track: "yogaasana2")]),
-        destination: { MeditationCardDetailView(meditate: Meditation.data)}
+    let mockMeditation = Meditation(
+        title: "Mindful Journey",
+        description: "Embark on a journey of mindfulness and inner peace.",
+        duration: 90,
+        image: "yogaasana2",
+        meditations: [
+            Meditate(
+                title: "Breathe and Relax",
+                duration: 120,
+                imageName: "yogaasana2",
+                description: "Focus on your breath to relax deeply.",
+                track: "meditation1"
+            )
+        ]
     )
     
+    let viewModel = MeditationViewModel(meditations: [mockMeditation])
+    viewModel.selectedMeditation = mockMeditation
+
+    return NavigationView {
+        MeditationCardView(
+            viewModel: viewModel,
+            meditation: mockMeditation
+        )
+    }
+
+    .environmentObject(AudioManager())
 }

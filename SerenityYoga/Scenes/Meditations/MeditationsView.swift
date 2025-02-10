@@ -28,13 +28,10 @@ struct MeditationsView: View {
                     ScrollView {  
                             // MARK: - Meditation Collections
                             VStack(spacing: 24) {
-                                ForEach(viewModel.meditations, id: \.id) { meditate in
-                                    MeditationCardView(
-                                        meditate: meditate,
-                                        destination: {
-                                            MeditationCardDetailView(meditate: meditate)
-                                        }
-                                    )
+                                ForEach(viewModel.meditations, id: \.id) { meditation in
+                                    MeditationCardView(viewModel: viewModel,
+                                                       meditation: meditation
+                                                       )
                                 }
                             }
                         

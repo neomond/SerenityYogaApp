@@ -13,9 +13,11 @@ struct MeditationCardDetailView: View {
     @State private var isLiked: Bool = false
     @State private var showPlayerView: Bool = false
     
-    let meditate: Meditation
+    @ObservedObject var viewModel: MeditationViewModel
     
     var body: some View {
+        let meditate = viewModel.selectedMeditation
+        
         ZStack {
             // MARK: - Content ScrollView
             ScrollView {
@@ -125,7 +127,7 @@ struct MeditationCardDetailView: View {
         }
         
         .fullScreenCover(isPresented: $showPlayerView){
-            MeditationPlayerView(meditation: Meditate(title: "Best Self", duration: 80, imageName: "image-stones", description: "Learn how to bring your best self forward in more moments of your life", track: "image-stones"))
+            MeditationPlayerView(meditation: Meditate(title: "Best Self", duration: 80, imageName: "image-stones", description: "Learn how to bring your best self forward in more moments of your life", track: "meditation1"))
         }
         
         .scrollBounce(enabled: false)
@@ -137,18 +139,25 @@ struct MeditationCardDetailView: View {
 }
 
 #Preview {
-    MeditationCardDetailView(meditate: Meditation(
+    let mockMeditation = Meditation(
         title: "Best Self",
         description: "Learn how to bring your best self forward in more moments of your life",
         duration: 70,
-        track: "image-stones",
         image: "image-stones",
         meditations: [
             Meditate(
-                title: "Best Self",
-                duration: 70,
+                title: "Deep Relaxation",
+                duration: 150,
                 imageName: "image-stones",
-                description: "Learn how to bring your best self forward in more moments of your life",
-                track: "image-stones")]))
-    .environmentObject(AudioManager())
+                description: "Relax deeply before sleep",
+                track: "meditation1"
+            )
+        ]
+    )
+    
+    let viewModel = MeditationViewModel(meditations: [mockMeditation])
+    viewModel.selectedMeditation = mockMeditation 
+    
+    return MeditationCardDetailView(viewModel: viewModel)
+        .environmentObject(AudioManager())
 }

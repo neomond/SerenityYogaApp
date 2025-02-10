@@ -31,7 +31,6 @@
 		7A3F0F412D48C38A000C0547 /* PracticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F402D48C38A000C0547 /* PracticesView.swift */; };
 		7A3F0F432D48C582000C0547 /* PracticesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F422D48C582000C0547 /* PracticesCardView.swift */; };
 		7A3F0F452D48D86E000C0547 /* PracticeCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */; };
-		7A3F0F492D4A8D52000C0547 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F482D4A8D52000C0547 /* Session.swift */; };
 		7A3F0F4B2D4A9978000C0547 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F4A2D4A9978000C0547 /* Practice.swift */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
@@ -125,7 +124,6 @@
 		7A3F0F402D48C38A000C0547 /* PracticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesView.swift; sourceTree = "<group>"; };
 		7A3F0F422D48C582000C0547 /* PracticesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesCardView.swift; sourceTree = "<group>"; };
 		7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCardDetailView.swift; sourceTree = "<group>"; };
-		7A3F0F482D4A8D52000C0547 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7A3F0F4A2D4A9978000C0547 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
@@ -430,7 +428,6 @@
 		7A922EC82CB3E218009F3E9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7A3F0F482D4A8D52000C0547 /* Session.swift */,
 				7A3F0F4A2D4A9978000C0547 /* Practice.swift */,
 				7ABC0C4F2D4B5C7000A19413 /* Meditation.swift */,
 				7ABC0C512D4B68F800A19413 /* ContentCardModel.swift */,
@@ -793,7 +790,6 @@
 				7AEB12952D34FE7900C64AD5 /* NotificationsViewModel.swift in Sources */,
 				7AEB12832D2FE4B100C64AD5 /* NotificationsView.swift in Sources */,
 				7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */,
-				7A3F0F492D4A8D52000C0547 /* Session.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7AEB12672D1B28F700C64AD5 /* HeaderView.swift in Sources */,
 				7AEB12A62D36A01100C64AD5 /* BlogCardView.swift in Sources */,

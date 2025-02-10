@@ -28,3 +28,11 @@ struct Practice {
         ]
     )
 }
+
+struct Session: Identifiable {
+    let id = UUID()
+    let title: String
+    let duration: String
+    let imageName: String
+    let description: String
+}

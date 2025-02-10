@@ -11,10 +11,16 @@ struct MeditationPlayerView: View {
     @EnvironmentObject var audioManager: AudioManager
     @Environment(\.dismiss) var dismiss
     @State private var isLiked: Bool = false
+    
     @State private var value: Double = 0.0
+    @State private var isEditing: Bool = false
+    
     var isPreview: Bool = false
     
     let meditation: Meditate
+    
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common)
+        .autoconnect()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -35,9 +41,10 @@ struct MeditationPlayerView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 16) {
-                // MARK: Back and Like Buttons
+                // MARK: Top Nav Buttons (Dismiss and Like)
                 HStack {
                     Button(action: {
+                        audioManager.stop()
                         dismiss()
                     }) {
                         Circle()
@@ -80,55 +87,69 @@ struct MeditationPlayerView: View {
                     Text(meditation.title)
                         .font(.callout)
                 }
-               
+                
                 .foregroundStyle(.white)
-//                .padding(.horizontal)
+//                                .padding(.horizontal)
                 
                 Spacer()
                 
-                VStack(spacing: 5) {
-                    // MARK: Playback Timeline
-                    Slider(value: $value, in: 0...meditation.duration)
-                        .accentColor(.white)
-                    
-                    // MARK: Playback Time
-                    HStack {
-                        Text("0:00")
+                if let player = audioManager.player {
+                    VStack(spacing: 5) {
+                        // MARK: Playback Timeline
+                        Slider(value: $value, in: 0...player.duration) { editing in
+                            
+                            print("editing", editing)
+                            isEditing = editing
+                            
+                            if !editing {
+                                player.currentTime = value
+                            }
+                        }
+                            .accentColor(.white)
+                        
+                        // MARK: Playback Time
+                        
+                        HStack {
+                            Text(DateComponentsFormatter.positional.string(from: player.currentTime) ?? "00:00")
+                            
+                            Spacer()
+                            
+                            Text(DateComponentsFormatter.positional.string(from: meditation.duration) ?? "00:00")
+                        }
+                        .font(.caption)
+                        .foregroundStyle(.white)
+                    }
+                    HStack{
+                        // MARK: Repeat Button
+                        let color: Color = audioManager.isLooping ? .teal : .white
+                        PlayBackControlButton(systemName: "repeat", color: color){
+                            audioManager.toggleLoop()
+                        }
                         Spacer()
-                        Text(DateComponentsFormatter.positional.string(from: meditation.duration) ?? "00:00") // ✅ Format duration
-                    }
-                    .font(.caption)
-                    .foregroundStyle(.white)
-                }
-                
-                HStack{
-                    // MARK: Repeat Button
-                    PlayBackControlButton(systemName: "repeat"){
                         
-                    }
-                    Spacer()
-                    
-                    // MARK: Backward Button
-                    PlayBackControlButton(systemName: "gobackward.10"){
+                        // MARK: Backward Button
+                        PlayBackControlButton(systemName: "gobackward.10"){
+                            player.currentTime -= 10
+                        }
+                        Spacer()
                         
-                    }
-                    Spacer()
-                    
-                    // MARK: Play/Pause Button
-                    PlayBackControlButton(systemName: "play.circle.fill", fontSize: 44){
+                        // MARK: Play/Pause Button
+                        PlayBackControlButton(systemName: audioManager.isPlaying ? "pause.circle.fill" : "play.circle.fill", fontSize: 44){
+                            audioManager.playPause()
+                        }
+                        Spacer()
                         
-                    }
-                    Spacer()
-                    
-                    // MARK: Forward Button
-                    PlayBackControlButton(systemName: "goforward.10"){
+                        // MARK: Forward Button
+                        PlayBackControlButton(systemName: "goforward.10"){
+                            player.currentTime += 10
+                        }
+                        Spacer()
                         
-                    }
-                    Spacer()
-                    
-                    // MARK: Stop Button
-                    PlayBackControlButton(systemName: "stop.fill"){
-                        
+                        // MARK: Stop Button
+                        PlayBackControlButton(systemName: "stop.fill"){
+                            audioManager.stop()
+                            dismiss()
+                        }
                     }
                 }
             }
@@ -138,6 +159,10 @@ struct MeditationPlayerView: View {
         .onAppear {
 //            AudioManager.shared.startPlayer(track: meditation.track, isPreview: isPreview)
             audioManager.startPlayer(track: meditation.track, isPreview: isPreview)
+        }
+        .onReceive(timer) { _ in
+            guard let player = audioManager.player, !isEditing else { return }
+            value = player.currentTime
         }
         .edgesIgnoringSafeArea(.vertical)
         .navigationBarBackButtonHidden(true)
