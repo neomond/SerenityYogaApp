@@ -10,6 +10,7 @@ import SwiftUI
 struct PracticeCardDetailView: View {
     @Environment(\.dismiss) var dismiss
     @State private var isLiked: Bool = false
+    @State private var showYTPlayerView: Bool = false
     
     let practice: Practice
     
@@ -100,7 +101,7 @@ struct PracticeCardDetailView: View {
                                 duration: .string(session.duration),
                                 imageName: session.imageName
                             ),
-                                          onListenTap: { print("\(session.title) tapped") }
+                                onListenTap: { showYTPlayerView = true }
                             )
                             .padding(.leading, SizeMetrics.smallPadding)
                             
@@ -118,6 +119,11 @@ struct PracticeCardDetailView: View {
                 }
             }
         }
+        
+        .fullScreenCover(isPresented: $showYTPlayerView){
+            PracticesPlayerView(videoURL: "dQw4w9WgXcQ")
+        }
+        
         .scrollBounce(enabled: false)
         .scrollIndicators(ScrollIndicatorVisibility.hidden)
         .navigationBarBackButtonHidden(true)

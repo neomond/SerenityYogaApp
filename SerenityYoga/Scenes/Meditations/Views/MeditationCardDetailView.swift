@@ -127,7 +127,12 @@ struct MeditationCardDetailView: View {
         }
         
         .fullScreenCover(isPresented: $showPlayerView){
-            MeditationPlayerView(meditation: Meditate(title: "Best Self", duration: 80, imageName: "image-stones", description: "Learn how to bring your best self forward in more moments of your life", track: "meditation1"))
+            MeditationPlayerView(meditation: Meditate(
+                title: "Best Self",
+                duration: 80,
+                imageName: "image-stones",
+                description: "Learn how to bring your best self forward in more moments of your life",
+                track: "meditation1"))
         }
         
         .scrollBounce(enabled: false)

@@ -32,6 +32,12 @@
 		7A3F0F432D48C582000C0547 /* PracticesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F422D48C582000C0547 /* PracticesCardView.swift */; };
 		7A3F0F452D48D86E000C0547 /* PracticeCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */; };
 		7A3F0F4B2D4A9978000C0547 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F4A2D4A9978000C0547 /* Practice.swift */; };
+		7A7F76F02D5BC622003414F5 /* PracticesPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76EF2D5BC622003414F5 /* PracticesPlayerView.swift */; };
+		7A7F76F32D5BDA62003414F5 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7F76F22D5BDA62003414F5 /* YouTubeiOSPlayerHelper */; };
+		7A7F76F62D5CC54F003414F5 /* WorkoutItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F52D5CC54F003414F5 /* WorkoutItemCell.swift */; };
+		7A7F76F82D5CC5AC003414F5 /* PracticesBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F72D5CC5AC003414F5 /* PracticesBottomSheet.swift */; };
+		7A7F76FA2D5CC5FE003414F5 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F92D5CC5FE003414F5 /* YouTubePlayerView.swift */; };
+		7A7F76FC2D5CC9DD003414F5 /* IntensityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76FB2D5CC9DD003414F5 /* IntensityLevelView.swift */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
 		7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A922E9E2CAFB950009F3E9C /* Assets.xcassets */; };
@@ -125,6 +131,11 @@
 		7A3F0F422D48C582000C0547 /* PracticesCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesCardView.swift; sourceTree = "<group>"; };
 		7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeCardDetailView.swift; sourceTree = "<group>"; };
 		7A3F0F4A2D4A9978000C0547 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
+		7A7F76EF2D5BC622003414F5 /* PracticesPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesPlayerView.swift; sourceTree = "<group>"; };
+		7A7F76F52D5CC54F003414F5 /* WorkoutItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemCell.swift; sourceTree = "<group>"; };
+		7A7F76F72D5CC5AC003414F5 /* PracticesBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesBottomSheet.swift; sourceTree = "<group>"; };
+		7A7F76F92D5CC5FE003414F5 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
+		7A7F76FB2D5CC9DD003414F5 /* IntensityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityLevelView.swift; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
 		7A922E9C2CAFB94F009F3E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -199,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7F76F32D5BDA62003414F5 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +308,7 @@
 		7A12F21F2CB6FCDD002498A2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7A7F76F42D5CC530003414F5 /* WorkoutItemCell */,
 				7AEB12642D1B28E600C64AD5 /* Header */,
 				7A10C10C2D12D9E1007ADA6F /* Picker */,
 				7A10C1012D12204E007ADA6F /* Buttons */,
@@ -335,6 +348,9 @@
 			children = (
 				7A3F0F422D48C582000C0547 /* PracticesCardView.swift */,
 				7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */,
+				7A7F76EF2D5BC622003414F5 /* PracticesPlayerView.swift */,
+				7A7F76F72D5CC5AC003414F5 /* PracticesBottomSheet.swift */,
+				7A7F76F92D5CC5FE003414F5 /* YouTubePlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +361,15 @@
 				7A3F0F3E2D48BECD000C0547 /* PracticesViewModel.swift */,
 			);
 			path = Practices;
+			sourceTree = "<group>";
+		};
+		7A7F76F42D5CC530003414F5 /* WorkoutItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A7F76F52D5CC54F003414F5 /* WorkoutItemCell.swift */,
+				7A7F76FB2D5CC9DD003414F5 /* IntensityLevelView.swift */,
+			);
+			path = WorkoutItemCell;
 			sourceTree = "<group>";
 		};
 		7A922E8E2CAFB94F009F3E9C = {
@@ -687,6 +712,9 @@
 			dependencies = (
 			);
 			name = SerenityYoga;
+			packageProductDependencies = (
+				7A7F76F22D5BDA62003414F5 /* YouTubeiOSPlayerHelper */,
+			);
 			productName = SerenityYoga;
 			productReference = 7A922E972CAFB94F009F3E9C /* SerenityYoga.app */;
 			productType = "com.apple.product-type.application";
@@ -715,6 +743,9 @@
 				Base,
 			);
 			mainGroup = 7A922E8E2CAFB94F009F3E9C;
+			packageReferences = (
+				7A7F76F12D5BDA62003414F5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+			);
 			productRefGroup = 7A922E982CAFB94F009F3E9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -769,6 +800,7 @@
 				7A10C1072D12CD12007ADA6F /* ActivityLevelView.swift in Sources */,
 				7AEE8BF52D14B05200E89626 /* MoodSelectorView.swift in Sources */,
 				7AEB12712D2D399A00C64AD5 /* CalendarView.swift in Sources */,
+				7A7F76F82D5CC5AC003414F5 /* PracticesBottomSheet.swift in Sources */,
 				7AEB12BD2D3EB93900C64AD5 /* MeditationCardView.swift in Sources */,
 				7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */,
 				7AEB12972D35016600C64AD5 /* ChangeActivityLvlViewModel.swift in Sources */,
@@ -792,6 +824,7 @@
 				7AEB12772D2EDB5E00C64AD5 /* SettingsView.swift in Sources */,
 				7A922ED02CB41E37009F3E9C /* Image+Ext.swift in Sources */,
 				7AEB12672D1B28F700C64AD5 /* HeaderView.swift in Sources */,
+				7A7F76F02D5BC622003414F5 /* PracticesPlayerView.swift in Sources */,
 				7AEB12A62D36A01100C64AD5 /* BlogCardView.swift in Sources */,
 				7AEB12BA2D3EB28800C64AD5 /* MeditationsView.swift in Sources */,
 				7A10C1032D12CA19007ADA6F /* OnboardingFlowView.swift in Sources */,
@@ -807,6 +840,7 @@
 				7AEB128D2D31B15800C64AD5 /* ChangePwdView.swift in Sources */,
 				7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */,
 				7AEB12B02D37FD5900C64AD5 /* QuoteCardView.swift in Sources */,
+				7A7F76FA2D5CC5FE003414F5 /* YouTubePlayerView.swift in Sources */,
 				7A10C1112D13751B007ADA6F /* DashboardView.swift in Sources */,
 				7A10C10B2D12CE5C007ADA6F /* WaitingScreenView.swift in Sources */,
 				7AEB12992D3501F800C64AD5 /* AboutAppViewModel.swift in Sources */,
@@ -824,7 +858,9 @@
 				7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */,
 				7A3F0F432D48C582000C0547 /* PracticesCardView.swift in Sources */,
 				7AEB12932D34FE0500C64AD5 /* SupportViewModel.swift in Sources */,
+				7A7F76FC2D5CC9DD003414F5 /* IntensityLevelView.swift in Sources */,
 				7AEB12872D2FEA4900C64AD5 /* AboutAppView.swift in Sources */,
+				7A7F76F62D5CC54F003414F5 /* WorkoutItemCell.swift in Sources */,
 				7AEB12612D1B255C00C64AD5 /* LargeCardView.swift in Sources */,
 				7AEB126F2D2D16E900C64AD5 /* CircularProgressView.swift in Sources */,
 				7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */,
@@ -1038,6 +1074,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A7F76F12D5BDA62003414F5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A7F76F22D5BDA62003414F5 /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A7F76F12D5BDA62003414F5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A922E8F2CAFB94F009F3E9C /* Project object */;
 }
