@@ -38,6 +38,7 @@
 		7A7F76F82D5CC5AC003414F5 /* PracticesBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F72D5CC5AC003414F5 /* PracticesBottomSheet.swift */; };
 		7A7F76FA2D5CC5FE003414F5 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F92D5CC5FE003414F5 /* YouTubePlayerView.swift */; };
 		7A7F76FC2D5CC9DD003414F5 /* IntensityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76FB2D5CC9DD003414F5 /* IntensityLevelView.swift */; };
+		7A7F884D2D5FCC19001D4D42 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F884C2D5FCC19001D4D42 /* FavoritesViewModel.swift */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
 		7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A922E9E2CAFB950009F3E9C /* Assets.xcassets */; };
@@ -136,6 +137,7 @@
 		7A7F76F72D5CC5AC003414F5 /* PracticesBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticesBottomSheet.swift; sourceTree = "<group>"; };
 		7A7F76F92D5CC5FE003414F5 /* YouTubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerView.swift; sourceTree = "<group>"; };
 		7A7F76FB2D5CC9DD003414F5 /* IntensityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityLevelView.swift; sourceTree = "<group>"; };
+		7A7F884C2D5FCC19001D4D42 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
 		7A922E9C2CAFB94F009F3E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -372,6 +374,14 @@
 			path = WorkoutItemCell;
 			sourceTree = "<group>";
 		};
+		7A7F884B2D5FCC0B001D4D42 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				7A7F884C2D5FCC19001D4D42 /* FavoritesViewModel.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		7A922E8E2CAFB94F009F3E9C = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +452,7 @@
 		7A922EC62CB3E207009F3E9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7A7F884B2D5FCC0B001D4D42 /* Favorites */,
 				7A3F0F3D2D48BEB5000C0547 /* Practices */,
 				7A3F0F362D480DC0000C0547 /* Meditation */,
 				7AEB12B52D3ADFD000C64AD5 /* Blog */,
@@ -851,6 +862,7 @@
 				7AEB12632D1B276600C64AD5 /* SmallCardView.swift in Sources */,
 				7ABC0C502D4B5C7000A19413 /* Meditation.swift in Sources */,
 				7ABC0C522D4B68F800A19413 /* ContentCardModel.swift in Sources */,
+				7A7F884D2D5FCC19001D4D42 /* FavoritesViewModel.swift in Sources */,
 				7AEB127D2D2FA8EC00C64AD5 /* CustomNavigationBar.swift in Sources */,
 				7AEB12B72D3ADFDF00C64AD5 /* BlogViewModel.swift in Sources */,
 				7A3F0F3F2D48BECD000C0547 /* PracticesViewModel.swift in Sources */,

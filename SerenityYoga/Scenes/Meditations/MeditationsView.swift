@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MeditationsView: View {
     @State private var showProfileView: Bool = false
+    @State private var showFavoritesView: Bool = false
     @StateObject var viewModel = MeditationViewModel()
 
     var body: some View {
@@ -20,7 +21,8 @@ struct MeditationsView: View {
                 VStack(spacing: 0) {
                     // MARK: - Top Icons View
                     IconsView(
-                        onProfileTapped: { showProfileView = true }, onFavoritesTapped: {},
+                        onProfileTapped: { showProfileView = true },
+                        onFavoritesTapped: { showFavoritesView = true},
                         label: "Meditation 🧘‍♀️"
                     )
                     .padding(.bottom, SizeMetrics.largePadding)
@@ -55,6 +57,11 @@ struct MeditationsView: View {
             // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {
                 ProfileView()
+            }
+            
+            // MARK: - Navigation to Favorites
+            .navigationDestination(isPresented: $showFavoritesView) {
+                FavoritesView()
             }
         }
     }
