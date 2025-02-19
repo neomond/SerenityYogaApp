@@ -14,6 +14,7 @@ struct MeditationCardDetailView: View {
     @State private var showPlayerView: Bool = false
     
     @ObservedObject var viewModel: MeditationViewModel
+    @ObservedObject var favoritesViewModel: FavoritesViewModel
     
     var body: some View {
         let meditate = viewModel.selectedMeditation
@@ -58,16 +59,20 @@ struct MeditationCardDetailView: View {
                             
                             Button(action: {
                                 isLiked.toggle()
+                                favoritesViewModel.toggleLike(for: meditate)
                             }) {
                                 Circle()
                                     .fill(Color.white.opacity(SizeMetrics.opacityThin))
                                     .frame(width: SizeMetrics.xmediumIcon,
                                            height: SizeMetrics.xmediumIcon)
                                     .overlay(
-                                        Image(systemName: isLiked ? "heart.fill" : "heart")
+                                        Image(systemName: favoritesViewModel.isLiked(meditate) ? "heart.fill" : "heart")
                                             .font(.system(size: SizeMetrics.extraSmallIcon))
-                                            .foregroundColor(isLiked ? .primaryPurple : .white)
+                                            .foregroundColor(favoritesViewModel.isLiked(meditate) ? .primaryPurple : .white)
                                     )
+                            }
+                            .onAppear {
+                                isLiked = favoritesViewModel.isLiked(meditate) 
                             }
                         }
                         .padding(.vertical, 40)
@@ -100,13 +105,17 @@ struct MeditationCardDetailView: View {
                     
                     // MARK: - Sessions Section
                     VStack(spacing: SizeMetrics.mediumPadding) {
-                        ForEach(meditate.meditations) { meditate in
-                            SmallCardView(item: ContentCardModel(
-                                title: meditate.title,
-                                duration: .time(meditate.duration),
-                                imageName: meditate.imageName
-                            ),
-                                onListenTap: { showPlayerView = true }
+                        ForEach(meditate.meditations) { meditateItem in
+                            SmallCardView(
+                                item: ContentCardModel(
+                                    title: meditateItem.title,
+                                    duration: .time(meditateItem.duration),
+                                    imageName: meditateItem.imageName
+                                ),
+                                onListenTap: {
+                                    viewModel.selectedMeditationItem = meditateItem
+                                    showPlayerView = true
+                                }
                             )
                             .padding(.leading, SizeMetrics.smallPadding)
                             
@@ -126,14 +135,15 @@ struct MeditationCardDetailView: View {
             }
         }
         
-        .fullScreenCover(isPresented: $showPlayerView){
-            MeditationPlayerView(meditation: Meditate(
-                title: "Best Self",
-                duration: 80,
-                imageName: "image-stones",
-                description: "Learn how to bring your best self forward in more moments of your life",
-                track: "meditation1"))
+        .fullScreenCover(isPresented: $showPlayerView) {
+            if let selectedMeditate = viewModel.selectedMeditationItem {
+                MeditationPlayerView(
+                    favoritesViewModel: favoritesViewModel,  
+                    meditation: selectedMeditate
+                )
+            }
         }
+        
         
         .scrollBounce(enabled: false)
         .scrollIndicators(ScrollIndicatorVisibility.hidden)
@@ -161,8 +171,9 @@ struct MeditationCardDetailView: View {
     )
     
     let viewModel = MeditationViewModel(meditations: [mockMeditation])
-    viewModel.selectedMeditation = mockMeditation 
+    let favoritesVM = FavoritesViewModel()
+    viewModel.selectedMeditation = mockMeditation
     
-    return MeditationCardDetailView(viewModel: viewModel)
+    return MeditationCardDetailView(viewModel: viewModel, favoritesViewModel: favoritesVM)
         .environmentObject(AudioManager())
 }

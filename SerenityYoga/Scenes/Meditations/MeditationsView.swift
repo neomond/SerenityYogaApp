@@ -10,8 +10,10 @@ import SwiftUI
 struct MeditationsView: View {
     @State private var showProfileView: Bool = false
     @State private var showFavoritesView: Bool = false
+    
     @StateObject var viewModel = MeditationViewModel()
-
+    @StateObject var favoritesViewModel = FavoritesViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
@@ -27,15 +29,15 @@ struct MeditationsView: View {
                     )
                     .padding(.bottom, SizeMetrics.largePadding)
                     
-                    ScrollView {  
-                            // MARK: - Meditation Collections
-                            VStack(spacing: 24) {
-                                ForEach(viewModel.meditations, id: \.id) { meditation in
-                                    MeditationCardView(viewModel: viewModel,
-                                                       meditation: meditation
-                                                       )
-                                }
+                    ScrollView {
+                        // MARK: - Meditation Collections
+                        VStack(spacing: 24) {
+                            ForEach(viewModel.meditations, id: \.id) { meditation in
+                                MeditationCardView(viewModel: viewModel,
+                                                   meditation: meditation, favoritesViewModel: favoritesViewModel
+                                )
                             }
+                        }
                         
                         .frame(maxWidth: .infinity)
                     }
@@ -61,13 +63,18 @@ struct MeditationsView: View {
             
             // MARK: - Navigation to Favorites
             .navigationDestination(isPresented: $showFavoritesView) {
-                FavoritesView()
+                FavoritesView(favoritesViewModel: favoritesViewModel)
             }
         }
     }
 }
 
 #Preview {
-    MeditationsView(viewModel: MeditationViewModel.mock)
-        .environmentObject(AudioManager())
+    let viewModel = MeditationViewModel.mock
+    let favoritesViewModel = FavoritesViewModel()
+    
+    return NavigationStack {
+        MeditationsView(viewModel: viewModel, favoritesViewModel: favoritesViewModel)
+    }
+    .environmentObject(AudioManager())
 }

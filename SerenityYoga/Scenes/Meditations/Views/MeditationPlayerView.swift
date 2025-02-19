@@ -17,6 +17,7 @@ struct MeditationPlayerView: View {
     
     var isPreview: Bool = false
     
+    @ObservedObject var favoritesViewModel: FavoritesViewModel
     let meditation: Meditate
     
     let timer = Timer.publish(every: 0.5, on: .main, in: .common)
@@ -61,17 +62,20 @@ struct MeditationPlayerView: View {
                     Spacer()
                     
                     Button(action: {
-                        isLiked.toggle()
+                        favoritesViewModel.toggleLike(for: meditation)
+                        isLiked = favoritesViewModel.isLiked(meditation)
                     }) {
                         Circle()
                             .fill(Color.white.opacity(SizeMetrics.opacityThin))
-                            .frame(width: SizeMetrics.xmediumIcon,
-                                   height: SizeMetrics.xmediumIcon)
+                            .frame(width: SizeMetrics.xmediumIcon, height: SizeMetrics.xmediumIcon)
                             .overlay(
                                 Image(systemName: isLiked ? "heart.fill" : "heart")
                                     .font(.system(size: SizeMetrics.extraSmallIcon))
                                     .foregroundColor(isLiked ? .primaryPurple : .white)
                             )
+                    }
+                    .onAppear {
+                        isLiked = favoritesViewModel.isLiked(meditation) 
                     }
                 }
                 
@@ -170,6 +174,17 @@ struct MeditationPlayerView: View {
 }
 
 #Preview {
-    MeditationPlayerView(isPreview: true, meditation: Meditate(title: "meow", duration: 80, imageName: "yogaImage", description: "meow", track: "meditation1"))
-        .environmentObject(AudioManager())
+    let favoritesVM = FavoritesViewModel()
+    
+    return MeditationPlayerView(
+        isPreview: true,
+        favoritesViewModel: favoritesVM,
+        meditation: Meditate(
+            title: "meow",
+            duration: 80,
+            imageName: "yogaImage",
+            description: "meow",
+            track: "meditation1")
+    )
+    .environmentObject(AudioManager())
 }

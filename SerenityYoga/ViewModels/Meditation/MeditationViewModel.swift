@@ -10,6 +10,7 @@ import Foundation
 final class MeditationViewModel: ObservableObject {
     @Published var meditations: [Meditation]
     @Published var selectedMeditation: Meditation
+    @Published var selectedMeditationItem: Meditate?
     
     init(meditations: [Meditation] = Meditation.mockData) {
         self.meditations = meditations

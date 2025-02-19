@@ -10,11 +10,12 @@ import SwiftUI
 struct MeditationCardView: View {
     let viewModel: MeditationViewModel
     let meditation: Meditation
-    @State private var isLiked: Bool = false
+    
+    @ObservedObject var favoritesViewModel: FavoritesViewModel
         
     var body: some View {
         NavigationLink(
-            destination: MeditationCardDetailView(viewModel: viewModel)
+            destination: MeditationCardDetailView(viewModel: viewModel, favoritesViewModel: favoritesViewModel)
                 .onAppear {
                     /// Update selectedMeditation when the card is tapped
                     viewModel.selectedMeditation = meditation
@@ -37,16 +38,16 @@ struct MeditationCardView: View {
                         .clipped()
                     
                     Button(action: {
-                        isLiked.toggle()
+                        favoritesViewModel.toggleLike(for: meditation)
                     }) {
                         Circle()
                             .fill(Color.white.opacity(SizeMetrics.opacityThin))
                             .frame(width: SizeMetrics.xmediumIcon,
                                    height: SizeMetrics.xmediumIcon)
                             .overlay(
-                                Image(systemName: isLiked ? "heart.fill" : "heart")
+                                Image(systemName: favoritesViewModel.isLiked(meditation) ? "heart.fill" : "heart")
                                     .font(.system(size: SizeMetrics.extraSmallIcon))
-                                    .foregroundColor(isLiked ? .primaryPurple : .white)
+                                    .foregroundColor(favoritesViewModel.isLiked(meditation) ? .primaryPurple : .white)
                             )
                     }
                     .padding()
@@ -94,12 +95,15 @@ struct MeditationCardView: View {
     )
     
     let viewModel = MeditationViewModel(meditations: [mockMeditation])
+    let favoritesViewModel = FavoritesViewModel()
+    
     viewModel.selectedMeditation = mockMeditation
 
     return NavigationView {
         MeditationCardView(
             viewModel: viewModel,
-            meditation: mockMeditation
+            meditation: mockMeditation, 
+            favoritesViewModel: favoritesViewModel
         )
     }
 

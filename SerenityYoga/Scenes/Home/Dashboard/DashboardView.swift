@@ -95,7 +95,7 @@ struct DashboardView: View {
             
             // MARK: - Navigation to Favorites
             .navigationDestination(isPresented: $showFavoritesView) {
-                FavoritesView()
+//                FavoritesView()
             }
         }
     }
