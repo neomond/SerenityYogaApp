@@ -34,12 +34,13 @@ struct MeditationsView: View {
                         VStack(spacing: 24) {
                             ForEach(viewModel.meditations, id: \.id) { meditation in
                                 MeditationCardView(viewModel: viewModel,
-                                                   meditation: meditation, favoritesViewModel: favoritesViewModel
+                                                   meditation: meditation,
+                                                   favoritesViewModel: favoritesViewModel
                                 )
                             }
                         }
-                        
                         .frame(maxWidth: .infinity)
+                        .padding(.horizontal, SizeMetrics.largeSpacing)
                     }
                     .padding(.vertical, 32)
                     .background(
@@ -55,6 +56,12 @@ struct MeditationsView: View {
             .scrollIndicators(ScrollIndicatorVisibility.hidden)
             .edgesIgnoringSafeArea(.bottom)
             
+            .onAppear {
+                favoritesViewModel.loadFavorites()
+            }
+            .onChange(of: favoritesViewModel.likedMeditations) { _ in
+                print("Favorites updated! Syncing UI...")
+            }
             
             // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {

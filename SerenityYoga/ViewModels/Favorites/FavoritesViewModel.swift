@@ -9,26 +9,26 @@ import SwiftUI
 import Combine
 
 final class FavoritesViewModel: ObservableObject {
-    @Published var likedMeditations: [Meditation] = []
-    @Published var likedMeditateTracks: [Meditate] = []
+    @Published var likedMeditations: [Meditation] = [] {
+        didSet { saveFavorites() } 
+    }
+    @Published var likedMeditateTracks: [Meditate] = [] {
+        didSet { saveFavorites() }
+    }
 
-    // MARK: persist data
     private let meditationKey = "likedMeditations"
-        private let meditateKey = "likedMeditateTracks"
+    private let meditateKey = "likedMeditateTracks"
 
-        init() {
-            loadFavorites()
-        }
-    
-    
+    init() {
+        loadFavorites()
+    }
+
     func toggleLike(for meditation: Meditation) {
         if let index = likedMeditations.firstIndex(where: { $0.id == meditation.id }) {
             likedMeditations.remove(at: index)
         } else {
             likedMeditations.append(meditation)
         }
-        saveFavorites()
-        objectWillChange.send()
     }
 
     func toggleLike(for meditate: Meditate) {
@@ -37,38 +37,39 @@ final class FavoritesViewModel: ObservableObject {
         } else {
             likedMeditateTracks.append(meditate)
         }
-        saveFavorites()
-        objectWillChange.send()
     }
 
     func isLiked(_ meditate: Meditate) -> Bool {
         return likedMeditateTracks.contains(where: { $0.id == meditate.id })
     }
-    
+
     func isLiked(_ meditation: Meditation) -> Bool {
         return likedMeditations.contains(where: { $0.id == meditation.id })
     }
-    
-    // MARK: - Save & Load Favorites
-       private func saveFavorites() {
-           if let meditationData = try? JSONEncoder().encode(likedMeditations) {
-               UserDefaults.standard.set(meditationData, forKey: meditationKey)
-           }
-           if let meditateData = try? JSONEncoder().encode(likedMeditateTracks) {
-               UserDefaults.standard.set(meditateData, forKey: meditateKey)
-           }
-       }
-    
-    private func loadFavorites() {
-         if let meditationData = UserDefaults.standard.data(forKey: meditationKey),
-            let savedMeditations = try? JSONDecoder().decode([Meditation].self, from: meditationData) {
-             likedMeditations = savedMeditations
-         }
-         
-         if let meditateData = UserDefaults.standard.data(forKey: meditateKey),
-            let savedMeditateTracks = try? JSONDecoder().decode([Meditate].self, from: meditateData) {
-             likedMeditateTracks = savedMeditateTracks
-         }
-     }
+
+    private func saveFavorites() {
+        do {
+            let meditationData = try JSONEncoder().encode(likedMeditations)
+            let meditateData = try JSONEncoder().encode(likedMeditateTracks)
+            UserDefaults.standard.set(meditationData, forKey: meditationKey)
+            UserDefaults.standard.set(meditateData, forKey: meditateKey)
+        } catch {
+            print("Error saving favorites:", error)
+        }
+    }
+
+    func loadFavorites() {
+        if let meditationData = UserDefaults.standard.data(forKey: meditationKey),
+           let savedMeditations = try? JSONDecoder().decode([Meditation].self, from: meditationData) {
+            likedMeditations = savedMeditations
+        }
+
+        if let meditateData = UserDefaults.standard.data(forKey: meditateKey),
+           let savedMeditateTracks = try? JSONDecoder().decode([Meditate].self, from: meditateData) {
+            likedMeditateTracks = savedMeditateTracks
+        }
+    }
 }
+
+
 

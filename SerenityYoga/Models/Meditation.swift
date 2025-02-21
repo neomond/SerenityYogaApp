@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct Meditation: Identifiable, Codable {
-    var id = UUID()
+struct Meditation: Identifiable, Codable, Equatable {
+//    var id = UUID()
+//    var id: String { "\(title)-\(image)"}
+    var id: String { title }
     let title: String
     let description: String
     let duration: TimeInterval
@@ -21,7 +23,8 @@ struct Meditation: Identifiable, Codable {
 }
 
 struct Meditate: Identifiable, Codable {
-    var id = UUID()
+//    var id = UUID()
+    var id: String { title }
     let title: String
     let duration: TimeInterval
     let imageName: String

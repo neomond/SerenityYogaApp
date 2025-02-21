@@ -72,7 +72,7 @@ struct MeditationCardView: View {
             }
             .background(Color.gray.opacity(0.2))
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(.horizontal)
+//            .padding(.horizontal)
         }
     }
 }
@@ -98,14 +98,14 @@ struct MeditationCardView: View {
     let favoritesViewModel = FavoritesViewModel()
     
     viewModel.selectedMeditation = mockMeditation
-
+    
     return NavigationView {
         MeditationCardView(
             viewModel: viewModel,
-            meditation: mockMeditation, 
+            meditation: mockMeditation,
             favoritesViewModel: favoritesViewModel
         )
     }
-
+    
     .environmentObject(AudioManager())
 }

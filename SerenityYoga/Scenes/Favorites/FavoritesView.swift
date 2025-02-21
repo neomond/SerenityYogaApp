@@ -28,24 +28,30 @@ struct FavoritesView: View {
                             
                             // MARK: - Saved Meditation Collections
                             if !favoritesViewModel.likedMeditations.isEmpty {
-                                Text("Meditation Collections")
+                                Text("Meditation Collections 🫶")
                                     .font(.title3)
                                     .fontWeight(.semibold)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.horizontal, SizeMetrics.mediumSpacing)
+                                    .padding(.horizontal, SizeMetrics.largeSpacing)
                                 
-                                ForEach(favoritesViewModel.likedMeditations) { meditation in
-                                    MeditationCardView(
-                                        viewModel: MeditationViewModel(),
-                                        meditation: meditation,
-                                        favoritesViewModel: favoritesViewModel
-                                    )
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: SizeMetrics.mediumSpacing) {
+                                        ForEach(favoritesViewModel.likedMeditations) { meditation in
+                                            MeditationCardView(
+                                                viewModel: MeditationViewModel(),
+                                                meditation: meditation,
+                                                favoritesViewModel: favoritesViewModel
+                                            )
+                                            .frame(width: 300, height: 320)
+                                        }
+                                    }
+                                    .padding(.horizontal, SizeMetrics.largeSpacing)
                                 }
                             }
                             
                             // MARK: - Saved Individual Meditation Tracks
                             if !favoritesViewModel.likedMeditateTracks.isEmpty {
-                                Text("Saved Meditation Tracks")
+                                Text("Saved Meditation Tracks 🎼 🎶")
                                     .font(.title3)
                                     .fontWeight(.semibold)
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -61,7 +67,7 @@ struct FavoritesView: View {
                                         ),
                                         onListenTap: {}
                                     )
-                                    .padding(.leading, SizeMetrics.smallPadding)
+                                    .padding(.horizontal, SizeMetrics.largeSpacing)
                                     
                                     Divider()
                                         .background(Color.gray.opacity(SizeMetrics.opacityThin))
@@ -70,7 +76,6 @@ struct FavoritesView: View {
                             }
                         }
                         .padding(.top, SizeMetrics.smallPadding)
-                        .padding(.horizontal, SizeMetrics.mediumSpacing)
                     }
                     .scrollBounce(enabled: false)
                     .scrollIndicators(ScrollIndicatorVisibility.hidden)
@@ -84,8 +89,6 @@ struct FavoritesView: View {
         .navigationBarBackButtonHidden(true)
     }
 }
-
-
 
 #Preview {
     let mockFavoritesViewModel = FavoritesViewModel()
