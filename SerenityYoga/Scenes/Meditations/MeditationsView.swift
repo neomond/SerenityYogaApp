@@ -11,7 +11,7 @@ struct MeditationsView: View {
     @State private var showProfileView: Bool = false
     @State private var showFavoritesView: Bool = false
     
-    @StateObject var viewModel = MeditationViewModel()
+    @StateObject var viewModel          = MeditationViewModel()
     @StateObject var favoritesViewModel = FavoritesViewModel()
     
     var body: some View {
@@ -23,8 +23,8 @@ struct MeditationsView: View {
                 VStack(spacing: 0) {
                     // MARK: - Top Icons View
                     IconsView(
-                        onProfileTapped: { showProfileView = true },
-                        onFavoritesTapped: { showFavoritesView = true},
+                        onProfileTapped:    { showProfileView   = true },
+                        onFavoritesTapped:  { showFavoritesView = true },
                         label: "Meditation 🧘‍♀️"
                     )
                     .padding(.bottom, SizeMetrics.largePadding)
@@ -33,9 +33,10 @@ struct MeditationsView: View {
                         // MARK: - Meditation Collections
                         VStack(spacing: 24) {
                             ForEach(viewModel.meditations, id: \.id) { meditation in
-                                MeditationCardView(viewModel: viewModel,
-                                                   meditation: meditation,
-                                                   favoritesViewModel: favoritesViewModel
+                                MeditationCardView(
+                                    viewModel:           viewModel,
+                                    meditation:          meditation,
+                                    favoritesViewModel:  favoritesViewModel
                                 )
                             }
                         }

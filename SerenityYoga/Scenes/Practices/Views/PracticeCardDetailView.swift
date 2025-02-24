@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct PracticeCardDetailView: View {
+    
     @Environment(\.dismiss) var dismiss
     @State private var isLiked: Bool = false
     @State private var showYTPlayerView: Bool = false
     
-    let practice: Practice
+    @ObservedObject var viewModel: PracticesViewModel
+    
     
     var body: some View {
+        let practice = viewModel.selectedPractice
+        
         ZStack {
             // MARK: - Content ScrollView
             ScrollView {
@@ -120,8 +124,10 @@ struct PracticeCardDetailView: View {
             }
         }
         
-        .fullScreenCover(isPresented: $showYTPlayerView){
-            PracticesPlayerView(videoURL: "dQw4w9WgXcQ")
+        .fullScreenCover(isPresented: $showYTPlayerView) {
+            if let selectedSession = practice.sessions.first {
+                PracticesPlayerView(videoURL: selectedSession.videoURL)
+            }
         }
         
         .scrollBounce(enabled: false)
@@ -132,7 +138,7 @@ struct PracticeCardDetailView: View {
 }
 
 #Preview {
-    PracticeCardDetailView(practice: Practice(
+    let mockPractices = Practice(
         title: "Morning yoga",
         description: "Learn how to bring your best self forward in more moments of your life",
         duration: 1500,
@@ -142,7 +148,19 @@ struct PracticeCardDetailView: View {
                 title: "Sun Salutation",
                 duration: "10 min",
                 imageName: "yogaasana1",
-                description: "Learn how to bring your best self forward in more moments of your life"),
-            Session(title: "Final Relaxation", duration: "20 min", imageName: "yogaasana3", description: "Cool down and relax.")
-        ]))
+                description: "Learn how to bring your best self forward in more moments of your life",
+                videoURL: "https://www.youtube.com/watch?v=abcd1234"
+            ),
+            Session(
+                title: "Final Relaxation",
+                duration: "20 min",
+                imageName: "yogaasana3",
+                description: "Cool down and relax.",
+                videoURL: "https://www.youtube.com/watch?v=qwerty90"
+            )
+        ]
+    )
+    
+    let viewModel = PracticesViewModel(practices: [mockPractices])
+    return PracticeCardDetailView(viewModel: viewModel)
 }

@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct PracticesCardView: View {
+    let viewModel: PracticesViewModel
     let practice: Practice
+    
+    @ObservedObject var favoritesViewModel: FavoritesViewModel
 
     @State private var isLiked: Bool = false
     
-    let destination: () -> PracticeCardDetailView
-
     var body: some View {
-        NavigationLink(destination: destination()) {
+        NavigationLink(
+            destination:  PracticeCardDetailView(viewModel: viewModel)
+            ){
             VStack(alignment: .leading) {
                 ZStack(alignment: .topTrailing) {
                     Image(practice.image)
@@ -67,25 +70,36 @@ struct PracticesCardView: View {
             }
             .background(Color.gray.opacity(0.2))
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(.horizontal)
         }
     }
 }
 
 #Preview {
-    PracticesCardView(
-        practice: Practice(
-            title: "Morning yoga",
-            description: "Learn how to bring your best self forward in more moments of your life",
-            duration: 1500,
-            image: "yogaasana1",
-            sessions: [
-                Session(
-                    title: "Sun Salutation",
-                    duration: "10 min",
-                    imageName: "yogaasana1",
-                    description: "Learn how to bring your best self forward in more moments of your life")]
-        ),
-        destination: { PracticeCardDetailView(practice: Practice.data) }
+    let mockPractices = Practice(
+        title: "Morning yoga",
+        description: "Learn how to bring your best self forward in more moments of your life",
+        duration: 1500,
+        image: "yogaasana1",
+        sessions: [
+            Session(
+                title: "Sun Salutation",
+                duration: "10 min",
+                imageName: "yogaasana1",
+                description: "Learn how to bring your best self forward in more moments of your life",
+                videoURL: "https://www.youtube.com/watch?v=abcd1234"
+            )
+        ]
     )
+    let viewModel = PracticesViewModel(practices: [mockPractices])
+    let favoritesViewModel = FavoritesViewModel()
+    
+    viewModel.selectedPractice = mockPractices
+    
+    return NavigationView {
+        PracticesCardView(
+            viewModel:          viewModel,
+            practice:           mockPractices,
+            favoritesViewModel: favoritesViewModel
+        )
+    }
 }

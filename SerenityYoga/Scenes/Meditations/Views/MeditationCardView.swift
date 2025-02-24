@@ -72,7 +72,6 @@ struct MeditationCardView: View {
             }
             .background(Color.gray.opacity(0.2))
             .clipShape(RoundedRectangle(cornerRadius: 20))
-//            .padding(.horizontal)
         }
     }
 }
@@ -101,8 +100,8 @@ struct MeditationCardView: View {
     
     return NavigationView {
         MeditationCardView(
-            viewModel: viewModel,
-            meditation: mockMeditation,
+            viewModel:          viewModel,
+            meditation:         mockMeditation,
             favoritesViewModel: favoritesViewModel
         )
     }

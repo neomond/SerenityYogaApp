@@ -16,7 +16,10 @@ struct FavoritesView: View {
                 CustomNavigationBar(title: "Favorites 🌱")
                     .padding(.horizontal, SizeMetrics.largePadding)
                 
-                if favoritesViewModel.likedMeditations.isEmpty && favoritesViewModel.likedMeditateTracks.isEmpty {
+                if favoritesViewModel.likedMeditations.isEmpty &&
+                   favoritesViewModel.likedMeditateTracks.isEmpty &&
+                   favoritesViewModel.likedPractices.isEmpty {
+                    
                     Text("No favorites yet! ❤️")
                         .foregroundColor(.gray)
                         .padding()
@@ -25,6 +28,29 @@ struct FavoritesView: View {
                 } else {
                     ScrollView {
                         VStack(spacing: SizeMetrics.largePadding) {
+                            
+                            // MARK: - Favorite Practices (New Section)
+                            if !favoritesViewModel.likedPractices.isEmpty {
+                                Text("Favorite Practices 🧘‍♂️")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.horizontal, SizeMetrics.largeSpacing)
+                                
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: SizeMetrics.mediumSpacing) {
+                                        ForEach(favoritesViewModel.likedPractices) { practice in
+                                            PracticesCardView(
+                                                viewModel: PracticesViewModel(),
+                                                practice: practice,
+                                                favoritesViewModel: favoritesViewModel
+                                            )
+                                            .frame(width: 300, height: 320)
+                                        }
+                                    }
+                                    .padding(.horizontal, SizeMetrics.largeSpacing)
+                                }
+                            }
                             
                             // MARK: - Saved Meditation Collections
                             if !favoritesViewModel.likedMeditations.isEmpty {
@@ -81,9 +107,6 @@ struct FavoritesView: View {
                     .scrollIndicators(ScrollIndicatorVisibility.hidden)
                 }
             }
-        }
-        .onAppear {
-            favoritesViewModel.objectWillChange.send()
         }
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarBackButtonHidden(true)

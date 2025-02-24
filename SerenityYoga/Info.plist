@@ -2,6 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <!-- Allow Arbitrary Loads for Web Content -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+        <key>NSAllowsArbitraryLoadsForMedia</key>
+        <true/>
+        <key>NSAllowsArbitraryLoadsInWebContent</key>
+        <true/>
+    </dict>
+
+    <!-- Allow WebKit to Load YouTube -->
+    <key>WKAppBoundDomains</key>
+    <array>
+        <string>youtube.com</string>
+        <string>www.youtube.com</string>
+        <string>youtu.be</string>
+    </array>
+    
+    <!-- Allow Background Audio Playback -->
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

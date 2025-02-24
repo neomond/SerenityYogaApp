@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PracticesView: View {
     @State private var showProfileView: Bool = false
-    @StateObject var viewModel = PracticesViewModel()
+    @State private var showFavoritesView: Bool = false
+    
+    @StateObject var viewModel          = PracticesViewModel()
+    @StateObject var favoritesViewModel = FavoritesViewModel()
     
     var body: some View {
         NavigationStack {
@@ -19,8 +22,10 @@ struct PracticesView: View {
                 
                 VStack(spacing: 0){
                     // MARK: - Top Icons View
-                    IconsView(onProfileTapped: { showProfileView = true }, onFavoritesTapped: {},
-                              label: "Practices 🌟")
+                    IconsView(
+                        onProfileTapped:    { showProfileView   = true },
+                        onFavoritesTapped:  { showFavoritesView = true},
+                        label: "Practices 🌟")
                     .padding(.bottom, SizeMetrics.largePadding)
                     
                     ScrollView {
@@ -28,14 +33,14 @@ struct PracticesView: View {
                         VStack(spacing: 24) {
                             ForEach(viewModel.practices, id: \.id){ practice in
                                 PracticesCardView(
-                                    practice: practice,
-                                    destination: {
-                                        PracticeCardDetailView(practice: practice)
-                                    }
+                                    viewModel:           viewModel,
+                                    practice:            practice,
+                                    favoritesViewModel:  favoritesViewModel
                                 )
                             }
                         }
                         .frame(maxWidth: .infinity)
+                        .padding(.horizontal, SizeMetrics.largeSpacing)
                     }
                     .padding(.vertical, 32)
                     .background(
@@ -50,14 +55,22 @@ struct PracticesView: View {
             .scrollIndicators(ScrollIndicatorVisibility.hidden)
             .edgesIgnoringSafeArea(.bottom)
             
-            // MARK: Navigation to ProfileView
+            // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {
                 ProfileView()
+            }
+            
+            // MARK: - Navigation to FavoritesView
+            .navigationDestination(isPresented: $showFavoritesView) {
+                FavoritesView(favoritesViewModel: favoritesViewModel)
             }
         }
     }
 }
 
 #Preview {
-    PracticesView(viewModel: PracticesViewModel.mock)
+    let vm = PracticesViewModel.mock
+    return NavigationStack {
+        PracticesView(viewModel: vm)
+    }
 }

@@ -175,5 +175,6 @@ struct MeditationCardDetailView: View {
     viewModel.selectedMeditation = mockMeditation
     
     return MeditationCardDetailView(viewModel: viewModel, favoritesViewModel: favoritesVM)
+        
         .environmentObject(AudioManager())
 }
