@@ -82,7 +82,9 @@ struct MeditationsView: View {
     let favoritesViewModel = FavoritesViewModel()
     
     return NavigationStack {
-        MeditationsView(viewModel: viewModel, favoritesViewModel: favoritesViewModel)
+        MeditationsView(
+            viewModel: viewModel,
+            favoritesViewModel: favoritesViewModel)
     }
     .environmentObject(AudioManager())
 }

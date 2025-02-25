@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct PracticesCardView: View {
-    let viewModel: PracticesViewModel
-    let practice: Practice
+    let viewModel:          PracticesViewModel
+    let practice:           Practice
     
-    @ObservedObject var favoritesViewModel: FavoritesViewModel
-
-    @State private var isLiked: Bool = false
+    @ObservedObject 
+    var favoritesViewModel: FavoritesViewModel
     
     var body: some View {
         NavigationLink(
-            destination:  PracticeCardDetailView(viewModel: viewModel)
+            destination:  PracticeCardDetailView(
+                viewModel: viewModel,
+                favoritesViewModel: favoritesViewModel)
+                .onAppear {
+                    /// Update selectedPractice when the card is tapped
+                    viewModel.selectedPractice = practice
+                }
             ){
             VStack(alignment: .leading) {
                 ZStack(alignment: .topTrailing) {
@@ -36,16 +41,16 @@ struct PracticesCardView: View {
                         .clipped()
                     
                     Button(action: {
-                        isLiked.toggle()
+                        favoritesViewModel.toggleLike(for: practice)
                     }) {
                         Circle()
                             .fill(Color.white.opacity(SizeMetrics.opacityThin))
                             .frame(width: SizeMetrics.xmediumIcon,
                                    height: SizeMetrics.xmediumIcon)
                             .overlay(
-                                Image(systemName: isLiked ? "heart.fill" : "heart")
+                                Image(systemName: favoritesViewModel.isLiked(practice) ? "heart.fill" : "heart")
                                     .font(.system(size: SizeMetrics.extraSmallIcon))
-                                    .foregroundColor(isLiked ? .primaryPurple : .white)
+                                    .foregroundColor(favoritesViewModel.isLiked(practice) ? .primaryPurple : .white)
                             )
                     }
                     .padding()

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct MeditationCardDetailView: View {
-    
     @Environment(\.dismiss) var dismiss
     @State private var isLiked: Bool = false
     @State private var showPlayerView: Bool = false
     
-    @ObservedObject var viewModel: MeditationViewModel
-    @ObservedObject var favoritesViewModel: FavoritesViewModel
+    @ObservedObject 
+    var viewModel:          MeditationViewModel
+    
+    @ObservedObject
+    var favoritesViewModel: FavoritesViewModel
     
     var body: some View {
         let meditate = viewModel.selectedMeditation

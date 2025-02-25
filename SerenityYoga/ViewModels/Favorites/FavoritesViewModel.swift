@@ -12,6 +12,7 @@ final class FavoritesViewModel: ObservableObject {
     @Published var likedMeditations: [Meditation] = [] {
         didSet { saveFavorites() }
     }
+    
     @Published var likedMeditateTracks: [Meditate] = [] {
         didSet { saveFavorites() }
     }
@@ -20,9 +21,14 @@ final class FavoritesViewModel: ObservableObject {
         didSet { saveFavorites() }
     }
     
+    @Published var likedPracticesVideos: [Session] = [] {
+        didSet { saveFavorites() }
+    }
+    
     private let meditationKey   = "likedMeditations"
     private let meditateKey     = "likedMeditateTracks"
     private let practiceKey     = "likedPractices"
+    private let sessionKey     = "likedSessions"
     
     init() {
         loadFavorites()
@@ -45,10 +51,22 @@ final class FavoritesViewModel: ObservableObject {
     }
     
     func toggleLike(for practice: Practice) {
+        print("Toggle like for: \(practice.title)")
         if let index = likedPractices.firstIndex(where: { $0.id == practice.id }) {
+            print("Removing from favorites: \(practice.title)")
             likedPractices.remove(at: index)
         } else {
+            print("Adding to favorites: \(practice.title)")
             likedPractices.append(practice)
+        }
+        saveFavorites()
+    }
+
+    func toggleLike(for session: Session) {
+        if let index = likedPracticesVideos.firstIndex(where: { $0.id == session.id }) {
+            likedPracticesVideos.remove(at: index)
+        } else {
+            likedPracticesVideos.append(session)
         }
     }
     
@@ -64,14 +82,20 @@ final class FavoritesViewModel: ObservableObject {
         return likedPractices.contains(where: { $0.id == practice.id })
     }
     
+    func isLiked(_ session: Session) -> Bool {
+        return likedPracticesVideos.contains(where: { $0.id == session.id })
+    }
+    
     private func saveFavorites() {
         do {
             let meditationData = try JSONEncoder().encode(likedMeditations)
             let meditateData = try JSONEncoder().encode(likedMeditateTracks)
             let practiceData = try JSONEncoder().encode(likedPractices)
+            let sessionData = try JSONEncoder().encode(likedPracticesVideos)
             UserDefaults.standard.set(meditationData, forKey: meditationKey)
             UserDefaults.standard.set(meditateData, forKey: meditateKey)
             UserDefaults.standard.set(practiceData, forKey: practiceKey)
+            UserDefaults.standard.set(sessionData, forKey: sessionKey)
         } catch {
             print("Error saving favorites:", error)
         }
@@ -88,10 +112,23 @@ final class FavoritesViewModel: ObservableObject {
             likedMeditateTracks = savedMeditateTracks
         }
         
-        if let practiceData = UserDefaults.standard.data(forKey: practiceKey),
-           let savedPractices = try? JSONDecoder().decode([Practice].self, from: practiceData) {
-            likedPractices = savedPractices
+        if let practiceData = UserDefaults.standard.data(forKey: practiceKey) {
+                do {
+                    let savedPractices = try JSONDecoder().decode([Practice].self, from: practiceData)
+                    likedPractices = savedPractices
+                    print("✅ Loaded \(likedPractices.count) favorite practices from UserDefaults")
+                } catch {
+                    print("❌ Error decoding practices: \(error)")
+                }
+            } else {
+                print("⚠️ No saved favorite practices found in UserDefaults")
+            }
+        
+        if let sessionData = UserDefaults.standard.data(forKey: sessionKey),
+           let savedSessions = try? JSONDecoder().decode([Session].self, from: sessionData) {
+            likedPracticesVideos = savedSessions
         }
+        print("Favorites loaded: \(likedPractices.count) practices")
     }
 }
 

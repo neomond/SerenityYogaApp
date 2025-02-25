@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct MeditationCardView: View {
-    let viewModel: MeditationViewModel
-    let meditation: Meditation
+    let viewModel:          MeditationViewModel
+    let meditation:         Meditation
     
-    @ObservedObject var favoritesViewModel: FavoritesViewModel
+    @ObservedObject 
+    var favoritesViewModel: FavoritesViewModel
         
     var body: some View {
         NavigationLink(
-            destination: MeditationCardDetailView(viewModel: viewModel, favoritesViewModel: favoritesViewModel)
+            destination: MeditationCardDetailView(
+                viewModel: viewModel,
+                favoritesViewModel: favoritesViewModel)
                 .onAppear {
                     /// Update selectedMeditation when the card is tapped
                     viewModel.selectedMeditation = meditation

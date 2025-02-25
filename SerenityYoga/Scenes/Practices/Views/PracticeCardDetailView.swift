@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct PracticeCardDetailView: View {
-    
     @Environment(\.dismiss) var dismiss
     @State private var isLiked: Bool = false
-    @State private var showYTPlayerView: Bool = false
+    @State private var showPlayerView: Bool = false
     
-    @ObservedObject var viewModel: PracticesViewModel
+    @ObservedObject
+    var viewModel:          PracticesViewModel
     
+    @ObservedObject
+    var favoritesViewModel: FavoritesViewModel
     
+
     var body: some View {
         let practice = viewModel.selectedPractice
         
@@ -53,20 +56,25 @@ struct PracticeCardDetailView: View {
                                             .foregroundColor(.white)
                                     )
                             }
+                            
                             Spacer()
                             
                             Button(action: {
                                 isLiked.toggle()
+                                favoritesViewModel.toggleLike(for: practice)
                             }) {
                                 Circle()
                                     .fill(Color.white.opacity(SizeMetrics.opacityThin))
                                     .frame(width: SizeMetrics.xmediumIcon,
                                            height: SizeMetrics.xmediumIcon)
                                     .overlay(
-                                        Image(systemName: isLiked ? "heart.fill" : "heart")
+                                        Image(systemName: favoritesViewModel.isLiked(practice) ? "heart.fill" : "heart")
                                             .font(.system(size: SizeMetrics.extraSmallIcon))
-                                            .foregroundColor(isLiked ? .primaryPurple : .white)
+                                            .foregroundColor(favoritesViewModel.isLiked(practice) ? .primaryPurple : .white)
                                     )
+                            }
+                            .onAppear {
+                                isLiked = favoritesViewModel.isLiked(practice)
                             }
                         }
                         .padding(.vertical, 40)
@@ -99,13 +107,17 @@ struct PracticeCardDetailView: View {
                     
                     // MARK: - Sessions Section
                     VStack(spacing: SizeMetrics.mediumPadding) {
-                        ForEach(practice.sessions) { session in
-                            SmallCardView(item: ContentCardModel(
-                                title: session.title,
-                                duration: .string(session.duration),
-                                imageName: session.imageName
-                            ),
-                                onListenTap: { showYTPlayerView = true }
+                        ForEach(practice.sessions) { sessionItem in
+                            SmallCardView(
+                                item: ContentCardModel(
+                                    title: sessionItem.title,
+                                    duration: .string(sessionItem.duration),
+                                    imageName: sessionItem.imageName
+                                ),
+                                onListenTap: {
+                                    viewModel.selectedPracticeItem = sessionItem
+                                    showPlayerView = true
+                                }
                             )
                             .padding(.leading, SizeMetrics.smallPadding)
                             
@@ -123,12 +135,17 @@ struct PracticeCardDetailView: View {
                 }
             }
         }
-        
-        .fullScreenCover(isPresented: $showYTPlayerView) {
-            if let selectedSession = practice.sessions.first {
-                PracticesPlayerView(videoURL: selectedSession.videoURL)
+        .fullScreenCover(isPresented: $showPlayerView) {
+            if let selectedSession = viewModel.selectedPracticeItem {
+                PracticesPlayerView(
+                    favoritesViewModel: favoritesViewModel,
+                    session: selectedSession
+                )
+            } else {
+                Text("Error: No session selected").foregroundColor(.red)
             }
         }
+
         
         .scrollBounce(enabled: false)
         .scrollIndicators(ScrollIndicatorVisibility.hidden)
@@ -162,5 +179,7 @@ struct PracticeCardDetailView: View {
     )
     
     let viewModel = PracticesViewModel(practices: [mockPractices])
-    return PracticeCardDetailView(viewModel: viewModel)
+    let favoritesVM = FavoritesViewModel()
+    viewModel.selectedPractice = mockPractices
+    return PracticeCardDetailView(viewModel: viewModel, favoritesViewModel: favoritesVM)
 }

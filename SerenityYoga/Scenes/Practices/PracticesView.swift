@@ -11,8 +11,12 @@ struct PracticesView: View {
     @State private var showProfileView: Bool = false
     @State private var showFavoritesView: Bool = false
     
-    @StateObject var viewModel          = PracticesViewModel()
-    @StateObject var favoritesViewModel = FavoritesViewModel()
+    @StateObject 
+    var viewModel          = PracticesViewModel()
+    
+    @StateObject 
+    var favoritesViewModel = FavoritesViewModel()
+    
     
     var body: some View {
         NavigationStack {
@@ -49,11 +53,16 @@ struct PracticesView: View {
                             .edgesIgnoringSafeArea(.bottom)
                     )
                 }
+                .frame(maxWidth: .infinity)
             }
             
             .scrollBounce(enabled: false)
             .scrollIndicators(ScrollIndicatorVisibility.hidden)
             .edgesIgnoringSafeArea(.bottom)
+            
+            .onAppear {
+                favoritesViewModel.loadFavorites()
+            }
             
             // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {
@@ -70,7 +79,11 @@ struct PracticesView: View {
 
 #Preview {
     let vm = PracticesViewModel.mock
+    let favoritesVm = FavoritesViewModel()
+    
     return NavigationStack {
-        PracticesView(viewModel: vm)
+        PracticesView(
+            viewModel: vm,
+            favoritesViewModel: favoritesVm)
     }
 }

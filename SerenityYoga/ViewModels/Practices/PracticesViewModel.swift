@@ -10,6 +10,7 @@ import Foundation
 final class PracticesViewModel: ObservableObject {
     @Published var practices: [Practice]
     @Published var selectedPractice: Practice
+    @Published var selectedPracticeItem: Session?
     
     init(practices: [Practice] = Practice.mockData) {
         self.practices = practices

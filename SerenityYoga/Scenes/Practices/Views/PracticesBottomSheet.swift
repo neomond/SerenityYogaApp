@@ -13,6 +13,8 @@ struct PracticesBottomSheet: View {
     let maxHeight: CGFloat = UIScreen.main.bounds.height * 0.2
     let collapsedHeight: CGFloat = UIScreen.main.bounds.height * 0.6
     
+    let session: Session
+    
     @GestureState private var dragOffset: CGFloat = 0
     
     var body: some View {
@@ -26,7 +28,7 @@ struct PracticesBottomSheet: View {
                 VStack(spacing: 16) {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("Morning Yoga Flow")
+                            Text(session.title)
                                 .font(.headline)
                                 .foregroundColor(.black)
                             Text("with Elly")
@@ -34,7 +36,7 @@ struct PracticesBottomSheet: View {
                                 .foregroundColor(.gray)
                         }
                         Spacer()
-                        Image("yogaasana1")
+                        Image(session.imageName)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 50, height: 50)
@@ -51,7 +53,7 @@ struct PracticesBottomSheet: View {
                     VStack {
                         HStack {
                             Label {
-                                Text("10 min")
+                                Text(session.duration)
                                     .foregroundColor(.black)
                             } icon: {
                                 Image(systemName: "clock")
@@ -85,11 +87,11 @@ struct PracticesBottomSheet: View {
                             WorkoutItemCell(
                                 emoji: "🧘‍♀️",
                                 title: "Workout",
-                                duration: "10 min")
+                                duration: session.duration)
                             WorkoutItemCell(
                                 emoji: "😌",
-                                title: "Shavasana Meditation",
-                                duration: "5 min")
+                                title: session.title,
+                                duration: session.duration)
                         }
                     }
                     .padding()

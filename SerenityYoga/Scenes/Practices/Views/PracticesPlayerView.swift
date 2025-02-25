@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct PracticesPlayerView: View {
-    let videoURL: String
     @Environment(\.dismiss) var dismiss
     @State private var offsetY: CGFloat = UIScreen.main.bounds.height * 0.6
     @GestureState private var dragOffset: CGFloat = 0
     @State private var isLiked: Bool = false
-    
+    @ObservedObject var favoritesViewModel: FavoritesViewModel
+
+    let session: Session
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -44,15 +45,16 @@ struct PracticesPlayerView: View {
                     
                     Button(action: {
                         isLiked.toggle()
+                        favoritesViewModel.toggleLike(for: session)
                     }) {
                         Circle()
                             .fill(Color.white.opacity(SizeMetrics.opacityThinSecond))
                             .frame(width: SizeMetrics.xmediumIcon,
                                    height: SizeMetrics.xmediumIcon)
                             .overlay(
-                                Image(systemName: isLiked ? "heart.fill" : "heart")
+                                Image(systemName: favoritesViewModel.isLiked(session) ? "heart.fill" : "heart")
                                     .font(.system(size: SizeMetrics.extraSmallIcon))
-                                    .foregroundColor(isLiked ? .primaryPurple : .white)
+                                    .foregroundColor(favoritesViewModel.isLiked(session) ? .primaryPurple : .white)
                             )
                     }
                 }
@@ -61,21 +63,43 @@ struct PracticesPlayerView: View {
                 Spacer().frame(height: 150)
                 
                 // MARK: YouTube Player
-                YouTubePlayerView(videoURL: videoURL)
-                    .aspectRatio(16/9, contentMode: .fit)
-                    .shadow(radius: 5)
+                if let embedURL = YouTubeManager.shared.getEmbedURL(from: session.videoURL) {
+                    YouTubePlayerView(videoURL: embedURL)
+                        .aspectRatio(16/9, contentMode: .fit)
+                        .shadow(radius: 5)
+                } else {
+                    Text("⚠️ Invalid YouTube URL")
+                        .foregroundColor(.red)
+                }
                 
                 Spacer()
             }
             
             // MARK: Draggable Bottom Sheet
-            PracticesBottomSheet(offsetY: $offsetY)
+            PracticesBottomSheet(
+                offsetY: $offsetY,
+                session: session
+            )
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .ignoresSafeArea(edges: .bottom)
+        }
+        .onAppear {
+            isLiked = favoritesViewModel.isLiked(session)
         }
     }
 }
 
 #Preview {
-    PracticesPlayerView(videoURL: "https://www.youtube.com/watch?v=M7lc1UVf-VE")
+    let favoritesVM = FavoritesViewModel()
+    
+    return PracticesPlayerView(
+        favoritesViewModel: favoritesVM,
+        session: Session(
+            title: "Sun Salutation",
+            duration: "10 min",
+            imageName: "yogaasana1",
+            description: "Start your day with energy.",
+            videoURL: "https://www.youtube.com/watch?v=abcd1234"
+        )
+    )
 }

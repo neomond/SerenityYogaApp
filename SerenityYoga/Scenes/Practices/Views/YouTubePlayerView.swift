@@ -30,7 +30,6 @@ struct YouTubePlayerView: UIViewRepresentable {
         return webView
     }
 
-
     func makeCoordinator() -> Coordinator {
         Coordinator()
     }
@@ -38,14 +37,10 @@ struct YouTubePlayerView: UIViewRepresentable {
     func updateUIView(_ uiView: WKWebView, context: Context) {
         print("🕵️ Received YouTube URL: \(videoURL)")
         
-        guard let videoID = extractYouTubeID(from: videoURL) else {
-            print("❌ Failed to extract YouTube ID from: \(videoURL)")
+        guard let embedURL = YouTubeManager.shared.getEmbedURL(from: videoURL) else {
+            print("❌ Failed to get valid embed URL from: \(videoURL)")
             return
         }
-
-        let embedURL = "https://www.youtube.com/embed/\(videoID)?playsinline=1&autoplay=1"
-        
-        print("🎬 Final YouTube URL: \(embedURL)") // ✅ Debug URL
 
         guard let url = URL(string: embedURL) else {
             print("❌ Invalid URL format: \(embedURL)")
@@ -55,27 +50,6 @@ struct YouTubePlayerView: UIViewRepresentable {
         let request = URLRequest(url: url)
         uiView.load(request)
     }
-
-
-
-    private func extractYouTubeID(from url: String) -> String? {
-        print("🕵️ Extracting ID from URL: \(url)")
-        
-        let patterns = [
-            "youtube\\.com/watch\\?v=([\\w-]+)",  // Standard YouTube URL
-            "youtu\\.be/([\\w-]+)"               // Shortened YouTube URL
-        ]
-        
-        for pattern in patterns {
-            if let range = url.range(of: pattern, options: .regularExpression) {
-                return String(url[range].split(separator: "=").last ?? "")
-            }
-        }
-        return nil
-    }
-
-
-
 
     class Coordinator: NSObject, WKNavigationDelegate {
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
@@ -94,7 +68,6 @@ struct YouTubePlayerView: UIViewRepresentable {
             }
         }
     }
-
 }
 
 // MARK: - Preview
