@@ -35,7 +35,6 @@ struct CategoryDetailView: View {
                             }
                             ForEach(items.dropFirst(), id: \.id) { item in
                                 SmallCardView(item: item, onListenTap: {})
-                                // MARK: - Light Gray Divider
                                 Divider()
                                     .background(Color.gray.opacity(SizeMetrics.opacityThin))
                             }
@@ -67,7 +66,6 @@ struct CategoryDetailView: View {
             ContentCardModel(title: "Morning Meditation", duration: .string("10:00"), imageName: "yogaasana1"),
             ContentCardModel(title: "Unwind after work", duration: .string("10:00"), imageName: "yogaasana2"),
             ContentCardModel(title: "Morning Yoga", duration: .string("10:00"), imageName: "yogaasana3"),
-            ContentCardModel(title: "Morning Yoga", duration: .string("10:00"), imageName: "yogaasana3")
         ]
     )
 }

@@ -40,6 +40,8 @@
 		7A7F76FC2D5CC9DD003414F5 /* IntensityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76FB2D5CC9DD003414F5 /* IntensityLevelView.swift */; };
 		7A7F884D2D5FCC19001D4D42 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F884C2D5FCC19001D4D42 /* FavoritesViewModel.swift */; };
 		7A83683F2D6DC63100E93113 /* YouTubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83683E2D6DC63100E93113 /* YouTubeManager.swift */; };
+		7A8368422D6EF09100E93113 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368412D6EF09100E93113 /* DashboardViewModel.swift */; };
+		7A8368442D6EF58100E93113 /* HorizontalSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
 		7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A922E9E2CAFB950009F3E9C /* Assets.xcassets */; };
@@ -140,6 +142,8 @@
 		7A7F76FB2D5CC9DD003414F5 /* IntensityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityLevelView.swift; sourceTree = "<group>"; };
 		7A7F884C2D5FCC19001D4D42 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		7A83683E2D6DC63100E93113 /* YouTubeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeManager.swift; sourceTree = "<group>"; };
+		7A8368412D6EF09100E93113 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSectionViewModel.swift; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
 		7A922E9C2CAFB94F009F3E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -384,6 +388,15 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
+		7A8368402D6EF07B00E93113 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7A8368412D6EF09100E93113 /* DashboardViewModel.swift */,
+				7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		7A922E8E2CAFB94F009F3E9C = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +467,7 @@
 		7A922EC62CB3E207009F3E9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7A8368402D6EF07B00E93113 /* Dashboard */,
 				7A7F884B2D5FCC0B001D4D42 /* Favorites */,
 				7A3F0F3D2D48BEB5000C0547 /* Practices */,
 				7A3F0F362D480DC0000C0547 /* Meditation */,
@@ -831,6 +845,7 @@
 				7A10C10E2D12D9F9007ADA6F /* AgePickerView.swift in Sources */,
 				7A922EA92CAFBA6C009F3E9C /* LoginView.swift in Sources */,
 				7ABC0C5D2D51368100A19413 /* AudioManager.swift in Sources */,
+				7A8368442D6EF58100E93113 /* HorizontalSectionViewModel.swift in Sources */,
 				7AEE8BF72D155BCE00E89626 /* HorizontalContentSection.swift in Sources */,
 				7AEB128B2D319FF400C64AD5 /* FAQs.swift in Sources */,
 				7AEB12952D34FE7900C64AD5 /* NotificationsViewModel.swift in Sources */,
@@ -848,6 +863,7 @@
 				7AEB12732D2D4CCE00C64AD5 /* WeeklyGoalSheet.swift in Sources */,
 				7AEB12812D2FD78C00C64AD5 /* SupportView.swift in Sources */,
 				7AEB12852D2FE57A00C64AD5 /* ChangeActivityLevelView.swift in Sources */,
+				7A8368422D6EF09100E93113 /* DashboardViewModel.swift in Sources */,
 				7ABC0C5A2D4BF70600A19413 /* FavoriteCategory.swift in Sources */,
 				7A0BB56E2CC7A98A00681A88 /* CheckEmailView.swift in Sources */,
 				7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */,

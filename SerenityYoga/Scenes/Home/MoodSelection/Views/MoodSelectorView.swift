@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MoodSelectorView: View {
-    @State private var selectedMood: String? = nil
     let onMoodSelected: (String) -> Void
     
     let moods = [
@@ -23,7 +22,8 @@ struct MoodSelectorView: View {
                 HStack(spacing: SizeMetrics.smallPadding) {
                     ForEach(moods, id: \.1) { mood in
                         Button(action: {
-                            onMoodSelected(mood.1) // Trigger the callback
+                            print("Mood Selected: \(mood.1)")
+                            onMoodSelected(mood.1)
                         }) {
                             HStack(spacing: SizeMetrics.xsSmallPadding) {
                                 Text(mood.0)

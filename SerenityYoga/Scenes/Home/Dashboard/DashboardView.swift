@@ -12,6 +12,8 @@ struct DashboardView: View {
     @State private var showProfileView: Bool = false
     @State private var showFavoritesView: Bool = false
     
+    @StateObject var viewModel = DashboardViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
@@ -24,7 +26,7 @@ struct DashboardView: View {
                         // MARK: - Top Icons View
                         IconsView( onProfileTapped:
                                     { showProfileView = true },
-                                   onFavoritesTapped: 
+                                   onFavoritesTapped:
                                     { showFavoritesView = true },
                                    label: nil)
                         .padding(.bottom, SizeMetrics.xlargePadding)
@@ -34,34 +36,23 @@ struct DashboardView: View {
                             .padding(.bottom, SizeMetrics.largePadding)
                         
                         // MARK: - Mood Selector View
-                        MoodSelectorView { mood in
-                            selectedMood = MoodItem(mood: mood)
+                        MoodSelectorView { moodString in
+                            print("Selected Mood in Dashboard: \(moodString)")
+                            viewModel.selectMood(moodString)
                         }
                         .padding(.bottom, SizeMetrics.xlargePadding)
                         
                         // MARK: - Main Content View
                         VStack(spacing: SizeMetrics.xlargeSpacing) {
-                            HorizontalContentSection(
-                                title: "Try this",
-                                items: [
-                                    ContentCardModel(title: "Yoga Basic", duration: .string("25:00"), imageName: "yogaImage"),
-                                    ContentCardModel(title: "Unwind", duration: .string("15:00"), imageName: "yogaasana1")
-                                ],
-                                onViewAllTapped: {
-                                    print("Try this View All tapped")
-                                }
-                            )
-                            
-                            HorizontalContentSection(
-                                title: "Meditate",
-                                items: [
-                                    ContentCardModel(title: "Morning Meditation", duration: .string("10:00"), imageName: "yogaasana2"),
-                                    ContentCardModel(title: "Guided Relaxation", duration: .string("19:00"), imageName: "yogaasana3")
-                                ],
-                                onViewAllTapped: {
-                                    print("Meditate View All tapped")
-                                }
-                            )
+                            ForEach(viewModel.fetchSections()) { section in
+                                HorizontalContentSection(
+                                    title: section.title,
+                                    items: section.items,
+                                    onViewAllTapped: {
+                                        viewModel.selectCategory(section)
+                                    }
+                                )
+                            }
                         }
                         .padding(.top, SizeMetrics.xlargePadding)
                         .padding(.bottom, SizeMetrics.mediumPadding)
@@ -73,8 +64,8 @@ struct DashboardView: View {
                         )
                     }
                     .frame(maxWidth: .infinity)
+                    .scrollBounce(enabled: false)
                 }
-                .scrollBounce(enabled: false)
                 
                 // MARK: - Space for Collapsible Tab Bar
                 HStack {}
@@ -83,11 +74,7 @@ struct DashboardView: View {
                     .background(Color.white)
             }
             .edgesIgnoringSafeArea(.bottom)
-            
-            .sheet(item: $selectedMood) { moodItem in
-                MoodDetailView(mood: moodItem.mood)
-            }
-            
+           
             // MARK: - Navigation to ProfileView
             .navigationDestination(isPresented: $showProfileView) {
                 ProfileView()
@@ -95,13 +82,25 @@ struct DashboardView: View {
             
             // MARK: - Navigation to Favorites
             .navigationDestination(isPresented: $showFavoritesView) {
-//                FavoritesView()
+                FavoritesView(favoritesViewModel: viewModel.favoritesViewModel)
+            }
+            
+            // MARK: - Navigation to Categories
+            .navigationDestination(isPresented: $viewModel.showCategoryDetail) {
+                if let selectedCategory = viewModel.selectedCategory {
+                    CategoryDetailView(title: selectedCategory.title, items: selectedCategory.items)
+                }
+            }
+            
+            // MARK: - Navigation to MoodDetailView
+            .navigationDestination(isPresented: $viewModel.showMoodDetail) {
+                if let selectedMood = viewModel.selectedMood {
+                    MoodDetailView(mood: selectedMood.mood)
+                }
             }
         }
     }
 }
-
-
 
 #Preview {
     DashboardView()

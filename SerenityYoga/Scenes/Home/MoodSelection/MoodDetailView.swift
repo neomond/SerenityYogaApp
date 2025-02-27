@@ -7,14 +7,11 @@
 
 import SwiftUI
 
-struct MoodItem: Identifiable {
-    let id = UUID()
-    let mood: String
-}
-
 struct MoodDetailView: View {
     let mood: String
     @Environment(\.dismiss) var dismiss
+    
+    @AppStorage("selectedMood") private var storedMood: String = ""
     
     var body: some View {
         ZStack {
@@ -85,6 +82,7 @@ struct MoodDetailView: View {
                     )
                 }
             }
+            .navigationBarBackButtonHidden(true)
             .edgesIgnoringSafeArea(.bottom)
             .scrollBounce(enabled: false)
             
