@@ -42,6 +42,7 @@
 		7A83683F2D6DC63100E93113 /* YouTubeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A83683E2D6DC63100E93113 /* YouTubeManager.swift */; };
 		7A8368422D6EF09100E93113 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368412D6EF09100E93113 /* DashboardViewModel.swift */; };
 		7A8368442D6EF58100E93113 /* HorizontalSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */; };
+		7A8368462D70E79C00E93113 /* MoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368452D70E79C00E93113 /* MoodViewModel.swift */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
 		7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A922E9E2CAFB950009F3E9C /* Assets.xcassets */; };
@@ -144,6 +145,7 @@
 		7A83683E2D6DC63100E93113 /* YouTubeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeManager.swift; sourceTree = "<group>"; };
 		7A8368412D6EF09100E93113 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSectionViewModel.swift; sourceTree = "<group>"; };
+		7A8368452D70E79C00E93113 /* MoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewModel.swift; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
 		7A922E9C2CAFB94F009F3E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			children = (
 				7A8368412D6EF09100E93113 /* DashboardViewModel.swift */,
 				7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */,
+				7A8368452D70E79C00E93113 /* MoodViewModel.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -894,6 +897,7 @@
 				7A7F76F62D5CC54F003414F5 /* WorkoutItemCell.swift in Sources */,
 				7A83683F2D6DC63100E93113 /* YouTubeManager.swift in Sources */,
 				7AEB12612D1B255C00C64AD5 /* LargeCardView.swift in Sources */,
+				7A8368462D70E79C00E93113 /* MoodViewModel.swift in Sources */,
 				7AEB126F2D2D16E900C64AD5 /* CircularProgressView.swift in Sources */,
 				7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */,
 				7AEB128F2D34FB6800C64AD5 /* SettingsViewModel.swift in Sources */,

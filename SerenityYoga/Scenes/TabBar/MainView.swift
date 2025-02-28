@@ -47,6 +47,7 @@ struct MainView: View {
                     tabs: tabs
                 )
             }
+            .scrollBounce(enabled: false)
             .frame(maxWidth: .infinity)
             .edgesIgnoringSafeArea(.bottom)
         }

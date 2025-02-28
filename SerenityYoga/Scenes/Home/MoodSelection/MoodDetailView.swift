@@ -11,15 +11,15 @@ struct MoodDetailView: View {
     let mood: String
     @Environment(\.dismiss) var dismiss
     
+    @StateObject private var moodViewModel = MoodViewModel()
     @AppStorage("selectedMood") private var storedMood: String = ""
     
     var body: some View {
-        ZStack {
+        NavigationStack { 
+            ZStack(alignment: .top) {
             // MARK: - Gradient Background
             GradientBg(colors: [.mainPink, .primaryPurple])
             
-            ScrollView {
-                
                 // MARK: - Close button
                 HStack {
                     Spacer()
@@ -40,12 +40,11 @@ struct MoodDetailView: View {
                     }
                 }
                 .padding(.horizontal, SizeMetrics.largePadding)
-                .padding(.top, SizeMetrics.largePadding)
                 
                 VStack(spacing: 0) {
                     // MARK: - Header Section
                     VStack(alignment: .leading) {
-                        Text(mood)
+                        Text("\(mood) \(moodViewModel.getMoodIcon(for: mood))")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -56,36 +55,38 @@ struct MoodDetailView: View {
                     }
                     .padding(.horizontal, SizeMetrics.mediumPadding)
                     .padding(.bottom, SizeMetrics.xlargeSpacing)
+                    .padding(.top, SizeMetrics.extraLargeSpacing)
                     
-                    // MARK: - Sessions Section
-                    VStack(spacing: SizeMetrics.mediumPadding) {
-                        ForEach(1...15, id: \.self) { index in
-                            SmallCardView(item: ContentCardModel(
-                                title: "Session \(index)",
-                                duration: .string("\(10 + index * 5) min"),
-                                imageName: "yogaasana1"
-                            ),
-                                          onListenTap: {})
-                            .padding(.leading, SizeMetrics.smallPadding)
-                            
-                            // MARK: - Light Gray Divider
-                            Divider()
-                                .background(Color.gray.opacity(SizeMetrics.opacityThin))
+                    ScrollView {
+                        // MARK: - Sessions Section
+                        LazyVStack(spacing: SizeMetrics.mediumPadding) {
+                            ForEach(moodViewModel.moodSessions, id: \.title) { session in
+                                SmallCardView(item: session, onListenTap: {})
+                                    .padding(.leading, SizeMetrics.smallPadding)
+                                
+                                Divider()
+                                .background(Color.gray.opacity(SizeMetrics.opacityThin))                        }
+                            Spacer()
                         }
-                        Spacer()
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, SizeMetrics.mediumSpacing)
+                        .padding(.top, SizeMetrics.xlargePadding)
                     }
-                    .padding(.horizontal, SizeMetrics.mediumSpacing)
-                    .padding(.top, SizeMetrics.xlargePadding)
                     .background(
                         Color.white
                             .cornerRadius(40, corners: [.topLeft, .topRight])
+                            .edgesIgnoringSafeArea(.bottom)
                     )
                 }
-            }
-            .navigationBarBackButtonHidden(true)
+            
             .edgesIgnoringSafeArea(.bottom)
             .scrollBounce(enabled: false)
-            
+            .onAppear {
+                moodViewModel.fetchSessions(for: mood)
+            }
+            .navigationBarBackButtonHidden(true)
+        }
+            .frame(maxWidth: .infinity)
         }
     }
 }
