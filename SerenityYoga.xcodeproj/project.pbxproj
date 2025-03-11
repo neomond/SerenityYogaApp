@@ -33,7 +33,6 @@
 		7A3F0F452D48D86E000C0547 /* PracticeCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F442D48D86E000C0547 /* PracticeCardDetailView.swift */; };
 		7A3F0F4B2D4A9978000C0547 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F4A2D4A9978000C0547 /* Practice.swift */; };
 		7A7F76F02D5BC622003414F5 /* PracticesPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76EF2D5BC622003414F5 /* PracticesPlayerView.swift */; };
-		7A7F76F32D5BDA62003414F5 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7F76F22D5BDA62003414F5 /* YouTubeiOSPlayerHelper */; };
 		7A7F76F62D5CC54F003414F5 /* WorkoutItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F52D5CC54F003414F5 /* WorkoutItemCell.swift */; };
 		7A7F76F82D5CC5AC003414F5 /* PracticesBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F72D5CC5AC003414F5 /* PracticesBottomSheet.swift */; };
 		7A7F76FA2D5CC5FE003414F5 /* YouTubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F76F92D5CC5FE003414F5 /* YouTubePlayerView.swift */; };
@@ -43,6 +42,13 @@
 		7A8368422D6EF09100E93113 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368412D6EF09100E93113 /* DashboardViewModel.swift */; };
 		7A8368442D6EF58100E93113 /* HorizontalSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */; };
 		7A8368462D70E79C00E93113 /* MoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8368452D70E79C00E93113 /* MoodViewModel.swift */; };
+		7A867FC42D802F3A001A2B1F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7A867FC32D802F3A001A2B1F /* FirebaseAuth */; };
+		7A867FC62D802F3A001A2B1F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7A867FC52D802F3A001A2B1F /* FirebaseFirestore */; };
+		7A867FC82D802F3A001A2B1F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7A867FC72D802F3A001A2B1F /* FirebaseFirestoreSwift */; };
+		7A867FCA2D802F3A001A2B1F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7A867FC92D802F3A001A2B1F /* FirebaseStorage */; };
+		7A867FCC2D8036AD001A2B1F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A867FCB2D8036AD001A2B1F /* AuthManager.swift */; };
+		7A867FCF2D8056EA001A2B1F /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 7A867FCE2D8056EA001A2B1F /* FirebaseAppCheck */; };
+		7A867FD12D805907001A2B1F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7A867FD02D805907001A2B1F /* .gitignore */; };
 		7A922E9B2CAFB94F009F3E9C /* SerenityYogaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */; };
 		7A922E9D2CAFB94F009F3E9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A922E9C2CAFB94F009F3E9C /* ContentView.swift */; };
 		7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A922E9E2CAFB950009F3E9C /* Assets.xcassets */; };
@@ -108,6 +114,7 @@
 		7AEE8BFB2D16E5A200E89626 /* MoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */; };
 		7AEE8BFD2D1960F200E89626 /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BFC2D1960F200E89626 /* CategoryDetailView.swift */; };
 		7AEE8BFF2D19935600E89626 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE8BFE2D19935600E89626 /* MainView.swift */; };
+		7AF2AADC2D802B2B00F8FB72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF2AADB2D802B2B00F8FB72 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +153,8 @@
 		7A8368412D6EF09100E93113 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		7A8368432D6EF58100E93113 /* HorizontalSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSectionViewModel.swift; sourceTree = "<group>"; };
 		7A8368452D70E79C00E93113 /* MoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodViewModel.swift; sourceTree = "<group>"; };
+		7A867FCB2D8036AD001A2B1F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7A867FD02D805907001A2B1F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7A922E972CAFB94F009F3E9C /* SerenityYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SerenityYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A922E9A2CAFB94F009F3E9C /* SerenityYogaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerenityYogaApp.swift; sourceTree = "<group>"; };
 		7A922E9C2CAFB94F009F3E9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -213,6 +222,7 @@
 		7AEE8BFA2D16E5A200E89626 /* MoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailView.swift; sourceTree = "<group>"; };
 		7AEE8BFC2D1960F200E89626 /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 		7AEE8BFE2D19935600E89626 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7AF2AADB2D802B2B00F8FB72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +230,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A7F76F32D5BDA62003414F5 /* YouTubeiOSPlayerHelper in Frameworks */,
+				7A867FC42D802F3A001A2B1F /* FirebaseAuth in Frameworks */,
+				7A867FCA2D802F3A001A2B1F /* FirebaseStorage in Frameworks */,
+				7A867FC62D802F3A001A2B1F /* FirebaseFirestore in Frameworks */,
+				7A867FCF2D8056EA001A2B1F /* FirebaseAppCheck in Frameworks */,
+				7A867FC82D802F3A001A2B1F /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +433,7 @@
 		7A922E992CAFB94F009F3E9C /* SerenityYoga */ = {
 			isa = PBXGroup;
 			children = (
+				7AF2AADB2D802B2B00F8FB72 /* GoogleService-Info.plist */,
 				7ABC0C602D513A1E00A19413 /* Info.plist */,
 				7ABC0C5B2D51366200A19413 /* Managers */,
 				7AE5DB4C2CC63C1E00DCB9A0 /* SupportingViews */,
@@ -430,6 +445,7 @@
 				7A922EC52CB3E202009F3E9C /* Scenes */,
 				7A922EC42CB3E1D9009F3E9C /* Resources */,
 				7A922EA02CAFB950009F3E9C /* Preview Content */,
+				7A867FD02D805907001A2B1F /* .gitignore */,
 			);
 			path = SerenityYoga;
 			sourceTree = "<group>";
@@ -545,6 +561,7 @@
 			children = (
 				7ABC0C5C2D51368100A19413 /* AudioManager.swift */,
 				7A83683E2D6DC63100E93113 /* YouTubeManager.swift */,
+				7A867FCB2D8036AD001A2B1F /* AuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -744,7 +761,11 @@
 			);
 			name = SerenityYoga;
 			packageProductDependencies = (
-				7A7F76F22D5BDA62003414F5 /* YouTubeiOSPlayerHelper */,
+				7A867FC32D802F3A001A2B1F /* FirebaseAuth */,
+				7A867FC52D802F3A001A2B1F /* FirebaseFirestore */,
+				7A867FC72D802F3A001A2B1F /* FirebaseFirestoreSwift */,
+				7A867FC92D802F3A001A2B1F /* FirebaseStorage */,
+				7A867FCE2D8056EA001A2B1F /* FirebaseAppCheck */,
 			);
 			productName = SerenityYoga;
 			productReference = 7A922E972CAFB94F009F3E9C /* SerenityYoga.app */;
@@ -775,7 +796,7 @@
 			);
 			mainGroup = 7A922E8E2CAFB94F009F3E9C;
 			packageReferences = (
-				7A7F76F12D5BDA62003414F5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				7A867FC22D802F3A001A2B1F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 7A922E982CAFB94F009F3E9C /* Products */;
 			projectDirPath = "";
@@ -791,7 +812,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A867FD12D805907001A2B1F /* .gitignore in Resources */,
 				7ABC0C5F2D51392500A19413 /* meditation1.mp3 in Resources */,
+				7AF2AADC2D802B2B00F8FB72 /* GoogleService-Info.plist in Resources */,
 				7A922EA22CAFB950009F3E9C /* Preview Assets.xcassets in Resources */,
 				7A922E9F2CAFB950009F3E9C /* Assets.xcassets in Resources */,
 			);
@@ -889,6 +912,7 @@
 				7AEB12B72D3ADFDF00C64AD5 /* BlogViewModel.swift in Sources */,
 				7A3F0F3F2D48BECD000C0547 /* PracticesViewModel.swift in Sources */,
 				7A10C1162D14122B007ADA6F /* CollapsibleTabBar.swift in Sources */,
+				7A867FCC2D8036AD001A2B1F /* AuthManager.swift in Sources */,
 				7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */,
 				7A3F0F432D48C582000C0547 /* PracticesCardView.swift in Sources */,
 				7AEB12932D34FE0500C64AD5 /* SupportViewModel.swift in Sources */,
@@ -1112,21 +1136,41 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7A7F76F12D5BDA62003414F5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+		7A867FC22D802F3A001A2B1F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
+				minimumVersion = 10.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7A7F76F22D5BDA62003414F5 /* YouTubeiOSPlayerHelper */ = {
+		7A867FC32D802F3A001A2B1F /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7A7F76F12D5BDA62003414F5 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
-			productName = YouTubeiOSPlayerHelper;
+			package = 7A867FC22D802F3A001A2B1F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		7A867FC52D802F3A001A2B1F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A867FC22D802F3A001A2B1F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		7A867FC72D802F3A001A2B1F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A867FC22D802F3A001A2B1F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		7A867FC92D802F3A001A2B1F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A867FC22D802F3A001A2B1F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		7A867FCE2D8056EA001A2B1F /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A867FC22D802F3A001A2B1F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        MainView()
+        SignupView()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(AuthManager())
         .environmentObject(AudioManager())
+    
 }

@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct SignupView: View {
+    @EnvironmentObject var authManager: AuthManager
+    
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var showPassword = false
+    @State private var showAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var isLoading = false
+    
     
     var body: some View {
         NavigationStack {
@@ -61,8 +68,12 @@ struct SignupView: View {
                     VStack(spacing: 16) {
                         
                         AppButton(title: "Sign Up") {
+                            signUp()
                             print("Email: \(email), Password: \(password)")
+                            
                         }
+                        .disabled(!isFormValid)
+                        .opacity(isFormValid ? 1.0 : 0.6)
                         
                         HStack {
                             Rectangle()
@@ -108,8 +119,63 @@ struct SignupView: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .edgesIgnoringSafeArea(.bottom)
             }
+            
+            .overlay(
+                Group {
+                    if isLoading {
+                        Color.black.opacity(0.4)
+                            .edgesIgnoringSafeArea(.all)
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .scaleEffect(1.5)
+                    }
+                }
+            )
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text(alertTitle),
+                    message: Text(alertMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
         .navigationBarBackButtonHidden(true)
+    }
+    
+    
+    
+    private var isFormValid: Bool {
+        !email.isEmpty &&
+        !password.isEmpty &&
+        password == confirmPassword &&
+        password.count >= 6 &&
+        email.contains("@") &&
+        email.contains(".")
+    }
+    
+    
+    private func signUp() {
+        guard isFormValid else {
+            alertTitle = "Invalid Form"
+            alertMessage = "Please check all fields and try again."
+            showAlert = true
+            return
+        }
+        
+        isLoading = true
+        
+        authManager.signUp(email: email, password: password) { success, error in
+            isLoading = false
+            
+            if success {
+                // Navigation will happen automatically if you set up ContentView correctly
+                print("Successfully signed up!")
+            } else if let error = error {
+                alertTitle = "Sign Up Failed"
+                alertMessage = error.localizedDescription
+                showAlert = true
+            }
+        }
     }
 }
 
