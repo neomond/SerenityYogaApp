@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var authManager: AuthManager
     
     @State private var email = ""
     @State private var password = ""
     @State private var showPassword = false
+    @State private var showAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var isLoading = false
     
     
     var body: some View {
@@ -51,45 +56,20 @@ struct LoginView: View {
                     VStack(spacing: 16) {
                         
                         AppButton(title: "Sign In") {
+                            signIn()
                             print("Email: \(email), Password: \(password)")
                         }
+                        .disabled(!isFormValid)
+                        .opacity(isFormValid ? 1.0 : 0.6)
                         
-                        HStack {
-                            Rectangle()
-                                .frame(height: 0.5)
-                                .foregroundColor(.gray)
-                                .padding(.horizontal)
-                            
-                            Text("Or With")
-                                .font(.footnote)
-                                .foregroundStyle(.gray)
-                            
-                            Rectangle()
-                                .frame(height: 0.5)
-                                .foregroundColor(.gray)
-                                .padding(.horizontal)
-                        }
+                        AuthUI.orSeparator()
                         
-                        Button(action: {
-                        }) {
-                            HStack(spacing: 0) {
-                                Image(.googleIcon)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 24, height: 24)
+                        // Social sign-in
+                        AuthUI.socialSignInButton(
+                            icon: Image(.googleIcon),
+                            text: "Login with Google") {
                                 
-                                Text("Login with Google")
-                                    .frame(minWidth: 0, maxWidth: .infinity)
-                                    .foregroundStyle(Color.secondaryGray)
                             }
-                        }
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(Color.white)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 25)
-                                .stroke(Color.gray, lineWidth: 0.5)
-                        )
                     }
                     Spacer()
                 }
@@ -100,11 +80,55 @@ struct LoginView: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .edgesIgnoringSafeArea(.bottom)
             }
+            .overlay(AuthUI.loadingOverlay(isLoading: isLoading))
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text(alertTitle),
+                    message: Text(alertMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
         .navigationBarBackButtonHidden(true)
     }
+    
+    private var isFormValid: Bool {
+        ValidationHelpers.isLoginFormValid(email: email, password: password)
+    }
+    
+    private func signIn() {
+        guard isFormValid else {
+            AlertHelpers.showFormValidationAlert(
+                showAlert: $showAlert,
+                alertTitle: $alertTitle,
+                alertMessage: $alertMessage
+            )
+            return
+        }
+        
+        isLoading = true
+        print("Attempting to sign in with email: \(email)")
+        
+        authManager.signIn(email: email, password: password) { success, error in
+            isLoading = false
+            
+            if success {
+                print("Successfully signed in!")
+            } else if let error = error {
+                print("Error signing in: \(error.localizedDescription)")
+                AlertHelpers.showAuthErrorAlert(
+                    showAlert: $showAlert,
+                    alertTitle: $alertTitle,
+                    alertMessage: $alertMessage,
+                    error: error
+                )
+            }
+        }
+    }
+    
 }
 
 #Preview {
     LoginView()
+        .environmentObject(AuthManager())
 }

@@ -24,6 +24,9 @@
 		7A12F2212CB7A879002498A2 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */; };
 		7A12F2232CB7A967002498A2 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2222CB7A967002498A2 /* AuthTextField.swift */; };
 		7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12F2242CB7AA56002498A2 /* AppButton.swift */; };
+		7A279AF42D805FDA00C8F1CC /* ValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A279AF32D805FDA00C8F1CC /* ValidationHelpers.swift */; };
+		7A279AF62D80632D00C8F1CC /* AuthUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A279AF52D80632D00C8F1CC /* AuthUI.swift */; };
+		7A279AF82D80634A00C8F1CC /* AlertHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A279AF72D80634A00C8F1CC /* AlertHelpers.swift */; };
 		7A3F0F352D4808B8000C0547 /* PlayBackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F342D4808B8000C0547 /* PlayBackControlButton.swift */; };
 		7A3F0F382D480DD5000C0547 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F372D480DD5000C0547 /* MeditationViewModel.swift */; };
 		7A3F0F3A2D4812D6000C0547 /* TrackDurationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3F0F392D4812D6000C0547 /* TrackDurationFormatter.swift */; };
@@ -135,6 +138,9 @@
 		7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		7A12F2222CB7A967002498A2 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		7A12F2242CB7AA56002498A2 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		7A279AF32D805FDA00C8F1CC /* ValidationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelpers.swift; sourceTree = "<group>"; };
+		7A279AF52D80632D00C8F1CC /* AuthUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUI.swift; sourceTree = "<group>"; };
+		7A279AF72D80634A00C8F1CC /* AlertHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelpers.swift; sourceTree = "<group>"; };
 		7A3F0F342D4808B8000C0547 /* PlayBackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackControlButton.swift; sourceTree = "<group>"; };
 		7A3F0F372D480DD5000C0547 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		7A3F0F392D4812D6000C0547 /* TrackDurationFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDurationFormatter.swift; sourceTree = "<group>"; };
@@ -346,6 +352,9 @@
 			children = (
 				7A12F2202CB7A879002498A2 /* AuthHeaderView.swift */,
 				7A12F2222CB7A967002498A2 /* AuthTextField.swift */,
+				7A279AF32D805FDA00C8F1CC /* ValidationHelpers.swift */,
+				7A279AF52D80632D00C8F1CC /* AuthUI.swift */,
+				7A279AF72D80634A00C8F1CC /* AlertHelpers.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -862,6 +871,7 @@
 				7ABC0C562D4BEE1400A19413 /* FavoritesView.swift in Sources */,
 				7AEB12C12D3FC0B900C64AD5 /* MeditationCardDetailView.swift in Sources */,
 				7A10C11A2D143F96007ADA6F /* GreetingView.swift in Sources */,
+				7A279AF62D80632D00C8F1CC /* AuthUI.swift in Sources */,
 				7A12F2252CB7AA56002498A2 /* AppButton.swift in Sources */,
 				7AEB125F2D1B24AC00C64AD5 /* GradientBg.swift in Sources */,
 				7AEB127B2D2FA54200C64AD5 /* PrivacyPolicyView.swift in Sources */,
@@ -912,7 +922,9 @@
 				7AEB12B72D3ADFDF00C64AD5 /* BlogViewModel.swift in Sources */,
 				7A3F0F3F2D48BECD000C0547 /* PracticesViewModel.swift in Sources */,
 				7A10C1162D14122B007ADA6F /* CollapsibleTabBar.swift in Sources */,
+				7A279AF42D805FDA00C8F1CC /* ValidationHelpers.swift in Sources */,
 				7A867FCC2D8036AD001A2B1F /* AuthManager.swift in Sources */,
+				7A279AF82D80634A00C8F1CC /* AlertHelpers.swift in Sources */,
 				7AC57B262D11F95B00C99B0A /* ForgotPasswordFlowView.swift in Sources */,
 				7A3F0F432D48C582000C0547 /* PracticesCardView.swift in Sources */,
 				7AEB12932D34FE0500C64AD5 /* SupportViewModel.swift in Sources */,

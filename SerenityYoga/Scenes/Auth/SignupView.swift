@@ -75,41 +75,14 @@ struct SignupView: View {
                         .disabled(!isFormValid)
                         .opacity(isFormValid ? 1.0 : 0.6)
                         
-                        HStack {
-                            Rectangle()
-                                .frame(height: 0.5)
-                                .foregroundColor(.gray)
-                                .padding(.horizontal)
-                            
-                            Text("Or With")
-                                .font(.footnote)
-                                .foregroundStyle(.gray)
-                            
-                            Rectangle()
-                                .frame(height: 0.5)
-                                .foregroundColor(.gray)
-                                .padding(.horizontal)
-                        }
-                        Button(action: {
-                        }) {
-                            HStack(spacing: 0) {
-                                Image(.googleIcon)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 24, height: 24)
-                                
-                                Text("Login with Google")
-                                    .frame(minWidth: 0, maxWidth: .infinity)
-                                    .foregroundStyle(Color.secondaryGray)
+                        AuthUI.orSeparator()
+                        
+                        // Social sign-in
+                        AuthUI.socialSignInButton(
+                            icon: Image(.googleIcon),
+                            text: "Login with Google") {
+                            //MARK: - Google sign-in would be implemented here
                             }
-                        }
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(Color.white)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 25)
-                                .stroke(Color.gray, lineWidth: 0.5)
-                        )
                     }
                     Spacer()
                 }
@@ -120,17 +93,7 @@ struct SignupView: View {
                 .edgesIgnoringSafeArea(.bottom)
             }
             
-            .overlay(
-                Group {
-                    if isLoading {
-                        Color.black.opacity(0.4)
-                            .edgesIgnoringSafeArea(.all)
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                            .scaleEffect(1.5)
-                    }
-                }
-            )
+            .overlay(AuthUI.loadingOverlay(isLoading: isLoading))
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text(alertTitle),
@@ -142,23 +105,22 @@ struct SignupView: View {
         .navigationBarBackButtonHidden(true)
     }
     
-    
-    
     private var isFormValid: Bool {
-        !email.isEmpty &&
-        !password.isEmpty &&
-        password == confirmPassword &&
-        password.count >= 6 &&
-        email.contains("@") &&
-        email.contains(".")
+        ValidationHelpers.isSignupFormValid(
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword
+        )
     }
-    
     
     private func signUp() {
         guard isFormValid else {
-            alertTitle = "Invalid Form"
-            alertMessage = "Please check all fields and try again."
-            showAlert = true
+            AlertHelpers.showFormValidationAlert(
+                showAlert: $showAlert,
+                alertTitle: $alertTitle,
+                alertMessage: $alertMessage,
+                isSignUp: true
+            )
             return
         }
         
@@ -168,12 +130,15 @@ struct SignupView: View {
             isLoading = false
             
             if success {
-                // Navigation will happen automatically if you set up ContentView correctly
                 print("Successfully signed up!")
             } else if let error = error {
-                alertTitle = "Sign Up Failed"
-                alertMessage = error.localizedDescription
-                showAlert = true
+                AlertHelpers.showAuthErrorAlert(
+                    showAlert: $showAlert,
+                    alertTitle: $alertTitle,
+                    alertMessage: $alertMessage,
+                    error: error,
+                    isSignUp: true
+                )
             }
         }
     }
@@ -182,4 +147,5 @@ struct SignupView: View {
 
 #Preview {
     SignupView()
+        .environmentObject(AuthManager())
 }

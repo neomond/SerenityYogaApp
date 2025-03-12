@@ -20,7 +20,7 @@ struct SerenityYogaApp: App {
         let providerFactory = AppCheckDebugProviderFactory()
         AppCheck.setAppCheckProviderFactory(providerFactory)
         #else
-        // Use App Attest for production (iOS 14+)
+        /// Use App Attest for production (iOS 14+)
         let providerFactory = AppAttestProviderFactory()
         AppCheck.setAppCheckProviderFactory(providerFactory)
         #endif
